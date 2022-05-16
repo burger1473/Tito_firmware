@@ -110,39 +110,8 @@ void TAREA_2_Initialize ( void )
 void TAREA_2_Tasks ( void )
 {
 
-    /* Check the application's current state. */
-    switch ( tarea_2Data.state )
-    {
-        /* Application's initial state. */
-        case TAREA_2_STATE_INIT:
-        {
-            bool appInitialized = true;
-
-
-            if (appInitialized)
-            {
-
-                tarea_2Data.state = TAREA_2_STATE_SERVICE_TASKS;
-            }
-            break;
-        }
-
-        case TAREA_2_STATE_SERVICE_TASKS:
-        {
-
-            break;
-        }
-
-        /* TODO: implement your application state machine.*/
-
-
-        /* The default state should never be executed. */
-        default:
-        {
-            /* TODO: Handle error in application's state machine. */
-            break;
-        }
-    }
+   /* Let idle task run for some time*/
+   vTaskDelay(500 / portTICK_PERIOD_MS );
 }
 
 
