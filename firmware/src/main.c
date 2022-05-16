@@ -16,12 +16,9 @@
 /*=====================[Implementaciones]==============================*/
 
 /*========================================================================
-  Funcion: uartReadEventHandler
-  Descripcion: Callback que se llama al ocurrir una recepcio de datos por uart, esta funcion libera el semaforo que desbloquea la tarea uart
-              para poder obtener el dato que se encuentra en el buffer del driver uart.
-  Parametro de entrada: 
-                          USART_EVENT event: tipo de evento del callback
-                          uintptr_t context.
+  Funcion: main
+  Descripcion: Inicia todos los modulos generados en Harmony. Crea las tareas e inicia el planificador
+  Sin parametro de entrada
   No retorna nada
   ========================================================================*/
 int main ( void )
