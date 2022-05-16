@@ -148,7 +148,7 @@ void TAREA_PRINCIPAL_Tasks ( void )
             }
 
             portENTER_CRITICAL(); //seccion critica para evitar que se ejecute cambio de contexto
-            readByte = ' ';
+            readByte_global = ' ';
             portEXIT_CRITICAL();
         }else{
             xSemaphoreTake(uartMutexLock, portMAX_DELAY);
