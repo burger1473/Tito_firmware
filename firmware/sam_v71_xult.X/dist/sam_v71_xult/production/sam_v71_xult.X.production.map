@@ -94,32 +94,32 @@ section                    address  length [bytes]      (dec)  Description
 .text.USART1_WriteFreeB   0x401f10           0x14          20   
 .text.vPortEnableVFP      0x401f24           0x14          20   
 .text.vPortExitCritical   0x401f38           0x14          20   
-.text.TAREA_2_Tasks       0x401f4c           0x14          20   
-.text.EFC_Initialize      0x401f60           0x10          16   
-.text.PIOA_InterruptHan   0x401f70           0x10          16   
-.text.vTaskSuspendAll     0x401f80           0x10          16   
-.text.memset              0x401f90           0x10          16   
-.text.main                0x401fa0            0xe          14   
-.text.HardFault_Handler   0x401fae            0x2           2   
-.text.USART1_ReadThresh   0x401fb0            0xc          12   
-.text.USART1_ReadCallba   0x401fbc            0xc          12   
-.text.vTaskMissedYield    0x401fc8            0xc          12   
-.text.TAREA_UART_Initia   0x401fd4            0xc          12   
-.text.TAREA_2_Initializ   0x401fe0            0xc          12   
-.text._TAREA_PRINCIPAL_   0x401fec            0x8           8   
-.text._TAREA_2_Tasks      0x401ff4            0x8           8   
-.text._TAREA_UART_Tasks   0x401ffc            0x8           8   
-.rodata                   0x402004            0x8           8  Read-only const 
-.text.DebugMonitor_Hand   0x40200c            0x2           2   
-.text.MemoryManagement_   0x40200e            0x2           2   
-.text.BusFault_Handler    0x402010            0x2           2   
-.text.UsageFault_Handle   0x402012            0x2           2   
-.text.Dummy_App_Func      0x402014            0x2           2   
-.text.vPortFree           0x402016            0x2           2   
-.text.__dummy             0x402018            0x2           2   
-      Total ROM used  :      0x201a        8218  0.4% of 0x200000
+.text.EFC_Initialize      0x401f4c           0x10          16   
+.text.PIOA_InterruptHan   0x401f5c           0x10          16   
+.text.vTaskSuspendAll     0x401f6c           0x10          16   
+.text.memset              0x401f7c           0x10          16   
+.text.main                0x401f8c            0xe          14   
+.text.HardFault_Handler   0x401f9a            0x2           2   
+.text.USART1_ReadThresh   0x401f9c            0xc          12   
+.text.USART1_ReadCallba   0x401fa8            0xc          12   
+.text.vTaskMissedYield    0x401fb4            0xc          12   
+.text.TAREA_UART_Initia   0x401fc0            0xc          12   
+.text.TAREA_2_Initializ   0x401fcc            0xc          12   
+.text.TAREA_2_Tasks       0x401fd8            0xc          12   
+.text._TAREA_PRINCIPAL_   0x401fe4            0x8           8   
+.text._TAREA_2_Tasks      0x401fec            0x8           8   
+.text._TAREA_UART_Tasks   0x401ff4            0x8           8   
+.rodata                   0x401ffc            0x8           8  Read-only const 
+.text.DebugMonitor_Hand   0x402004            0x2           2   
+.text.MemoryManagement_   0x402006            0x2           2   
+.text.BusFault_Handler    0x402008            0x2           2   
+.text.UsageFault_Handle   0x40200a            0x2           2   
+.text.Dummy_App_Func      0x40200c            0x2           2   
+.text.vPortFree           0x40200e            0x2           2   
+.text.__dummy             0x402010            0x2           2   
+      Total ROM used  :      0x2012        8210  0.4% of 0x200000
         --------------------------------------------------------------------------
-         Total Program Memory used  :      0x201a        8218  0.4% of 0x200000
+         Total Program Memory used  :      0x2012        8210  0.4% of 0x200000
         --------------------------------------------------------------------------
 
 
@@ -971,7 +971,7 @@ LOAD data_init
  .comment       0x00000053       0x54 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
  .comment       0x00000053       0x54 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
 
-.debug_info     0x00000000    0x12baa
+.debug_info     0x00000000    0x12bc7
  .debug_info    0x00000000      0xa66 build/sam_v71_xult/production/_ext/1379310441/bsp.o
  .debug_info    0x00000a66      0x869 build/sam_v71_xult/production/_ext/1157990217/plib_clk.o
  .debug_info    0x000012cf      0x929 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
@@ -991,16 +991,16 @@ LOAD data_init
  .debug_info    0x0000c446     0x2e58 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
  .debug_info    0x0000f29e      0x3b4 build/sam_v71_xult/production/_ext/1360937237/main.o
  .debug_info    0x0000f652      0x7fb build/sam_v71_xult/production/_ext/1360937237/tarea_uart.o
- .debug_info    0x0000fe4d      0x475 build/sam_v71_xult/production/_ext/1360937237/tarea_2.o
- .debug_info    0x000102c2      0xdc7 build/sam_v71_xult/production/_ext/1360937237/tarea_principal.o
- .debug_info    0x00011089      0x2e1 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
- .debug_info    0x0001136a      0x6b9 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
- .debug_info    0x00011a23      0x5e5 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
- .debug_info    0x00012008      0x324 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
- .debug_info    0x0001232c      0x2e2 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
- .debug_info    0x0001260e      0x59c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
+ .debug_info    0x0000fe4d      0x492 build/sam_v71_xult/production/_ext/1360937237/tarea_2.o
+ .debug_info    0x000102df      0xdc7 build/sam_v71_xult/production/_ext/1360937237/tarea_principal.o
+ .debug_info    0x000110a6      0x2e1 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
+ .debug_info    0x00011387      0x6b9 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
+ .debug_info    0x00011a40      0x5e5 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
+ .debug_info    0x00012025      0x324 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
+ .debug_info    0x00012349      0x2e2 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
+ .debug_info    0x0001262b      0x59c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
 
-.debug_abbrev   0x00000000     0x2a58
+.debug_abbrev   0x00000000     0x2a66
  .debug_abbrev  0x00000000       0xd1 build/sam_v71_xult/production/_ext/1379310441/bsp.o
  .debug_abbrev  0x000000d1       0xd5 build/sam_v71_xult/production/_ext/1157990217/plib_clk.o
  .debug_abbrev  0x000001a6      0x21a build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
@@ -1020,14 +1020,14 @@ LOAD data_init
  .debug_abbrev  0x00001ca7      0x466 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
  .debug_abbrev  0x0000210d       0xdb build/sam_v71_xult/production/_ext/1360937237/main.o
  .debug_abbrev  0x000021e8      0x1a3 build/sam_v71_xult/production/_ext/1360937237/tarea_uart.o
- .debug_abbrev  0x0000238b      0x127 build/sam_v71_xult/production/_ext/1360937237/tarea_2.o
- .debug_abbrev  0x000024b2      0x191 build/sam_v71_xult/production/_ext/1360937237/tarea_principal.o
- .debug_abbrev  0x00002643       0x2e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
- .debug_abbrev  0x00002671      0x126 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
- .debug_abbrev  0x00002797       0xc7 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
- .debug_abbrev  0x0000285e       0x9c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
- .debug_abbrev  0x000028fa       0x97 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
- .debug_abbrev  0x00002991       0xc7 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
+ .debug_abbrev  0x0000238b      0x135 build/sam_v71_xult/production/_ext/1360937237/tarea_2.o
+ .debug_abbrev  0x000024c0      0x191 build/sam_v71_xult/production/_ext/1360937237/tarea_principal.o
+ .debug_abbrev  0x00002651       0x2e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
+ .debug_abbrev  0x0000267f      0x126 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
+ .debug_abbrev  0x000027a5       0xc7 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
+ .debug_abbrev  0x0000286c       0x9c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
+ .debug_abbrev  0x00002908       0x97 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
+ .debug_abbrev  0x0000299f       0xc7 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
 
 .debug_aranges  0x00000000      0x7d0
  .debug_aranges
@@ -1112,7 +1112,7 @@ LOAD data_init
  .debug_ranges  0x00000920       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
  .debug_ranges  0x00000930       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
 
-.debug_line     0x00000000     0x649a
+.debug_line     0x00000000     0x650b
  .debug_line    0x00000000      0x157 build/sam_v71_xult/production/_ext/1379310441/bsp.o
  .debug_line    0x00000157      0x1b6 build/sam_v71_xult/production/_ext/1157990217/plib_clk.o
  .debug_line    0x0000030d      0x3e0 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
@@ -1132,16 +1132,16 @@ LOAD data_init
  .debug_line    0x00003d66     0x1752 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
  .debug_line    0x000054b8      0x138 build/sam_v71_xult/production/_ext/1360937237/main.o
  .debug_line    0x000055f0      0x29b build/sam_v71_xult/production/_ext/1360937237/tarea_uart.o
- .debug_line    0x0000588b      0x14e build/sam_v71_xult/production/_ext/1360937237/tarea_2.o
- .debug_line    0x000059d9      0x2b8 build/sam_v71_xult/production/_ext/1360937237/tarea_principal.o
- .debug_line    0x00005c91      0x110 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
- .debug_line    0x00005da1      0x24c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
- .debug_line    0x00005fed      0x132 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
- .debug_line    0x0000611f       0xf2 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
- .debug_line    0x00006211       0xea c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
- .debug_line    0x000062fb      0x19f c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
+ .debug_line    0x0000588b      0x1bf build/sam_v71_xult/production/_ext/1360937237/tarea_2.o
+ .debug_line    0x00005a4a      0x2b8 build/sam_v71_xult/production/_ext/1360937237/tarea_principal.o
+ .debug_line    0x00005d02      0x110 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
+ .debug_line    0x00005e12      0x24c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
+ .debug_line    0x0000605e      0x132 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
+ .debug_line    0x00006190       0xf2 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
+ .debug_line    0x00006282       0xea c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
+ .debug_line    0x0000636c      0x19f c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
 
-.debug_str      0x00000000      0x96c
+.debug_str      0x00000000      0x977
  .debug_str     0x00000000        0x0 build/sam_v71_xult/production/_ext/1379310441/bsp.o
  .debug_str     0x00000000        0x0 build/sam_v71_xult/production/_ext/1157990217/plib_clk.o
  .debug_str     0x00000000       0x14 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
@@ -1161,16 +1161,16 @@ LOAD data_init
  .debug_str     0x000005ac      0x275 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
  .debug_str     0x00000821       0x19 build/sam_v71_xult/production/_ext/1360937237/main.o
  .debug_str     0x0000083a       0xbd build/sam_v71_xult/production/_ext/1360937237/tarea_uart.o
- .debug_str     0x000008f7        0x0 build/sam_v71_xult/production/_ext/1360937237/tarea_2.o
- .debug_str     0x000008f7       0x75 build/sam_v71_xult/production/_ext/1360937237/tarea_principal.o
- .debug_str     0x0000096c        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
- .debug_str     0x0000096c        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
- .debug_str     0x0000096c        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
- .debug_str     0x0000096c        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
- .debug_str     0x0000096c        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
- .debug_str     0x0000096c        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
+ .debug_str     0x000008f7        0xb build/sam_v71_xult/production/_ext/1360937237/tarea_2.o
+ .debug_str     0x00000902       0x75 build/sam_v71_xult/production/_ext/1360937237/tarea_principal.o
+ .debug_str     0x00000977        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
+ .debug_str     0x00000977        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
+ .debug_str     0x00000977        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
+ .debug_str     0x00000977        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
+ .debug_str     0x00000977        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
+ .debug_str     0x00000977        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
 
-.debug_frame    0x00000000     0x105c
+.debug_frame    0x00000000     0x1064
  .debug_frame   0x00000000       0x20 build/sam_v71_xult/production/_ext/1379310441/bsp.o
  .debug_frame   0x00000020       0x20 build/sam_v71_xult/production/_ext/1157990217/plib_clk.o
  .debug_frame   0x00000040       0xec build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
@@ -1190,14 +1190,14 @@ LOAD data_init
  .debug_frame   0x00000a38      0x46c build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
  .debug_frame   0x00000ea4       0x28 build/sam_v71_xult/production/_ext/1360937237/main.o
  .debug_frame   0x00000ecc       0x60 build/sam_v71_xult/production/_ext/1360937237/tarea_uart.o
- .debug_frame   0x00000f2c       0x30 build/sam_v71_xult/production/_ext/1360937237/tarea_2.o
- .debug_frame   0x00000f5c       0x44 build/sam_v71_xult/production/_ext/1360937237/tarea_principal.o
- .debug_frame   0x00000fa0       0x38 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
- .debug_frame   0x00000fd8       0x3c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
- .debug_frame   0x00001014       0x28 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
- .debug_frame   0x0000103c       0x20 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
+ .debug_frame   0x00000f2c       0x38 build/sam_v71_xult/production/_ext/1360937237/tarea_2.o
+ .debug_frame   0x00000f64       0x44 build/sam_v71_xult/production/_ext/1360937237/tarea_principal.o
+ .debug_frame   0x00000fa8       0x38 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
+ .debug_frame   0x00000fe0       0x3c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
+ .debug_frame   0x0000101c       0x28 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
+ .debug_frame   0x00001044       0x20 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
 
-.debug_loc      0x00000000     0x553c
+.debug_loc      0x00000000     0x5546
  .debug_loc     0x00000000      0x611 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
  .debug_loc     0x00000611      0x124 build/sam_v71_xult/production/_ext/1537621011/plib_nvic.o
  .debug_loc     0x00000735      0x371 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
@@ -1213,12 +1213,12 @@ LOAD data_init
  .debug_loc     0x00003128     0x211d build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
  .debug_loc     0x00005245       0x20 build/sam_v71_xult/production/_ext/1360937237/main.o
  .debug_loc     0x00005265      0x100 build/sam_v71_xult/production/_ext/1360937237/tarea_uart.o
- .debug_loc     0x00005365       0x16 build/sam_v71_xult/production/_ext/1360937237/tarea_2.o
- .debug_loc     0x0000537b       0x4c build/sam_v71_xult/production/_ext/1360937237/tarea_principal.o
- .debug_loc     0x000053c7       0x14 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
- .debug_loc     0x000053db       0x51 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
- .debug_loc     0x0000542c       0xba c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
- .debug_loc     0x000054e6       0x56 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
+ .debug_loc     0x00005365       0x20 build/sam_v71_xult/production/_ext/1360937237/tarea_2.o
+ .debug_loc     0x00005385       0x4c build/sam_v71_xult/production/_ext/1360937237/tarea_principal.o
+ .debug_loc     0x000053d1       0x14 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
+ .debug_loc     0x000053e5       0x51 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
+ .debug_loc     0x00005436       0xba c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
+ .debug_loc     0x000054f0       0x56 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
 
 .note.GNU-stack
                 0x00000000        0x0
@@ -1878,89 +1878,89 @@ LOAD data_init
                 0x00401f38       0x14 build/sam_v71_xult/production/_ext/977623654/port.o
                 0x00401f38                vPortExitCritical
 
-.text.TAREA_2_Tasks%117
-                0x00401f4c       0x14
- .text.TAREA_2_Tasks
-                0x00401f4c       0x14 build/sam_v71_xult/production/_ext/1360937237/tarea_2.o
-                0x00401f4c                TAREA_2_Tasks
-
-.text.EFC_Initialize%118
-                0x00401f60       0x10
+.text.EFC_Initialize%117
+                0x00401f4c       0x10
  .text.EFC_Initialize
-                0x00401f60       0x10 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
-                0x00401f60                EFC_Initialize
+                0x00401f4c       0x10 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
+                0x00401f4c                EFC_Initialize
 
-.text.PIOA_InterruptHandler%119
-                0x00401f70       0x10
+.text.PIOA_InterruptHandler%118
+                0x00401f5c       0x10
  .text.PIOA_InterruptHandler
-                0x00401f70       0x10 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
-                0x00401f70                PIOA_InterruptHandler
+                0x00401f5c       0x10 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
+                0x00401f5c                PIOA_InterruptHandler
 
-.text.vTaskSuspendAll%120
-                0x00401f80       0x10
+.text.vTaskSuspendAll%119
+                0x00401f6c       0x10
  .text.vTaskSuspendAll
-                0x00401f80       0x10 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-                0x00401f80                vTaskSuspendAll
+                0x00401f6c       0x10 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x00401f6c                vTaskSuspendAll
 
-.text.memset%121
-                0x00401f90       0x10
- .text.memset   0x00401f90       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
-                0x00401f90                memset
+.text.memset%120
+                0x00401f7c       0x10
+ .text.memset   0x00401f7c       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
+                0x00401f7c                memset
 
-.text.main%122  0x00401fa0        0xe
- .text.main     0x00401fa0        0xe build/sam_v71_xult/production/_ext/1360937237/main.o
-                0x00401fa0                main
+.text.main%121  0x00401f8c        0xe
+ .text.main     0x00401f8c        0xe build/sam_v71_xult/production/_ext/1360937237/main.o
+                0x00401f8c                main
 
-.text.USART1_ReadThresholdSet%123
-                0x00401fb0        0xc
+.text.USART1_ReadThresholdSet%122
+                0x00401f9c        0xc
  .text.USART1_ReadThresholdSet
-                0x00401fb0        0xc build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
-                0x00401fb0                USART1_ReadThresholdSet
+                0x00401f9c        0xc build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
+                0x00401f9c                USART1_ReadThresholdSet
 
-.text.USART1_ReadCallbackRegister%124
-                0x00401fbc        0xc
+.text.USART1_ReadCallbackRegister%123
+                0x00401fa8        0xc
  .text.USART1_ReadCallbackRegister
-                0x00401fbc        0xc build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
-                0x00401fbc                USART1_ReadCallbackRegister
+                0x00401fa8        0xc build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
+                0x00401fa8                USART1_ReadCallbackRegister
 
-.text.vTaskMissedYield%125
-                0x00401fc8        0xc
+.text.vTaskMissedYield%124
+                0x00401fb4        0xc
  .text.vTaskMissedYield
-                0x00401fc8        0xc build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-                0x00401fc8                vTaskMissedYield
+                0x00401fb4        0xc build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x00401fb4                vTaskMissedYield
 
-.text.TAREA_UART_Initialize%126
-                0x00401fd4        0xc
+.text.TAREA_UART_Initialize%125
+                0x00401fc0        0xc
  .text.TAREA_UART_Initialize
-                0x00401fd4        0xc build/sam_v71_xult/production/_ext/1360937237/tarea_uart.o
-                0x00401fd4                TAREA_UART_Initialize
+                0x00401fc0        0xc build/sam_v71_xult/production/_ext/1360937237/tarea_uart.o
+                0x00401fc0                TAREA_UART_Initialize
 
-.text.TAREA_2_Initialize%127
-                0x00401fe0        0xc
+.text.TAREA_2_Initialize%126
+                0x00401fcc        0xc
  .text.TAREA_2_Initialize
-                0x00401fe0        0xc build/sam_v71_xult/production/_ext/1360937237/tarea_2.o
-                0x00401fe0                TAREA_2_Initialize
+                0x00401fcc        0xc build/sam_v71_xult/production/_ext/1360937237/tarea_2.o
+                0x00401fcc                TAREA_2_Initialize
+
+.text.TAREA_2_Tasks%127
+                0x00401fd8        0xc
+ .text.TAREA_2_Tasks
+                0x00401fd8        0xc build/sam_v71_xult/production/_ext/1360937237/tarea_2.o
+                0x00401fd8                TAREA_2_Tasks
 
 .text._TAREA_PRINCIPAL_Tasks%128
-                0x00401fec        0x8
+                0x00401fe4        0x8
  .text._TAREA_PRINCIPAL_Tasks
-                0x00401fec        0x8 build/sam_v71_xult/production/_ext/1320227943/tasks.o
-                0x00401fec                _TAREA_PRINCIPAL_Tasks
+                0x00401fe4        0x8 build/sam_v71_xult/production/_ext/1320227943/tasks.o
+                0x00401fe4                _TAREA_PRINCIPAL_Tasks
 
 .text._TAREA_2_Tasks%129
-                0x00401ff4        0x8
+                0x00401fec        0x8
  .text._TAREA_2_Tasks
-                0x00401ff4        0x8 build/sam_v71_xult/production/_ext/1320227943/tasks.o
-                0x00401ff4                _TAREA_2_Tasks
+                0x00401fec        0x8 build/sam_v71_xult/production/_ext/1320227943/tasks.o
+                0x00401fec                _TAREA_2_Tasks
 
 .text._TAREA_UART_Tasks%130
-                0x00401ffc        0x8
+                0x00401ff4        0x8
  .text._TAREA_UART_Tasks
-                0x00401ffc        0x8 build/sam_v71_xult/production/_ext/1320227943/tasks.o
-                0x00401ffc                _TAREA_UART_Tasks
+                0x00401ff4        0x8 build/sam_v71_xult/production/_ext/1320227943/tasks.o
+                0x00401ff4                _TAREA_UART_Tasks
 
-.rodata%131     0x00402004        0x8
- .rodata        0x00402004        0x8 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+.rodata%131     0x00401ffc        0x8
+ .rodata        0x00401ffc        0x8 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
 
 .text.vListInitialiseItem%132
                 0x00401d5a        0x6
@@ -2050,53 +2050,53 @@ LOAD data_init
                 0x0040149a                NonMaskableInt_Handler
 
 .text.HardFault_Handler%135
-                0x00401fae        0x2
+                0x00401f9a        0x2
  .text.HardFault_Handler
-                0x00401fae        0x2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
-                0x00401fae                HardFault_Handler
+                0x00401f9a        0x2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
+                0x00401f9a                HardFault_Handler
 
 .text.DebugMonitor_Handler%136
-                0x0040200c        0x2
+                0x00402004        0x2
  .text.DebugMonitor_Handler
-                0x0040200c        0x2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
-                0x0040200c                DebugMonitor_Handler
+                0x00402004        0x2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
+                0x00402004                DebugMonitor_Handler
 
 .text.MemoryManagement_Handler%137
-                0x0040200e        0x2
+                0x00402006        0x2
  .text.MemoryManagement_Handler
-                0x0040200e        0x2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
-                0x0040200e                MemoryManagement_Handler
+                0x00402006        0x2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
+                0x00402006                MemoryManagement_Handler
 
 .text.BusFault_Handler%138
-                0x00402010        0x2
+                0x00402008        0x2
  .text.BusFault_Handler
-                0x00402010        0x2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
-                0x00402010                BusFault_Handler
+                0x00402008        0x2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
+                0x00402008                BusFault_Handler
 
 .text.UsageFault_Handler%139
-                0x00402012        0x2
+                0x0040200a        0x2
  .text.UsageFault_Handler
-                0x00402012        0x2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
-                0x00402012                UsageFault_Handler
+                0x0040200a        0x2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
+                0x0040200a                UsageFault_Handler
 
 .text.Dummy_App_Func%140
-                0x00402014        0x2
+                0x0040200c        0x2
  .text.Dummy_App_Func
-                0x00402014        0x2 build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
-                0x00402014                _on_reset
-                0x00402014                _on_bootstrap
-                0x00402014                __xc32_on_reset
-                0x00402014                Dummy_App_Func
-                0x00402014                __xc32_on_bootstrap
+                0x0040200c        0x2 build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
+                0x0040200c                _on_reset
+                0x0040200c                _on_bootstrap
+                0x0040200c                __xc32_on_reset
+                0x0040200c                Dummy_App_Func
+                0x0040200c                __xc32_on_bootstrap
 
 .text.vPortFree%141
-                0x00402016        0x2
+                0x0040200e        0x2
  .text.vPortFree
-                0x00402016        0x2 build/sam_v71_xult/production/_ext/1665200909/heap_1.o
-                0x00402016                vPortFree
+                0x0040200e        0x2 build/sam_v71_xult/production/_ext/1665200909/heap_1.o
+                0x0040200e                vPortFree
 
 .text.__dummy%142
-                0x00402018        0x2
- .text.__dummy  0x00402018        0x2 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
-                0x00402018                __init_stdio
-                0x00402018                __init_host
+                0x00402010        0x2
+ .text.__dummy  0x00402010        0x2 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
+                0x00402010                __init_stdio
+                0x00402010                __init_host
