@@ -1,5 +1,5 @@
-build/sam_v71_xult/production/_ext/1360937237/task1.o: ../src/task1.c \
- ../src/task1.h ../src/config/sam_v71_xult/configuration.h \
+build/sam_v71_xult/production/_ext/1360937237/tarea_2.o: ../src/tarea_2.c \
+ ../src/tarea_2.h ../src/config/sam_v71_xult/configuration.h \
  ../src/config/sam_v71_xult/user.h ../src/config/sam_v71_xult/bsp/bsp.h \
  ../src/config/sam_v71_xult/device.h \
  ../src/packs/ATSAMV71Q21B_DFP/samv71q21b.h \
@@ -110,35 +110,9 @@ build/sam_v71_xult/production/_ext/1360937237/task1.o: ../src/task1.c \
  ../src/config/sam_v71_xult/device.h \
  ../src/config/sam_v71_xult/toolchain_specifics.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h \
- ../src/config/sam_v71_xult/peripheral/pio/plib_pio.h \
- ../src/config/sam_v71_xult/definitions.h \
- ../src/config/sam_v71_xult/peripheral/clk/plib_clk.h \
- ../src/config/sam_v71_xult/peripheral/nvic/plib_nvic.h \
- ../src/config/sam_v71_xult/peripheral/efc/plib_efc.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/FreeRTOS.h \
- ../src/config/sam_v71_xult/FreeRTOSConfig.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/projdefs.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/portable.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/deprecated_definitions.h \
- ../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/CM7/portmacro.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/mpu_wrappers.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/task.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/list.h \
- ../src/config/sam_v71_xult/peripheral/usart/plib_usart1.h \
- ../src/config/sam_v71_xult/peripheral/usart/plib_usart_common.h \
- ../src/config/sam_v71_xult/system/int/sys_int.h \
- ../src/config/sam_v71_xult/system/int/sys_int_mapping.h \
- ../src/config/sam_v71_xult/system/cache/sys_cache.h \
- ../src/config/sam_v71_xult/osal/osal.h \
- ../src/config/sam_v71_xult/osal/osal_definitions.h \
- ../src/config/sam_v71_xult/osal/osal_freertos.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/queue.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/task.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/semphr.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/queue.h ../src/task1.h \
- ../src/task2.h ../src/tarea_uart.h
+ ../src/config/sam_v71_xult/peripheral/pio/plib_pio.h
 
-../src/task1.h:
+../src/tarea_2.h:
 
 ../src/config/sam_v71_xult/configuration.h:
 
@@ -365,59 +339,3 @@ build/sam_v71_xult/production/_ext/1360937237/task1.o: ../src/task1.c \
 ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h:
 
 ../src/config/sam_v71_xult/peripheral/pio/plib_pio.h:
-
-../src/config/sam_v71_xult/definitions.h:
-
-../src/config/sam_v71_xult/peripheral/clk/plib_clk.h:
-
-../src/config/sam_v71_xult/peripheral/nvic/plib_nvic.h:
-
-../src/config/sam_v71_xult/peripheral/efc/plib_efc.h:
-
-../src/third_party/rtos/FreeRTOS/Source/Include/FreeRTOS.h:
-
-../src/config/sam_v71_xult/FreeRTOSConfig.h:
-
-../src/third_party/rtos/FreeRTOS/Source/Include/projdefs.h:
-
-../src/third_party/rtos/FreeRTOS/Source/Include/portable.h:
-
-../src/third_party/rtos/FreeRTOS/Source/Include/deprecated_definitions.h:
-
-../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/CM7/portmacro.h:
-
-../src/third_party/rtos/FreeRTOS/Source/Include/mpu_wrappers.h:
-
-../src/third_party/rtos/FreeRTOS/Source/Include/task.h:
-
-../src/third_party/rtos/FreeRTOS/Source/Include/list.h:
-
-../src/config/sam_v71_xult/peripheral/usart/plib_usart1.h:
-
-../src/config/sam_v71_xult/peripheral/usart/plib_usart_common.h:
-
-../src/config/sam_v71_xult/system/int/sys_int.h:
-
-../src/config/sam_v71_xult/system/int/sys_int_mapping.h:
-
-../src/config/sam_v71_xult/system/cache/sys_cache.h:
-
-../src/config/sam_v71_xult/osal/osal.h:
-
-../src/config/sam_v71_xult/osal/osal_definitions.h:
-
-../src/config/sam_v71_xult/osal/osal_freertos.h:
-
-../src/third_party/rtos/FreeRTOS/Source/Include/queue.h:
-
-../src/third_party/rtos/FreeRTOS/Source/Include/task.h:
-
-../src/third_party/rtos/FreeRTOS/Source/Include/semphr.h:
-
-../src/third_party/rtos/FreeRTOS/Source/Include/queue.h:
-
-../src/task1.h:
-
-../src/task2.h:
-
-../src/tarea_uart.h:

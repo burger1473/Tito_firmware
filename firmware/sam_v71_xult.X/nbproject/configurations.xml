@@ -209,9 +209,9 @@
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
-      <itemPath>../src/task1.h</itemPath>
-      <itemPath>../src/task2.h</itemPath>
       <itemPath>../src/tarea_uart.h</itemPath>
+      <itemPath>../src/tarea_2.h</itemPath>
+      <itemPath>../src/tarea_principal.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -327,9 +327,9 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
-      <itemPath>../src/task1.c</itemPath>
-      <itemPath>../src/task2.c</itemPath>
       <itemPath>../src/tarea_uart.c</itemPath>
+      <itemPath>../src/tarea_2.c</itemPath>
+      <itemPath>../src/tarea_principal.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>

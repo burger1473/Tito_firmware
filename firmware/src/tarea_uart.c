@@ -55,6 +55,7 @@
 TAREA_UART_DATA tarea_uartData;
 static SemaphoreHandle_t dataRxSemaphore;
 extern SemaphoreHandle_t uartMutexLock;
+uint8_t readByte_global=' ';
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Callback Functions
@@ -128,7 +129,7 @@ void TAREA_UART_Tasks ( void )
 {
     uint8_t readByte;
     bool status = false;
-    TickType_t timeNow;
+    //TickType_t timeNow;
 
     USART1_ReadCallbackRegister(uartReadEventHandler, 0);
     USART1_ReadThresholdSet(1);
@@ -146,28 +147,29 @@ void TAREA_UART_Tasks ( void )
         /* Block until a character is received on the terminal */
         if( xSemaphoreTake( dataRxSemaphore, portMAX_DELAY ) == pdTRUE )
         {
-            /* Task3 is running (<-) now */
+            /*
             xSemaphoreTake(uartMutexLock, portMAX_DELAY);
-            USART1_Write((uint8_t*)"                      Tsk3-P3 <-\r\n", 34);
+            USART1_Write((uint8_t*)"Inicio tarea uart\r\n", 19);
             xSemaphoreGive(uartMutexLock);
-
+            */
             /* Toggle an LED if character received is 'L' or 'l' */
             while (USART1_Read(&readByte, 1) == true)
             {
-                if (readByte == 'L' || readByte == 'l')
-                {
-                    LED1_Toggle();
-                }
+                portENTER_CRITICAL(); //seccion critica para evitar que se ejecute cambio de contexto
+                readByte_global=readByte;
+                portEXIT_CRITICAL();
             }
 
-            /* Work done by task3 for 50 ticks */
+            /* Work done by task3 for 50 ticks 
             timeNow = xTaskGetTickCount();
             while ((xTaskGetTickCount() - timeNow) < 50);
+            */
 
-            /* Task3 is exiting (->) now */
+            /*
             xSemaphoreTake(uartMutexLock, portMAX_DELAY);
-            USART1_Write((uint8_t*)"                      Tsk3-P3 ->\r\n", 34);
+            USART1_Write((uint8_t*)"Fin tarea uart\r\n", 16);
             xSemaphoreGive(uartMutexLock);
+            */
         }
     }
 }

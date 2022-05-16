@@ -59,24 +59,24 @@
 // Section: RTOS "Tasks" Routine
 // *****************************************************************************
 // *****************************************************************************
-/* Handle for the TASK1_Tasks. */
-TaskHandle_t xTASK1_Tasks;
+/* Handle for the TAREA_PRINCIPAL_Tasks. */
+TaskHandle_t xTAREA_PRINCIPAL_Tasks;
 
-void _TASK1_Tasks(  void *pvParameters  )
+void _TAREA_PRINCIPAL_Tasks(  void *pvParameters  )
 {   
     while(1)
     {
-        TASK1_Tasks();
+        TAREA_PRINCIPAL_Tasks();
     }
 }
-/* Handle for the TASK2_Tasks. */
-TaskHandle_t xTASK2_Tasks;
+/* Handle for the TAREA_2_Tasks. */
+TaskHandle_t xTAREA_2_Tasks;
 
-void _TASK2_Tasks(  void *pvParameters  )
+void _TAREA_2_Tasks(  void *pvParameters  )
 {   
     while(1)
     {
-        TASK2_Tasks();
+        TAREA_2_Tasks();
     }
 }
 /* Handle for the TAREA_UART_Tasks. */
@@ -118,21 +118,21 @@ void SYS_Tasks ( void )
     
 
     /* Maintain the application's state machine. */
-        /* Create OS Thread for TASK1_Tasks. */
-    xTaskCreate((TaskFunction_t) _TASK1_Tasks,
-                "TASK1_Tasks",
+        /* Create OS Thread for TAREA_PRINCIPAL_Tasks. */
+    xTaskCreate((TaskFunction_t) _TAREA_PRINCIPAL_Tasks,
+                "TAREA_PRINCIPAL_Tasks",
                 1024,
                 NULL,
                 1,
-                &xTASK1_Tasks);
+                &xTAREA_PRINCIPAL_Tasks);
 
-    /* Create OS Thread for TASK2_Tasks. */
-    xTaskCreate((TaskFunction_t) _TASK2_Tasks,
-                "TASK2_Tasks",
+    /* Create OS Thread for TAREA_2_Tasks. */
+    xTaskCreate((TaskFunction_t) _TAREA_2_Tasks,
+                "TAREA_2_Tasks",
                 1024,
                 NULL,
                 2,
-                &xTASK2_Tasks);
+                &xTAREA_2_Tasks);
 
     /* Create OS Thread for TAREA_UART_Tasks. */
     xTaskCreate((TaskFunction_t) _TAREA_UART_Tasks,

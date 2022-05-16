@@ -138,8 +138,8 @@ build/sam_v71_xult/production/_ext/1320227943/exceptions.o: \
  ../src/third_party/rtos/FreeRTOS/Source/Include/queue.h \
  ../src/third_party/rtos/FreeRTOS/Source/Include/task.h \
  ../src/third_party/rtos/FreeRTOS/Source/Include/semphr.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/queue.h ../src/task1.h \
- ../src/task2.h ../src/tarea_uart.h
+ ../src/third_party/rtos/FreeRTOS/Source/Include/queue.h \
+ ../src/tarea_principal.h ../src/tarea_2.h ../src/tarea_uart.h
 
 ../src/config/sam_v71_xult/configuration.h:
 
@@ -421,8 +421,8 @@ build/sam_v71_xult/production/_ext/1320227943/exceptions.o: \
 
 ../src/third_party/rtos/FreeRTOS/Source/Include/queue.h:
 
-../src/task1.h:
+../src/tarea_principal.h:
 
-../src/task2.h:
+../src/tarea_2.h:
 
 ../src/tarea_uart.h:

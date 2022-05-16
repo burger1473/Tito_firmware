@@ -59,8 +59,8 @@
 #include "system/int/sys_int.h"
 #include "system/cache/sys_cache.h"
 #include "osal/osal.h"
-#include "task1.h"
-#include "task2.h"
+#include "tarea_principal.h"
+#include "tarea_2.h"
 #include "tarea_uart.h"
 
 

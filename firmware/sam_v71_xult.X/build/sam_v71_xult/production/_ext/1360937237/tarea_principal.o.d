@@ -1,5 +1,6 @@
-build/sam_v71_xult/production/_ext/1360937237/task2.o: ../src/task2.c \
- ../src/task2.h ../src/config/sam_v71_xult/configuration.h \
+build/sam_v71_xult/production/_ext/1360937237/tarea_principal.o: \
+ ../src/tarea_principal.c ../src/tarea_principal.h \
+ ../src/config/sam_v71_xult/configuration.h \
  ../src/config/sam_v71_xult/user.h ../src/config/sam_v71_xult/bsp/bsp.h \
  ../src/config/sam_v71_xult/device.h \
  ../src/packs/ATSAMV71Q21B_DFP/samv71q21b.h \
@@ -135,10 +136,10 @@ build/sam_v71_xult/production/_ext/1360937237/task2.o: ../src/task2.c \
  ../src/third_party/rtos/FreeRTOS/Source/Include/queue.h \
  ../src/third_party/rtos/FreeRTOS/Source/Include/task.h \
  ../src/third_party/rtos/FreeRTOS/Source/Include/semphr.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/queue.h ../src/task1.h \
- ../src/task2.h ../src/tarea_uart.h
+ ../src/third_party/rtos/FreeRTOS/Source/Include/queue.h \
+ ../src/tarea_principal.h ../src/tarea_2.h ../src/tarea_uart.h
 
-../src/task2.h:
+../src/tarea_principal.h:
 
 ../src/config/sam_v71_xult/configuration.h:
 
@@ -416,8 +417,8 @@ build/sam_v71_xult/production/_ext/1360937237/task2.o: ../src/task2.c \
 
 ../src/third_party/rtos/FreeRTOS/Source/Include/queue.h:
 
-../src/task1.h:
+../src/tarea_principal.h:
 
-../src/task2.h:
+../src/tarea_2.h:
 
 ../src/tarea_uart.h:

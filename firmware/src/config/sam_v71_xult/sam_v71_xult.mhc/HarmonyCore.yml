@@ -16,7 +16,7 @@ children:
       - type: String
         attributes: {id: name}
         children:
-        - {type: Value, value: task1.c}
+        - {type: Value, value: tarea_principal.c}
   - type: File
     attributes: {id: APP0_H}
     children:
@@ -29,7 +29,7 @@ children:
       - type: String
         attributes: {id: name}
         children:
-        - {type: Value, value: task1.h}
+        - {type: Value, value: tarea_principal.h}
   - type: File
     attributes: {id: APP1_C}
     children:
@@ -42,7 +42,7 @@ children:
       - type: String
         attributes: {id: name}
         children:
-        - {type: Value, value: task2.c}
+        - {type: Value, value: tarea_2.c}
   - type: File
     attributes: {id: APP1_H}
     children:
@@ -55,7 +55,7 @@ children:
       - type: String
         attributes: {id: name}
         children:
-        - {type: Value, value: task2.h}
+        - {type: Value, value: tarea_2.h}
   - type: File
     attributes: {id: APP2_C}
     children:
@@ -255,14 +255,14 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: task1}
+        attributes: {value: Tarea_principal}
   - type: String
     attributes: {id: GEN_APP_TASK_NAME_1}
     children:
     - type: Values
       children:
       - type: User
-        attributes: {value: task2}
+        attributes: {value: Tarea_2}
   - type: String
     attributes: {id: GEN_APP_TASK_NAME_2}
     children:

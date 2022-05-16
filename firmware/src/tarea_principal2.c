@@ -28,7 +28,7 @@
     Microchip Technology Inc.
 
   File Name:
-    task4.c
+    tarea_principal.c
 
   Summary:
     This file contains the source code for the MPLAB Harmony application.
@@ -50,18 +50,16 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#include "task4.h"
+#include "tarea_principal.h"
 #include "definitions.h"
 #include <string.h>
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
 // *****************************************************************************
 // *****************************************************************************
 
-TASK4_DATA task4Data;
-static SemaphoreHandle_t switchPressSemaphore;
-extern SemaphoreHandle_t uartMutexLock;
 // *****************************************************************************
 /* Application Data
 
@@ -72,30 +70,24 @@ extern SemaphoreHandle_t uartMutexLock;
     This structure holds the application's data.
 
   Remarks:
-    This structure should be initialized by the TASK4_Initialize function.
+    This structure should be initialized by the tarea_principal_Initialize function.
 
     Application strings and buffers are be defined outside this structure.
 */
 
+tarea_principal_DATA tarea_principalData;
 
+/* Mutex used to protect the shared resource - UART */
+SemaphoreHandle_t uartMutexLock;
+extern uint8_t readByte_global;
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Callback Functions
 // *****************************************************************************
 // *****************************************************************************
 
-static void SwitchPress_Handler(PIO_PIN pin, uintptr_t context)
-{
-    BaseType_t xHigherPriorityTaskWoken;
-
-    /* Unblock the task by releasing the semaphore. */
-    xSemaphoreGiveFromISR( switchPressSemaphore, &xHigherPriorityTaskWoken );
-
-    /* If xHigherPriorityTaskWoken was set to true you
-    we should yield */
-
-    portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
-}
+/* TODO:  Add any necessary callback functions.
+*/
 
 // *****************************************************************************
 // *****************************************************************************
@@ -116,67 +108,79 @@ static void SwitchPress_Handler(PIO_PIN pin, uintptr_t context)
 
 /*******************************************************************************
   Function:
-    void TASK4_Initialize ( void )
+    void tarea_principal_Initialize ( void )
 
   Remarks:
-    See prototype in task4.h.
+    See prototype in tarea_principal.h.
  */
 
-void TASK4_Initialize ( void )
+void tarea_principal_Initialize ( void )
 {
     /* Place the App state machine in its initial state. */
-    task4Data.state = TASK4_STATE_INIT;
+    tarea_principalData.state = tarea_principal_STATE_INIT;
 
+    /* Create a mutex type semaphore. */
+    uartMutexLock = xSemaphoreCreateMutex();
 
-
-    /* TODO: Initialize your application's state machine and other
-     * parameters.
-     */
+    if( uartMutexLock == NULL)
+    {
+        /* There was insufficient FreeRTOS heap available for the semaphore to
+        be created successfully. */
+        USART1_Write((uint8_t*)"Could not create mutex lock\r\n", strlen("Could not create mutex lock\r\n"));
+    }
 }
-
 
 /******************************************************************************
   Function:
-    void TASK4_Tasks ( void )
+    void tarea_principal_Tasks ( void )
 
   Remarks:
-    See prototype in task4.h.
+    See prototype in tarea_principal.h.
  */
 
-void TASK4_Tasks ( void )
+void tarea_principal_Tasks ( void )
 {
-    bool status = false;
     TickType_t timeNow;
 
-    switchPressSemaphore = xSemaphoreCreateBinary();
-
-    if (switchPressSemaphore != NULL)
+    while (1)
     {
-        status = true;
-    }
-
-    PIO_PinInterruptCallbackRegister(SWITCH_PIN, SwitchPress_Handler, (uintptr_t)NULL);
-    PIO_PinInterruptEnable(SWITCH_PIN);
-
-    while (status == true)
-    {
-        /* Block until user presses the switch */
-        if( xSemaphoreTake( switchPressSemaphore, portMAX_DELAY ) == pdTRUE )
-        {
-            /* Task4 is running (<-) now */
+        /*
+        xSemaphoreTake(uartMutexLock, portMAX_DELAY);
+        USART1_Write((uint8_t*)"Entrada tarea principal\r\n", 25);
+        xSemaphoreGive(uartMutexLock);
+        */
+        portENTER_CRITICAL(); //seccion critica para evitar que se ejecute cambio de contexto
+        uint8_t readByte = readByte_global;
+        portEXIT_CRITICAL();
+        if (readByte != ' ')
+        { 
             xSemaphoreTake(uartMutexLock, portMAX_DELAY);
-            USART1_Write((uint8_t*)"                                Tsk4-P4 <-\r\n", 44);
+            USART1_Write((uint8_t*)"Tecla: ", 7);
+            USART1_Write(&readByte, 1);
+            USART1_Write((uint8_t*)"\r\n", 2);
             xSemaphoreGive(uartMutexLock);
+            if (readByte == 'L' || readByte == 'l')
+            {
+                LED1_Toggle();
+            }
 
-            /* Work done by task3 for 10 ticks */
-            timeNow = xTaskGetTickCount();
-            while ((xTaskGetTickCount() - timeNow) < 10);
-
-            /* Task4 is exiting (->) now */
-            xSemaphoreTake(uartMutexLock, portMAX_DELAY);
-            USART1_Write((uint8_t*)"                                Tsk4-P4 ->\r\n", 44);
-            xSemaphoreGive(uartMutexLock);
+            portENTER_CRITICAL(); //seccion critica para evitar que se ejecute cambio de contexto
+            readByte = ' ';
+            portEXIT_CRITICAL();
         }
+        
+        /* Work done by tarea_principal for 100 ticks 
+        timeNow = xTaskGetTickCount();
+        while ((xTaskGetTickCount() - timeNow) < 100);
+        */
+        /*
+        xSemaphoreTake(uartMutexLock, portMAX_DELAY);
+        USART1_Write((uint8_t*)"Salida tarea principal\r\n", 24);
+        xSemaphoreGive(uartMutexLock);
+        */
+
+        /* Let idle task run for some time*/
+        vTaskDelay(10 / portTICK_PERIOD_MS );
     }
 }
 

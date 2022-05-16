@@ -1,34 +1,11 @@
 /*******************************************************************************
-* Copyright (C) 2020 Microchip Technology Inc. and its subsidiaries.
-*
-* Subject to your compliance with these terms, you may use Microchip software
-* and any derivatives exclusively with Microchip products. It is your
-* responsibility to comply with third party license terms applicable to your
-* use of third party software (including open source software) that may
-* accompany Microchip software.
-*
-* THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
-* EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
-* WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
-* PARTICULAR PURPOSE.
-*
-* IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
-* INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
-* WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
-* BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
-* FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
-* ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
-* THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
-
-/*******************************************************************************
   MPLAB Harmony Application Header File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    task4.h
+    tarea_2.h
 
   Summary:
     This header file provides prototypes and definitions for the application.
@@ -36,13 +13,13 @@
   Description:
     This header file provides function prototypes and data type definitions for
     the application.  Some of these are required by the system (such as the
-    "TASK4_Initialize" and "TASK4_Tasks" prototypes) and some of them are only used
-    internally by the application (such as the "TASK4_STATES" definition).  Both
+    "TAREA_2_Initialize" and "TAREA_2_Tasks" prototypes) and some of them are only used
+    internally by the application (such as the "TAREA_2_STATES" definition).  Both
     are defined here for convenience.
 *******************************************************************************/
 
-#ifndef _TASK4_H
-#define _TASK4_H
+#ifndef _TAREA_2_H
+#define _TAREA_2_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -84,11 +61,11 @@ extern "C" {
 typedef enum
 {
     /* Application's state machine's initial state. */
-    TASK4_STATE_INIT=0,
-    TASK4_STATE_SERVICE_TASKS,
+    TAREA_2_STATE_INIT=0,
+    TAREA_2_STATE_SERVICE_TASKS,
     /* TODO: Define states used by the application state machine. */
 
-} TASK4_STATES;
+} TAREA_2_STATES;
 
 
 // *****************************************************************************
@@ -107,11 +84,11 @@ typedef enum
 typedef struct
 {
     /* The application's current state */
-    TASK4_STATES state;
+    TAREA_2_STATES state;
 
     /* TODO: Define any additional data used by the application. */
 
-} TASK4_DATA;
+} TAREA_2_DATA;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -129,7 +106,7 @@ typedef struct
 
 /*******************************************************************************
   Function:
-    void TASK4_Initialize ( void )
+    void TAREA_2_Initialize ( void )
 
   Summary:
      MPLAB Harmony application initialization routine.
@@ -137,7 +114,7 @@ typedef struct
   Description:
     This function initializes the Harmony application.  It places the
     application in its initial state and prepares it to run so that its
-    TASK4_Tasks function can be called.
+    TAREA_2_Tasks function can be called.
 
   Precondition:
     All other system initialization routines should be called before calling
@@ -151,19 +128,19 @@ typedef struct
 
   Example:
     <code>
-    TASK4_Initialize();
+    TAREA_2_Initialize();
     </code>
 
   Remarks:
     This routine must be called from the SYS_Initialize function.
 */
 
-void TASK4_Initialize ( void );
+void TAREA_2_Initialize ( void );
 
 
 /*******************************************************************************
   Function:
-    void TASK4_Tasks ( void )
+    void TAREA_2_Tasks ( void )
 
   Summary:
     MPLAB Harmony Demo application tasks function
@@ -184,14 +161,14 @@ void TASK4_Initialize ( void );
 
   Example:
     <code>
-    TASK4_Tasks();
+    TAREA_2_Tasks();
     </code>
 
   Remarks:
     This routine must be called from SYS_Tasks() routine.
  */
 
-void TASK4_Tasks( void );
+void TAREA_2_Tasks( void );
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
@@ -199,7 +176,7 @@ void TASK4_Tasks( void );
 #endif
 //DOM-IGNORE-END
 
-#endif /* _TASK4_H */
+#endif /* _TAREA_2_H */
 
 /*******************************************************************************
  End of File
