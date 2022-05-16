@@ -48,13 +48,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 972E955D94A63BA89BF6ABD6AADB1023
-- generatedChecksum: 9D3F2ED9D081BE64176C12B83AD0E2FC
+- generatedChecksum: A4AC7AEFE1682B772AB18D95AEFCC11C
   logicalPath: config/sam_v71_xult
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 9D3F2ED9D081BE64176C12B83AD0E2FC
+  userChecksum: A4AC7AEFE1682B772AB18D95AEFCC11C
 - generatedChecksum: ABF86F935B08F6EB5F009A2099F5C255
   logicalPath: config/sam_v71_xult
   name: interrupts.c
@@ -167,6 +167,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 02C3C1B519E59992810626BB6098CF56
+- generatedChecksum: D33C199E4173A024068991ED6C026827
+  logicalPath: ''
+  name: tarea_uart.c
+  physicalPath: ../..
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: D33C199E4173A024068991ED6C026827
 - generatedChecksum: null
   logicalPath: ''
   name: task1.c
@@ -181,13 +188,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: null
-- generatedChecksum: 4891CC3B59A26362B52866A9FC2405DF
+- generatedChecksum: 55391960546837EFCC0D006C466DC675
   logicalPath: config/sam_v71_xult
   name: tasks.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 4891CC3B59A26362B52866A9FC2405DF
+  userChecksum: 55391960546837EFCC0D006C466DC675
 - generatedChecksum: F1B86F6E1527FD59A8713B67564F2898
   logicalPath: FreeRTOS/Source
   name: timers.c
@@ -377,13 +384,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: B424335B8194FB845DFEE348D5ACCDA0
-- generatedChecksum: DFAC7C8CF46A996CE4D4706E8FBE6F5F
+- generatedChecksum: 3CE4DEC586490A1EDA0C6970F15B9C09
   logicalPath: config/sam_v71_xult
   name: definitions.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: DFAC7C8CF46A996CE4D4706E8FBE6F5F
+  userChecksum: 3CE4DEC586490A1EDA0C6970F15B9C09
 - generatedChecksum: 1EA4EDD5EA90F43EC407DE32441159A9
   logicalPath: FreeRTOS/Source/include
   name: deprecated_definitions.h
@@ -1000,6 +1007,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 00278F169FFB0CBBAB3A68B5D647F093
+- generatedChecksum: D45B99D670AE044A194C4B54B55C6579
+  logicalPath: ''
+  name: tarea_uart.h
+  physicalPath: ../..
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: D45B99D670AE044A194C4B54B55C6579
 - generatedChecksum: 84B3224817BDD8B37961BB3B3441E134
   logicalPath: FreeRTOS/Source/include
   name: task.h

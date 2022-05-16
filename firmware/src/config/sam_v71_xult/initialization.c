@@ -131,6 +131,7 @@ void SYS_Initialize ( void* data )
 
     TASK1_Initialize();
     TASK2_Initialize();
+    TAREA_UART_Initialize();
 
 
     NVIC_Initialize();

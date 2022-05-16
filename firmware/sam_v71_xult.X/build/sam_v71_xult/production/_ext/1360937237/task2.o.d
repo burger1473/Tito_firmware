@@ -136,7 +136,7 @@ build/sam_v71_xult/production/_ext/1360937237/task2.o: ../src/task2.c \
  ../src/third_party/rtos/FreeRTOS/Source/Include/task.h \
  ../src/third_party/rtos/FreeRTOS/Source/Include/semphr.h \
  ../src/third_party/rtos/FreeRTOS/Source/Include/queue.h ../src/task1.h \
- ../src/task2.h
+ ../src/task2.h ../src/tarea_uart.h
 
 ../src/task2.h:
 
@@ -419,3 +419,5 @@ build/sam_v71_xult/production/_ext/1360937237/task2.o: ../src/task2.c \
 ../src/task1.h:
 
 ../src/task2.h:
+
+../src/tarea_uart.h:

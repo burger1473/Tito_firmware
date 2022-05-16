@@ -79,6 +79,16 @@ void _TASK2_Tasks(  void *pvParameters  )
         TASK2_Tasks();
     }
 }
+/* Handle for the TAREA_UART_Tasks. */
+TaskHandle_t xTAREA_UART_Tasks;
+
+void _TAREA_UART_Tasks(  void *pvParameters  )
+{   
+    while(1)
+    {
+        TAREA_UART_Tasks();
+    }
+}
 
 
 
@@ -123,6 +133,14 @@ void SYS_Tasks ( void )
                 NULL,
                 2,
                 &xTASK2_Tasks);
+
+    /* Create OS Thread for TAREA_UART_Tasks. */
+    xTaskCreate((TaskFunction_t) _TAREA_UART_Tasks,
+                "TAREA_UART_Tasks",
+                1024,
+                NULL,
+                3,
+                &xTAREA_UART_Tasks);
 
 
 

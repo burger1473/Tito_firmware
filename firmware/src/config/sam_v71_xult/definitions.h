@@ -61,6 +61,7 @@
 #include "osal/osal.h"
 #include "task1.h"
 #include "task2.h"
+#include "tarea_uart.h"
 
 
 

@@ -64,11 +64,11 @@ children:
       - type: Boolean
         attributes: {id: enabled}
         children:
-        - {type: Value, value: 'false'}
+        - {type: Value, value: 'true'}
       - type: String
         attributes: {id: name}
         children:
-        - {type: Value, value: task3.c}
+        - {type: Value, value: tarea_uart.c}
   - type: File
     attributes: {id: APP2_H}
     children:
@@ -77,11 +77,11 @@ children:
       - type: Boolean
         attributes: {id: enabled}
         children:
-        - {type: Value, value: 'false'}
+        - {type: Value, value: 'true'}
       - type: String
         attributes: {id: name}
         children:
-        - {type: Value, value: task3.h}
+        - {type: Value, value: tarea_uart.h}
   - type: File
     attributes: {id: APP3_C}
     children:
@@ -187,7 +187,7 @@ children:
       - type: Boolean
         attributes: {id: visible}
         children:
-        - {type: Value, value: 'false'}
+        - {type: Value, value: 'true'}
   - type: Menu
     attributes: {id: GEN_APP_RTOS_TASK_CONF_MENU3}
     children:
@@ -223,7 +223,7 @@ children:
       - type: Boolean
         attributes: {id: visible}
         children:
-        - {type: Value, value: 'false'}
+        - {type: Value, value: 'true'}
   - type: Menu
     attributes: {id: GEN_APP_TASK_CONF_MENU3}
     children:
@@ -239,7 +239,7 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: '2'}
+        attributes: {value: '3'}
   - type: Menu
     attributes: {id: GEN_APP_TASK_MENU}
     children:
@@ -269,7 +269,7 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: task3}
+        attributes: {value: Tarea_uart}
   - type: String
     attributes: {id: GEN_APP_TASK_NAME_3}
     children:
