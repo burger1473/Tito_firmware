@@ -79,26 +79,6 @@ void _TASK2_Tasks(  void *pvParameters  )
         TASK2_Tasks();
     }
 }
-/* Handle for the TASK3_Tasks. */
-TaskHandle_t xTASK3_Tasks;
-
-void _TASK3_Tasks(  void *pvParameters  )
-{   
-    while(1)
-    {
-        TASK3_Tasks();
-    }
-}
-/* Handle for the TASK4_Tasks. */
-TaskHandle_t xTASK4_Tasks;
-
-void _TASK4_Tasks(  void *pvParameters  )
-{   
-    while(1)
-    {
-        TASK4_Tasks();
-    }
-}
 
 
 
@@ -143,22 +123,6 @@ void SYS_Tasks ( void )
                 NULL,
                 2,
                 &xTASK2_Tasks);
-
-    /* Create OS Thread for TASK3_Tasks. */
-    xTaskCreate((TaskFunction_t) _TASK3_Tasks,
-                "TASK3_Tasks",
-                1024,
-                NULL,
-                3,
-                &xTASK3_Tasks);
-
-    /* Create OS Thread for TASK4_Tasks. */
-    xTaskCreate((TaskFunction_t) _TASK4_Tasks,
-                "TASK4_Tasks",
-                1024,
-                NULL,
-                4,
-                &xTASK4_Tasks);
 
 
 

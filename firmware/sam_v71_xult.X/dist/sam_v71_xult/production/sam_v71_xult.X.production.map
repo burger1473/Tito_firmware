@@ -20,116 +20,99 @@ section                    address  length [bytes]      (dec)  Description
 -------                 ----------  -------------------------  -----------
 .vectors                  0x400000          0x168         360   
 .text                     0x400168           0x20          32  App's exec code 
-.dinit                    0x400188          0x240         576   
-.text.xTaskCreate         0x4003c8          0x1e4         484   
-.text.USART1_InterruptH   0x4005ac          0x17c         380   
-.text.Reset_Handler       0x400728          0x178         376   
-.text.xQueueSemaphoreTa   0x4008a0          0x158         344   
-.text.xQueueGenericSend   0x4009f8          0x128         296   
-.text.xTaskIncrementTic   0x400b20          0x114         276   
-.text.PIO_Initialize      0x400c34           0xf0         240   
-.text.xTaskResumeAll      0x400d24           0xe4         228   
-.text.TASK3_Tasks         0x400e08           0xe4         228   
-.text.TASK4_Tasks         0x400eec           0xac         172   
-.text.vTaskSwitchContex   0x400f98           0xa8         168   
-.text.xTaskPriorityInhe   0x401040           0xa8         168   
-.text.USART1_Write        0x4010e8           0xa4         164   
-.text.prvAddCurrentTask   0x40118c           0x94         148   
-.text.SYS_Tasks           0x401220           0x90         144   
-.text.__pic32c_data_ini   0x4012b0           0x88         136   
-.text.vTaskPriorityDisi   0x401338           0x80         128   
-.text.prvUnlockQueue      0x4013b8           0x7e         126   
-.text.Dummy_Handler       0x401436            0x2           2   
-.text.xTaskPriorityDisi   0x401438           0x7c         124   
-.text.xTaskRemoveFromEv   0x4014b4           0x78         120   
-.text.prvCopyDataToQueu   0x40152c           0x72         114   
-.text.NonMaskableInt_Ha   0x40159e            0x2           2   
-.text.xQueueGenericRese   0x4015a0           0x70         112   
-.text.prvIdleTask         0x401610           0x70         112   
-.text.USART1_Initialize   0x401680           0x6c         108   
-.text.pvPortMalloc        0x4016ec           0x6c         108   
-.text.TASK1_Tasks         0x401758           0x6c         108   
-.text.TASK2_Tasks         0x4017c4           0x6c         108   
-.text.vTaskStartSchedul   0x401830           0x68         104   
-.text.CLOCK_Initialize    0x401898           0x64         100   
-.text.PIO_PinInterruptC   0x4018fc           0x64         100   
-.text.xPortPendSVHandle   0x401960           0x64         100   
-.text.xQueueGiveFromISR   0x4019c4           0x64         100   
-.rodata                   0x401a28           0x60          96  Read-only const 
-.text.xTaskCheckForTime   0x401a88           0x5c          92   
-.text.__libc_start_init   0x401ae4           0x5c          92   
-.text._PIO_Interrupt_Ha   0x401b40           0x58          88   
-.text.USART1_Read         0x401b98           0x58          88   
-.text.xPortStartSchedul   0x401bf0           0x48          72   
-.rodata                   0x401c38           0x48          72  Read-only const 
-.text                     0x401c80           0x40          64  App's exec code 
-.text.NVIC_Initialize     0x401cc0           0x40          64   
-.rodata                   0x401d00           0x40          64  Read-only const 
-.text.SYS_Initialize      0x401d40           0x3c          60   
-.text.vListInsert         0x401d7c           0x34          52   
-.text.vTaskDelay          0x401db0           0x34          52   
-.text.uartReadEventHand   0x401de4           0x34          52   
-.rodata                   0x401e18           0x30          48  Read-only const 
-.text.xPortSysTickHandl   0x401e48           0x30          48   
-.text.xQueueGenericCrea   0x401e78           0x30          48   
-.rodata                   0x401ea8           0x30          48  Read-only const 
-.text.SwitchPress_Handl   0x401ed8           0x30          48   
-.text.pxPortInitialiseS   0x401f08           0x2c          44   
-.text.prvResetNextTaskU   0x401f34           0x2c          44   
-.text.TASK1_Initialize    0x401f60           0x2c          44   
-.text.prvPortStartFirst   0x401f8c           0x28          40   
-.text.vPortSetupTimerIn   0x401fb4           0x28          40   
-.text.uxListRemove        0x401fdc           0x26          38   
-.text.prvTaskExitError    0x402002           0x24          36   
-.text._TASK1_Tasks        0x402026            0x8           8   
-.text.DebugMonitor_Hand   0x40202e            0x2           2   
-.text.vPortSVCHandler     0x402030           0x24          36   
-.text.vPortEnterCritica   0x402054           0x24          36   
-.text.xQueueCreateMutex   0x402078           0x24          36   
-.text.BSP_Initialize      0x40209c           0x20          32   
-.text.USART1_WritePendi   0x4020bc           0x1c          28   
-.text.USART1_ReadCountG   0x4020d8           0x1c          28   
-.text.vTaskPlaceOnEvent   0x4020f4           0x1c          28   
-.text.pvTaskIncrementMu   0x402110           0x1c          28   
-.text.USART1_ReadNotifi   0x40212c           0x18          24   
-.text.vTaskInternalSetT   0x402144           0x18          24   
-.text.vApplicationStack   0x40215c           0x16          22   
-.text.vApplicationMallo   0x402172           0x16          22   
-.text.vListInitialise     0x402188           0x16          22   
-.text.vListInsertEnd      0x40219e           0x16          22   
-.text.prvIsQueueEmpty     0x4021b4           0x16          22   
-.text.memcpy              0x4021ca           0x16          22   
-.text.USART1_WriteFreeB   0x4021e0           0x14          20   
-.text.vPortEnableVFP      0x4021f4           0x14          20   
-.text.vPortExitCritical   0x402208           0x14          20   
-.text.EFC_Initialize      0x40221c           0x10          16   
-.text.PIOA_InterruptHan   0x40222c           0x10          16   
-.text.vTaskSuspendAll     0x40223c           0x10          16   
-.text.memset              0x40224c           0x10          16   
-.text.main                0x40225c            0xe          14   
-.text.HardFault_Handler   0x40226a            0x2           2   
-.text.USART1_ReadThresh   0x40226c            0xc          12   
-.text.USART1_ReadCallba   0x402278            0xc          12   
-.text.xTaskGetTickCount   0x402284            0xc          12   
-.text.vTaskMissedYield    0x402290            0xc          12   
-.text.TASK2_Initialize    0x40229c            0xc          12   
-.text.TASK3_Initialize    0x4022a8            0xc          12   
-.text.TASK4_Initialize    0x4022b4            0xc          12   
-.text._TASK2_Tasks        0x4022c0            0x8           8   
-.text._TASK3_Tasks        0x4022c8            0x8           8   
-.text._TASK4_Tasks        0x4022d0            0x8           8   
-.rodata                   0x4022d8            0x8           8  Read-only const 
-.text.vListInitialiseIt   0x4022e0            0x6           6   
-.text.PIO_PortInterrupt   0x4022e6            0x4           4   
-.text.MemoryManagement_   0x4022ea            0x2           2   
-.text.BusFault_Handler    0x4022ec            0x2           2   
-.text.UsageFault_Handle   0x4022ee            0x2           2   
-.text.Dummy_App_Func      0x4022f0            0x2           2   
-.text.vPortFree           0x4022f2            0x2           2   
-.text.__dummy             0x4022f4            0x2           2   
-      Total ROM used  :      0x22f6        8950  0.4% of 0x200000
+.dinit                    0x400188          0x200         512   
+.text.xTaskCreate         0x400388          0x1e4         484   
+.text.USART1_InterruptH   0x40056c          0x17c         380   
+.text.Reset_Handler       0x4006e8          0x178         376   
+.text.xQueueSemaphoreTa   0x400860          0x158         344   
+.text.xQueueGenericSend   0x4009b8          0x128         296   
+.text.xTaskIncrementTic   0x400ae0          0x114         276   
+.text.PIO_Initialize      0x400bf4           0xf0         240   
+.text.xTaskResumeAll      0x400ce4           0xe4         228   
+.text.vTaskSwitchContex   0x400dc8           0xa8         168   
+.text.xTaskPriorityInhe   0x400e70           0xa8         168   
+.text.USART1_Write        0x400f18           0xa4         164   
+.text.prvAddCurrentTask   0x400fbc           0x94         148   
+.text.__pic32c_data_ini   0x401050           0x88         136   
+.text.vTaskPriorityDisi   0x4010d8           0x80         128   
+.text.prvUnlockQueue      0x401158           0x7e         126   
+.text.Dummy_Handler       0x4011d6            0x2           2   
+.text.xTaskPriorityDisi   0x4011d8           0x7c         124   
+.text.xTaskRemoveFromEv   0x401254           0x78         120   
+.text.prvCopyDataToQueu   0x4012cc           0x72         114   
+.text.NonMaskableInt_Ha   0x40133e            0x2           2   
+.text.xQueueGenericRese   0x401340           0x70         112   
+.text.prvIdleTask         0x4013b0           0x70         112   
+.text.USART1_Initialize   0x401420           0x6c         108   
+.text.pvPortMalloc        0x40148c           0x6c         108   
+.text.TASK1_Tasks         0x4014f8           0x6c         108   
+.text.TASK2_Tasks         0x401564           0x6c         108   
+.text.vTaskStartSchedul   0x4015d0           0x68         104   
+.text.CLOCK_Initialize    0x401638           0x64         100   
+.text.MemoryManagement_   0x40169c            0x2           2   
+.text.BusFault_Handler    0x40169e            0x2           2   
+.text.xPortPendSVHandle   0x4016a0           0x64         100   
+.text.xTaskCheckForTime   0x401704           0x5c          92   
+.text.__libc_start_init   0x401760           0x5c          92   
+.text._PIO_Interrupt_Ha   0x4017bc           0x58          88   
+.text.SYS_Tasks           0x401814           0x50          80   
+.text.xPortStartSchedul   0x401864           0x48          72   
+.text                     0x4018ac           0x40          64  App's exec code 
+.text.NVIC_Initialize     0x4018ec           0x40          64   
+.rodata                   0x40192c           0x40          64  Read-only const 
+.text.SYS_Initialize      0x40196c           0x34          52   
+.text.vListInsert         0x4019a0           0x34          52   
+.text.vTaskDelay          0x4019d4           0x34          52   
+.text.xPortSysTickHandl   0x401a08           0x30          48   
+.text.xQueueGenericCrea   0x401a38           0x30          48   
+.rodata                   0x401a68           0x30          48  Read-only const 
+.text.pxPortInitialiseS   0x401a98           0x2c          44   
+.text.prvResetNextTaskU   0x401ac4           0x2c          44   
+.text.TASK1_Initialize    0x401af0           0x2c          44   
+.text.prvPortStartFirst   0x401b1c           0x28          40   
+.text.vPortSetupTimerIn   0x401b44           0x28          40   
+.text.uxListRemove        0x401b6c           0x26          38   
+.text.prvTaskExitError    0x401b92           0x24          36   
+.text._TASK1_Tasks        0x401bb6            0x8           8   
+.text.DebugMonitor_Hand   0x401bbe            0x2           2   
+.text.vPortSVCHandler     0x401bc0           0x24          36   
+.text.vPortEnterCritica   0x401be4           0x24          36   
+.text.xQueueCreateMutex   0x401c08           0x24          36   
+.text.BSP_Initialize      0x401c2c           0x20          32   
+.text.USART1_WritePendi   0x401c4c           0x1c          28   
+.text.USART1_ReadCountG   0x401c68           0x1c          28   
+.text.vTaskPlaceOnEvent   0x401c84           0x1c          28   
+.text.pvTaskIncrementMu   0x401ca0           0x1c          28   
+.rodata                   0x401cbc           0x18          24  Read-only const 
+.text.vTaskInternalSetT   0x401cd4           0x18          24   
+.text.vApplicationStack   0x401cec           0x16          22   
+.text.vApplicationMallo   0x401d02           0x16          22   
+.text.vListInitialise     0x401d18           0x16          22   
+.text.vListInsertEnd      0x401d2e           0x16          22   
+.text.prvIsQueueEmpty     0x401d44           0x16          22   
+.text.memcpy              0x401d5a           0x16          22   
+.text.USART1_WriteFreeB   0x401d70           0x14          20   
+.text.vPortEnableVFP      0x401d84           0x14          20   
+.text.vPortExitCritical   0x401d98           0x14          20   
+.text.EFC_Initialize      0x401dac           0x10          16   
+.text.PIOA_InterruptHan   0x401dbc           0x10          16   
+.text.vTaskSuspendAll     0x401dcc           0x10          16   
+.text.memset              0x401ddc           0x10          16   
+.text.main                0x401dec            0xe          14   
+.text.HardFault_Handler   0x401dfa            0x2           2   
+.text.xTaskGetTickCount   0x401dfc            0xc          12   
+.text.vTaskMissedYield    0x401e08            0xc          12   
+.text.TASK2_Initialize    0x401e14            0xc          12   
+.text._TASK2_Tasks        0x401e20            0x8           8   
+.rodata                   0x401e28            0x8           8  Read-only const 
+.text.vListInitialiseIt   0x401e30            0x6           6   
+.text.UsageFault_Handle   0x401e36            0x2           2   
+.text.Dummy_App_Func      0x401e38            0x2           2   
+.text.vPortFree           0x401e3a            0x2           2   
+.text.__dummy             0x401e3c            0x2           2   
+      Total ROM used  :      0x1e3e        7742  0.4% of 0x200000
         --------------------------------------------------------------------------
-         Total Program Memory used  :      0x22f6        8950  0.4% of 0x200000
+         Total Program Memory used  :      0x1e3e        7742  0.4% of 0x200000
         --------------------------------------------------------------------------
 
 
@@ -150,48 +133,42 @@ section                    address  length [bytes]      (dec)  Description
 .bss.USART1_ReadBuffer  0x2040a374           0x10          16   
 .bss.portPinCbObj       0x2040a384            0xc          12   
 .data.portNumCb         0x2040a390            0x6           6   
-.bss.cmd.7928           0x2040a398            0x4           4   
+.bss.cmd.7938           0x2040a398            0x4           4   
 .bss.xTASK1_Tasks       0x2040a39c            0x4           4   
 .bss.xTASK2_Tasks       0x2040a3a0            0x4           4   
-.bss.xTASK3_Tasks       0x2040a3a4            0x4           4   
-.bss.xTASK4_Tasks       0x2040a3a8            0x4           4   
-.data.uxCriticalNesting 0x2040a3ac            0x4           4   
-.bss.pucAlignedHeap.616 0x2040a3b0            0x4           4   
-.bss.xNextFreeByte      0x2040a3b4            0x4           4   
-.bss.pxCurrentTCB       0x2040a3b8            0x4           4   
-.bss.pxDelayedTaskList  0x2040a3bc            0x4           4   
-.bss.pxOverflowDelayedT 0x2040a3c0            0x4           4   
-.bss.uxCurrentNumberOfT 0x2040a3c4            0x4           4   
-.bss.uxDeletedTasksWait 0x2040a3c8            0x4           4   
-.bss.uxSchedulerSuspend 0x2040a3cc            0x4           4   
-.bss.uxTaskNumber       0x2040a3d0            0x4           4   
-.bss.uxTopReadyPriority 0x2040a3d4            0x4           4   
-.bss.xIdleTaskHandle    0x2040a3d8            0x4           4   
-.bss.xNextTaskUnblockTi 0x2040a3dc            0x4           4   
-.bss.xNumOfOverflows    0x2040a3e0            0x4           4   
-.bss.xPendedTicks       0x2040a3e4            0x4           4   
-.bss.xSchedulerRunning  0x2040a3e8            0x4           4   
-.bss.xTickCount         0x2040a3ec            0x4           4   
-.bss.xYieldPending      0x2040a3f0            0x4           4   
-.bss.uartMutexLock      0x2040a3f4            0x4           4   
-.bss.dataRxSemaphore    0x2040a3f8            0x4           4   
-.bss.switchPressSemapho 0x2040a3fc            0x4           4   
-.bss                    0x2040a400            0x8           8  Uninitialized data 
-.bss.task4Data          0x2040a408            0x1           1   
-.bss.task3Data          0x2040a40c            0x1           1   
-.bss.task2Data          0x2040a410            0x1           1   
-.bss.task1Data          0x2040a414            0x1           1   
-         Total RAM used  :      0xa40a       41994  10.7% of 0x60000
+.data.uxCriticalNesting 0x2040a3a4            0x4           4   
+.bss.pucAlignedHeap.616 0x2040a3a8            0x4           4   
+.bss.xNextFreeByte      0x2040a3ac            0x4           4   
+.bss.pxCurrentTCB       0x2040a3b0            0x4           4   
+.bss.pxDelayedTaskList  0x2040a3b4            0x4           4   
+.bss.pxOverflowDelayedT 0x2040a3b8            0x4           4   
+.bss.uxCurrentNumberOfT 0x2040a3bc            0x4           4   
+.bss.uxDeletedTasksWait 0x2040a3c0            0x4           4   
+.bss.uxSchedulerSuspend 0x2040a3c4            0x4           4   
+.bss.uxTaskNumber       0x2040a3c8            0x4           4   
+.bss.uxTopReadyPriority 0x2040a3cc            0x4           4   
+.bss.xIdleTaskHandle    0x2040a3d0            0x4           4   
+.bss.xNextTaskUnblockTi 0x2040a3d4            0x4           4   
+.bss.xNumOfOverflows    0x2040a3d8            0x4           4   
+.bss.xPendedTicks       0x2040a3dc            0x4           4   
+.bss.xSchedulerRunning  0x2040a3e0            0x4           4   
+.bss.xTickCount         0x2040a3e4            0x4           4   
+.bss.xYieldPending      0x2040a3e8            0x4           4   
+.bss.uartMutexLock      0x2040a3ec            0x4           4   
+.bss                    0x2040a3f0            0x8           8  Uninitialized data 
+.bss.task2Data          0x2040a3f8            0x1           1   
+.bss.task1Data          0x2040a3fc            0x1           1   
+         Total RAM used  :      0xa3f8       41976  10.7% of 0x60000
         --------------------------------------------------------------------------
-            Total Data Memory used  :      0xa40a       41994  10.7% of 0x60000
+            Total Data Memory used  :      0xa3f8       41976  10.7% of 0x60000
         --------------------------------------------------------------------------
 
 
 Dynamic Data-Memory Reservation
 section                    address  length [bytes]      (dec)  Description
 -------                 ----------  -------------------------  -----------
-heap                    0x2040a418          0x200         512  Reserved for heap 
-stack                   0x2040a630        0x559c0      350656  Reserved for stack 
+heap                    0x2040a400          0x200         512  Reserved for heap 
+stack                   0x2040a618        0x559d8      350680  Reserved for stack 
 
         --------------------------------------------------------------------------
 
@@ -267,6 +244,10 @@ Discarded input sections
                 0x00000000       0x10 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
  .text.EFC_SectorErase
                 0x00000000       0x28 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
+ .text.EFC_PageBufferWrite
+                0x00000000       0x38 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
+ .text.EFC_PageBufferCommit
+                0x00000000       0x34 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
  .text.EFC_PageWrite
                 0x00000000       0x5c build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
  .text.EFC_QuadWordWrite
@@ -308,8 +289,12 @@ Discarded input sections
                 0x00000000        0x4 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
  .text.PIO_PortOutputEnable
                 0x00000000        0x4 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
+ .text.PIO_PortInterruptEnable
+                0x00000000        0x4 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
  .text.PIO_PortInterruptDisable
                 0x00000000        0x4 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
+ .text.PIO_PinInterruptCallbackRegister
+                0x00000000       0x64 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
  .text          0x00000000        0x0 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
  .data          0x00000000        0x0 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
  .bss           0x00000000        0x0 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
@@ -317,9 +302,17 @@ Discarded input sections
                 0x00000000       0x8c build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
  .text.USART1_ErrorGet
                 0x00000000       0x14 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
+ .text.USART1_Read
+                0x00000000       0x58 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
  .text.USART1_ReadFreeBufferCountGet
                 0x00000000       0x14 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
  .text.USART1_ReadBufferSizeGet
+                0x00000000        0xc build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
+ .text.USART1_ReadNotificationEnable
+                0x00000000       0x18 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
+ .text.USART1_ReadThresholdSet
+                0x00000000        0xc build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
+ .text.USART1_ReadCallbackRegister
                 0x00000000        0xc build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
  .text.USART1_WriteCountGet
                 0x00000000        0x8 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
@@ -379,13 +372,13 @@ Discarded input sections
                 0x00000000       0x38 build/sam_v71_xult/production/_ext/1871840330/sys_cache.o
  .text.SYS_CACHE_CleanInvalidateDCache_by_Addr
                 0x00000000       0x38 build/sam_v71_xult/production/_ext/1871840330/sys_cache.o
- .debug_info    0x00000000     0x15e7 build/sam_v71_xult/production/_ext/1871840330/sys_cache.o
- .debug_abbrev  0x00000000      0x24a build/sam_v71_xult/production/_ext/1871840330/sys_cache.o
+ .debug_info    0x00000000     0x1600 build/sam_v71_xult/production/_ext/1871840330/sys_cache.o
+ .debug_abbrev  0x00000000      0x248 build/sam_v71_xult/production/_ext/1871840330/sys_cache.o
  .debug_loc     0x00000000      0x6bb build/sam_v71_xult/production/_ext/1871840330/sys_cache.o
  .debug_aranges
                 0x00000000       0x80 build/sam_v71_xult/production/_ext/1871840330/sys_cache.o
  .debug_ranges  0x00000000       0xe8 build/sam_v71_xult/production/_ext/1871840330/sys_cache.o
- .debug_line    0x00000000      0xb00 build/sam_v71_xult/production/_ext/1871840330/sys_cache.o
+ .debug_line    0x00000000      0xae9 build/sam_v71_xult/production/_ext/1871840330/sys_cache.o
  .debug_str     0x00000000       0x1c build/sam_v71_xult/production/_ext/1871840330/sys_cache.o
  .comment       0x00000000       0x54 build/sam_v71_xult/production/_ext/1871840330/sys_cache.o
  .debug_frame   0x00000000      0x150 build/sam_v71_xult/production/_ext/1871840330/sys_cache.o
@@ -492,6 +485,8 @@ Discarded input sections
                 0x00000000       0x16 build/sam_v71_xult/production/_ext/404212886/queue.o
  .text.xQueueGenericSendFromISR
                 0x00000000       0x70 build/sam_v71_xult/production/_ext/404212886/queue.o
+ .text.xQueueGiveFromISR
+                0x00000000       0x64 build/sam_v71_xult/production/_ext/404212886/queue.o
  .text.xQueueReceive
                 0x00000000      0x114 build/sam_v71_xult/production/_ext/404212886/queue.o
  .text.xQueuePeek
@@ -668,12 +663,6 @@ Discarded input sections
  .text          0x00000000        0x0 build/sam_v71_xult/production/_ext/1360937237/task2.o
  .data          0x00000000        0x0 build/sam_v71_xult/production/_ext/1360937237/task2.o
  .bss           0x00000000        0x0 build/sam_v71_xult/production/_ext/1360937237/task2.o
- .text          0x00000000        0x0 build/sam_v71_xult/production/_ext/1360937237/task3.o
- .data          0x00000000        0x0 build/sam_v71_xult/production/_ext/1360937237/task3.o
- .bss           0x00000000        0x0 build/sam_v71_xult/production/_ext/1360937237/task3.o
- .text          0x00000000        0x0 build/sam_v71_xult/production/_ext/1360937237/task4.o
- .data          0x00000000        0x0 build/sam_v71_xult/production/_ext/1360937237/task4.o
- .bss           0x00000000        0x0 build/sam_v71_xult/production/_ext/1360937237/task4.o
  .text          0x00000000        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
  .data          0x00000000        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
  .xc_stack_usage
@@ -732,8 +721,8 @@ ram              0x20400000         0x00060000         xw !r
 itcm             0x00000000         0x00000000         xw
 dtcm             0x20000000         0x00000000         xw !r
 config_D0000000  0xd0000000         0x00000004
-config_D0000004  0xd0000004         0x00000004
 config_D0000008  0xd0000008         0x00000004
+config_D0000004  0xd0000004         0x00000004
 config_D000000C  0xd000000c         0x00000004
 config_D0000010  0xd0000010         0x00000004
 *default*        0x00000000         0xffffffff
@@ -771,8 +760,6 @@ LOAD build/sam_v71_xult/production/_ext/404212886/stream_buffer.o
 LOAD build/sam_v71_xult/production/_ext/1360937237/main.o
 LOAD build/sam_v71_xult/production/_ext/1360937237/task1.o
 LOAD build/sam_v71_xult/production/_ext/1360937237/task2.o
-LOAD build/sam_v71_xult/production/_ext/1360937237/task3.o
-LOAD build/sam_v71_xult/production/_ext/1360937237/task4.o
                 0x00000001                __MPLAB_BUILD = 0x1
                 0x00600000                __rom_end = (ORIGIN (rom) + LENGTH (rom))
                 0x20460000                __ram_end = (ORIGIN (ram) + LENGTH (ram))
@@ -780,11 +767,11 @@ LOAD build/sam_v71_xult/production/_ext/1360937237/task4.o
 .config_D0000000
  *(.config_D0000000)
 
-.config_D0000004
- *(.config_D0000004)
-
 .config_D0000008
  *(.config_D0000008)
+
+.config_D0000004
+ *(.config_D0000004)
 
 .config_D000000C
  *(.config_D000000C)
@@ -930,23 +917,19 @@ LOAD data_init
  .ARM.attributes
                 0x00000406       0x32 build/sam_v71_xult/production/_ext/1360937237/task2.o
  .ARM.attributes
-                0x00000438       0x32 build/sam_v71_xult/production/_ext/1360937237/task3.o
+                0x00000438       0x32 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
  .ARM.attributes
-                0x0000046a       0x32 build/sam_v71_xult/production/_ext/1360937237/task4.o
+                0x0000046a       0x34 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
  .ARM.attributes
-                0x0000049c       0x32 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
+                0x0000049e       0x32 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
  .ARM.attributes
-                0x000004ce       0x34 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
+                0x000004d0       0x34 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
  .ARM.attributes
-                0x00000502       0x32 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
+                0x00000504       0x34 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
  .ARM.attributes
-                0x00000534       0x34 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
+                0x00000538       0x32 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
  .ARM.attributes
-                0x00000568       0x34 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
- .ARM.attributes
-                0x0000059c       0x32 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
- .ARM.attributes
-                0x000005ce       0x1e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+dp/hard/crtn.o
+                0x0000056a       0x1e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+dp/hard/crtn.o
 
 .comment        0x00000000       0x53
  .comment       0x00000000       0x53 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+dp/hard/crtbegin.o
@@ -971,8 +954,6 @@ LOAD data_init
  .comment       0x00000053       0x54 build/sam_v71_xult/production/_ext/1360937237/main.o
  .comment       0x00000053       0x54 build/sam_v71_xult/production/_ext/1360937237/task1.o
  .comment       0x00000053       0x54 build/sam_v71_xult/production/_ext/1360937237/task2.o
- .comment       0x00000053       0x54 build/sam_v71_xult/production/_ext/1360937237/task3.o
- .comment       0x00000053       0x54 build/sam_v71_xult/production/_ext/1360937237/task4.o
  .comment       0x00000053       0x54 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
  .comment       0x00000053       0x54 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
  .comment       0x00000053       0x54 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
@@ -980,91 +961,87 @@ LOAD data_init
  .comment       0x00000053       0x54 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
  .comment       0x00000053       0x54 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
 
-.debug_info     0x00000000    0x13b05
+.debug_info     0x00000000    0x11cdb
  .debug_info    0x00000000      0xa66 build/sam_v71_xult/production/_ext/1379310441/bsp.o
  .debug_info    0x00000a66      0x869 build/sam_v71_xult/production/_ext/1157990217/plib_clk.o
- .debug_info    0x000012cf      0x7ef build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
- .debug_info    0x00001abe     0x11e7 build/sam_v71_xult/production/_ext/1537621011/plib_nvic.o
- .debug_info    0x00002ca5     0x190b build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
- .debug_info    0x000045b0     0x1841 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
- .debug_info    0x00005df1      0x571 build/sam_v71_xult/production/_ext/1320227943/initialization.o
- .debug_info    0x00006362      0xe68 build/sam_v71_xult/production/_ext/1320227943/interrupts.o
- .debug_info    0x000071ca      0x462 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
- .debug_info    0x0000762c      0xddb build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
- .debug_info    0x00008407      0x51c build/sam_v71_xult/production/_ext/1320227943/freertos_hooks.o
- .debug_info    0x00008923      0x6a9 build/sam_v71_xult/production/_ext/1320227943/tasks.o
- .debug_info    0x00008fcc      0x76c build/sam_v71_xult/production/_ext/977623654/port.o
- .debug_info    0x00009738      0x4f2 build/sam_v71_xult/production/_ext/1665200909/heap_1.o
- .debug_info    0x00009c2a      0x61f build/sam_v71_xult/production/_ext/404212886/list.o
- .debug_info    0x0000a249     0x2131 build/sam_v71_xult/production/_ext/404212886/queue.o
- .debug_info    0x0000c37a     0x2e58 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
- .debug_info    0x0000f1d2      0x3b4 build/sam_v71_xult/production/_ext/1360937237/main.o
- .debug_info    0x0000f586      0x645 build/sam_v71_xult/production/_ext/1360937237/task1.o
- .debug_info    0x0000fbcb      0x601 build/sam_v71_xult/production/_ext/1360937237/task2.o
- .debug_info    0x000101cc      0xf3b build/sam_v71_xult/production/_ext/1360937237/task3.o
- .debug_info    0x00011107      0xedd build/sam_v71_xult/production/_ext/1360937237/task4.o
- .debug_info    0x00011fe4      0x2e1 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
- .debug_info    0x000122c5      0x6b9 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
- .debug_info    0x0001297e      0x5e5 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
- .debug_info    0x00012f63      0x324 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
- .debug_info    0x00013287      0x2e2 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
- .debug_info    0x00013569      0x59c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
+ .debug_info    0x000012cf      0x929 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
+ .debug_info    0x00001bf8     0x11fd build/sam_v71_xult/production/_ext/1537621011/plib_nvic.o
+ .debug_info    0x00002df5     0x190b build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
+ .debug_info    0x00004700     0x1841 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
+ .debug_info    0x00005f41      0x543 build/sam_v71_xult/production/_ext/1320227943/initialization.o
+ .debug_info    0x00006484      0xe68 build/sam_v71_xult/production/_ext/1320227943/interrupts.o
+ .debug_info    0x000072ec      0x462 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
+ .debug_info    0x0000774e      0xdf1 build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
+ .debug_info    0x0000853f      0x51c build/sam_v71_xult/production/_ext/1320227943/freertos_hooks.o
+ .debug_info    0x00008a5b      0x55f build/sam_v71_xult/production/_ext/1320227943/tasks.o
+ .debug_info    0x00008fba      0x76c build/sam_v71_xult/production/_ext/977623654/port.o
+ .debug_info    0x00009726      0x4f2 build/sam_v71_xult/production/_ext/1665200909/heap_1.o
+ .debug_info    0x00009c18      0x61f build/sam_v71_xult/production/_ext/404212886/list.o
+ .debug_info    0x0000a237     0x2131 build/sam_v71_xult/production/_ext/404212886/queue.o
+ .debug_info    0x0000c368     0x2e58 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+ .debug_info    0x0000f1c0      0x3b4 build/sam_v71_xult/production/_ext/1360937237/main.o
+ .debug_info    0x0000f574      0x645 build/sam_v71_xult/production/_ext/1360937237/task1.o
+ .debug_info    0x0000fbb9      0x601 build/sam_v71_xult/production/_ext/1360937237/task2.o
+ .debug_info    0x000101ba      0x2e1 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
+ .debug_info    0x0001049b      0x6b9 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
+ .debug_info    0x00010b54      0x5e5 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
+ .debug_info    0x00011139      0x324 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
+ .debug_info    0x0001145d      0x2e2 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
+ .debug_info    0x0001173f      0x59c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
 
-.debug_abbrev   0x00000000     0x2ca8
+.debug_abbrev   0x00000000     0x28c2
  .debug_abbrev  0x00000000       0xd1 build/sam_v71_xult/production/_ext/1379310441/bsp.o
  .debug_abbrev  0x000000d1       0xd5 build/sam_v71_xult/production/_ext/1157990217/plib_clk.o
- .debug_abbrev  0x000001a6      0x211 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
- .debug_abbrev  0x000003b7      0x208 build/sam_v71_xult/production/_ext/1537621011/plib_nvic.o
- .debug_abbrev  0x000005bf      0x298 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
- .debug_abbrev  0x00000857      0x47a build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
- .debug_abbrev  0x00000cd1       0xfb build/sam_v71_xult/production/_ext/1320227943/initialization.o
- .debug_abbrev  0x00000dcc       0xd8 build/sam_v71_xult/production/_ext/1320227943/interrupts.o
- .debug_abbrev  0x00000ea4       0xa2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
- .debug_abbrev  0x00000f46      0x24f build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
- .debug_abbrev  0x00001195      0x14e build/sam_v71_xult/production/_ext/1320227943/freertos_hooks.o
- .debug_abbrev  0x000012e3      0x12b build/sam_v71_xult/production/_ext/1320227943/tasks.o
- .debug_abbrev  0x0000140e      0x23e build/sam_v71_xult/production/_ext/977623654/port.o
- .debug_abbrev  0x0000164c      0x16c build/sam_v71_xult/production/_ext/1665200909/heap_1.o
- .debug_abbrev  0x000017b8      0x15e build/sam_v71_xult/production/_ext/404212886/list.o
- .debug_abbrev  0x00001916      0x399 build/sam_v71_xult/production/_ext/404212886/queue.o
- .debug_abbrev  0x00001caf      0x466 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
- .debug_abbrev  0x00002115       0xdb build/sam_v71_xult/production/_ext/1360937237/main.o
- .debug_abbrev  0x000021f0      0x15b build/sam_v71_xult/production/_ext/1360937237/task1.o
- .debug_abbrev  0x0000234b      0x16a build/sam_v71_xult/production/_ext/1360937237/task2.o
- .debug_abbrev  0x000024b5      0x1d5 build/sam_v71_xult/production/_ext/1360937237/task3.o
- .debug_abbrev  0x0000268a      0x209 build/sam_v71_xult/production/_ext/1360937237/task4.o
- .debug_abbrev  0x00002893       0x2e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
- .debug_abbrev  0x000028c1      0x126 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
- .debug_abbrev  0x000029e7       0xc7 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
- .debug_abbrev  0x00002aae       0x9c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
- .debug_abbrev  0x00002b4a       0x97 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
- .debug_abbrev  0x00002be1       0xc7 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
+ .debug_abbrev  0x000001a6      0x21a build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
+ .debug_abbrev  0x000003c0      0x1f7 build/sam_v71_xult/production/_ext/1537621011/plib_nvic.o
+ .debug_abbrev  0x000005b7      0x298 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
+ .debug_abbrev  0x0000084f      0x47a build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
+ .debug_abbrev  0x00000cc9       0xfb build/sam_v71_xult/production/_ext/1320227943/initialization.o
+ .debug_abbrev  0x00000dc4       0xd8 build/sam_v71_xult/production/_ext/1320227943/interrupts.o
+ .debug_abbrev  0x00000e9c       0xa2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
+ .debug_abbrev  0x00000f3e      0x24f build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
+ .debug_abbrev  0x0000118d      0x14e build/sam_v71_xult/production/_ext/1320227943/freertos_hooks.o
+ .debug_abbrev  0x000012db      0x12b build/sam_v71_xult/production/_ext/1320227943/tasks.o
+ .debug_abbrev  0x00001406      0x23e build/sam_v71_xult/production/_ext/977623654/port.o
+ .debug_abbrev  0x00001644      0x16c build/sam_v71_xult/production/_ext/1665200909/heap_1.o
+ .debug_abbrev  0x000017b0      0x15e build/sam_v71_xult/production/_ext/404212886/list.o
+ .debug_abbrev  0x0000190e      0x399 build/sam_v71_xult/production/_ext/404212886/queue.o
+ .debug_abbrev  0x00001ca7      0x466 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+ .debug_abbrev  0x0000210d       0xdb build/sam_v71_xult/production/_ext/1360937237/main.o
+ .debug_abbrev  0x000021e8      0x15b build/sam_v71_xult/production/_ext/1360937237/task1.o
+ .debug_abbrev  0x00002343      0x16a build/sam_v71_xult/production/_ext/1360937237/task2.o
+ .debug_abbrev  0x000024ad       0x2e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
+ .debug_abbrev  0x000024db      0x126 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
+ .debug_abbrev  0x00002601       0xc7 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
+ .debug_abbrev  0x000026c8       0x9c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
+ .debug_abbrev  0x00002764       0x97 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
+ .debug_abbrev  0x000027fb       0xc7 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
 
-.debug_aranges  0x00000000      0x7f8
+.debug_aranges  0x00000000      0x798
  .debug_aranges
                 0x00000000       0x20 build/sam_v71_xult/production/_ext/1379310441/bsp.o
  .debug_aranges
                 0x00000020       0x20 build/sam_v71_xult/production/_ext/1157990217/plib_clk.o
  .debug_aranges
-                0x00000040       0x60 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
+                0x00000040       0x70 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
  .debug_aranges
-                0x000000a0       0x38 build/sam_v71_xult/production/_ext/1537621011/plib_nvic.o
+                0x000000b0       0x38 build/sam_v71_xult/production/_ext/1537621011/plib_nvic.o
  .debug_aranges
-                0x000000d8       0x88 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
+                0x000000e8       0x88 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
  .debug_aranges
-                0x00000160       0xb0 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
+                0x00000170       0xb0 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
  .debug_aranges
-                0x00000210       0x20 build/sam_v71_xult/production/_ext/1320227943/initialization.o
+                0x00000220       0x20 build/sam_v71_xult/production/_ext/1320227943/initialization.o
  .debug_aranges
-                0x00000230       0x20 build/sam_v71_xult/production/_ext/1320227943/interrupts.o
+                0x00000240       0x20 build/sam_v71_xult/production/_ext/1320227943/interrupts.o
  .debug_aranges
-                0x00000250       0x48 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
+                0x00000260       0x48 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
  .debug_aranges
-                0x00000298       0x28 build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
+                0x000002a8       0x28 build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
  .debug_aranges
-                0x000002c0       0x40 build/sam_v71_xult/production/_ext/1320227943/freertos_hooks.o
+                0x000002d0       0x40 build/sam_v71_xult/production/_ext/1320227943/freertos_hooks.o
  .debug_aranges
-                0x00000300       0x40 build/sam_v71_xult/production/_ext/1320227943/tasks.o
+                0x00000310       0x30 build/sam_v71_xult/production/_ext/1320227943/tasks.o
  .debug_aranges
                 0x00000340       0x78 build/sam_v71_xult/production/_ext/977623654/port.o
  .debug_aranges
@@ -1082,161 +1059,147 @@ LOAD data_init
  .debug_aranges
                 0x000006b8       0x28 build/sam_v71_xult/production/_ext/1360937237/task2.o
  .debug_aranges
-                0x000006e0       0x30 build/sam_v71_xult/production/_ext/1360937237/task3.o
+                0x000006e0       0x20 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
  .debug_aranges
-                0x00000710       0x30 build/sam_v71_xult/production/_ext/1360937237/task4.o
+                0x00000700       0x28 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
  .debug_aranges
-                0x00000740       0x20 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
+                0x00000728       0x18 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
  .debug_aranges
-                0x00000760       0x28 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
+                0x00000740       0x20 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
  .debug_aranges
-                0x00000788       0x18 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
+                0x00000760       0x20 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
  .debug_aranges
-                0x000007a0       0x20 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
- .debug_aranges
-                0x000007c0       0x20 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
- .debug_aranges
-                0x000007e0       0x18 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
+                0x00000780       0x18 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
 
-.debug_ranges   0x00000000      0x928
+.debug_ranges   0x00000000      0x900
  .debug_ranges  0x00000000       0x10 build/sam_v71_xult/production/_ext/1379310441/bsp.o
  .debug_ranges  0x00000010       0x10 build/sam_v71_xult/production/_ext/1157990217/plib_clk.o
- .debug_ranges  0x00000020       0x68 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
- .debug_ranges  0x00000088       0x28 build/sam_v71_xult/production/_ext/1537621011/plib_nvic.o
- .debug_ranges  0x000000b0       0x78 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
- .debug_ranges  0x00000128      0x148 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
- .debug_ranges  0x00000270       0x10 build/sam_v71_xult/production/_ext/1320227943/initialization.o
- .debug_ranges  0x00000280       0x10 build/sam_v71_xult/production/_ext/1320227943/interrupts.o
- .debug_ranges  0x00000290       0x38 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
- .debug_ranges  0x000002c8       0x48 build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
- .debug_ranges  0x00000310       0x30 build/sam_v71_xult/production/_ext/1320227943/freertos_hooks.o
- .debug_ranges  0x00000340       0x30 build/sam_v71_xult/production/_ext/1320227943/tasks.o
- .debug_ranges  0x00000370       0x68 build/sam_v71_xult/production/_ext/977623654/port.o
- .debug_ranges  0x000003d8       0x28 build/sam_v71_xult/production/_ext/1665200909/heap_1.o
- .debug_ranges  0x00000400       0x30 build/sam_v71_xult/production/_ext/404212886/list.o
- .debug_ranges  0x00000430      0x180 build/sam_v71_xult/production/_ext/404212886/queue.o
- .debug_ranges  0x000005b0      0x288 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
- .debug_ranges  0x00000838       0x10 build/sam_v71_xult/production/_ext/1360937237/main.o
- .debug_ranges  0x00000848       0x18 build/sam_v71_xult/production/_ext/1360937237/task1.o
- .debug_ranges  0x00000860       0x18 build/sam_v71_xult/production/_ext/1360937237/task2.o
- .debug_ranges  0x00000878       0x20 build/sam_v71_xult/production/_ext/1360937237/task3.o
- .debug_ranges  0x00000898       0x20 build/sam_v71_xult/production/_ext/1360937237/task4.o
- .debug_ranges  0x000008b8       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
- .debug_ranges  0x000008c8       0x40 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
- .debug_ranges  0x00000908       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
- .debug_ranges  0x00000918       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
+ .debug_ranges  0x00000020       0x90 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
+ .debug_ranges  0x000000b0       0x28 build/sam_v71_xult/production/_ext/1537621011/plib_nvic.o
+ .debug_ranges  0x000000d8       0x78 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
+ .debug_ranges  0x00000150      0x148 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
+ .debug_ranges  0x00000298       0x10 build/sam_v71_xult/production/_ext/1320227943/initialization.o
+ .debug_ranges  0x000002a8       0x10 build/sam_v71_xult/production/_ext/1320227943/interrupts.o
+ .debug_ranges  0x000002b8       0x38 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
+ .debug_ranges  0x000002f0       0x48 build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
+ .debug_ranges  0x00000338       0x30 build/sam_v71_xult/production/_ext/1320227943/freertos_hooks.o
+ .debug_ranges  0x00000368       0x20 build/sam_v71_xult/production/_ext/1320227943/tasks.o
+ .debug_ranges  0x00000388       0x68 build/sam_v71_xult/production/_ext/977623654/port.o
+ .debug_ranges  0x000003f0       0x28 build/sam_v71_xult/production/_ext/1665200909/heap_1.o
+ .debug_ranges  0x00000418       0x30 build/sam_v71_xult/production/_ext/404212886/list.o
+ .debug_ranges  0x00000448      0x180 build/sam_v71_xult/production/_ext/404212886/queue.o
+ .debug_ranges  0x000005c8      0x288 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+ .debug_ranges  0x00000850       0x10 build/sam_v71_xult/production/_ext/1360937237/main.o
+ .debug_ranges  0x00000860       0x18 build/sam_v71_xult/production/_ext/1360937237/task1.o
+ .debug_ranges  0x00000878       0x18 build/sam_v71_xult/production/_ext/1360937237/task2.o
+ .debug_ranges  0x00000890       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
+ .debug_ranges  0x000008a0       0x40 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
+ .debug_ranges  0x000008e0       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
+ .debug_ranges  0x000008f0       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
 
-.debug_line     0x00000000     0x6795
+.debug_line     0x00000000     0x6228
  .debug_line    0x00000000      0x157 build/sam_v71_xult/production/_ext/1379310441/bsp.o
  .debug_line    0x00000157      0x1b6 build/sam_v71_xult/production/_ext/1157990217/plib_clk.o
- .debug_line    0x0000030d      0x320 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
- .debug_line    0x0000062d      0x317 build/sam_v71_xult/production/_ext/1537621011/plib_nvic.o
- .debug_line    0x00000944      0x504 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
- .debug_line    0x00000e48      0x9a9 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
- .debug_line    0x000017f1      0x303 build/sam_v71_xult/production/_ext/1320227943/initialization.o
- .debug_line    0x00001af4      0x138 build/sam_v71_xult/production/_ext/1320227943/interrupts.o
- .debug_line    0x00001c2c      0x191 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
- .debug_line    0x00001dbd      0x46e build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
- .debug_line    0x0000222b      0x1e3 build/sam_v71_xult/production/_ext/1320227943/freertos_hooks.o
- .debug_line    0x0000240e      0x211 build/sam_v71_xult/production/_ext/1320227943/tasks.o
- .debug_line    0x0000261f      0x35f build/sam_v71_xult/production/_ext/977623654/port.o
- .debug_line    0x0000297e      0x1dd build/sam_v71_xult/production/_ext/1665200909/heap_1.o
- .debug_line    0x00002b5b      0x2d4 build/sam_v71_xult/production/_ext/404212886/list.o
- .debug_line    0x00002e2f      0xe88 build/sam_v71_xult/production/_ext/404212886/queue.o
- .debug_line    0x00003cb7     0x1752 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
- .debug_line    0x00005409      0x138 build/sam_v71_xult/production/_ext/1360937237/main.o
- .debug_line    0x00005541      0x24e build/sam_v71_xult/production/_ext/1360937237/task1.o
- .debug_line    0x0000578f      0x236 build/sam_v71_xult/production/_ext/1360937237/task2.o
- .debug_line    0x000059c5      0x2f5 build/sam_v71_xult/production/_ext/1360937237/task3.o
- .debug_line    0x00005cba      0x2d2 build/sam_v71_xult/production/_ext/1360937237/task4.o
- .debug_line    0x00005f8c      0x110 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
- .debug_line    0x0000609c      0x24c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
- .debug_line    0x000062e8      0x132 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
- .debug_line    0x0000641a       0xf2 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
- .debug_line    0x0000650c       0xea c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
- .debug_line    0x000065f6      0x19f c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
+ .debug_line    0x0000030d      0x3e0 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
+ .debug_line    0x000006ed      0x317 build/sam_v71_xult/production/_ext/1537621011/plib_nvic.o
+ .debug_line    0x00000a04      0x504 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
+ .debug_line    0x00000f08      0x9a9 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
+ .debug_line    0x000018b1      0x2eb build/sam_v71_xult/production/_ext/1320227943/initialization.o
+ .debug_line    0x00001b9c      0x138 build/sam_v71_xult/production/_ext/1320227943/interrupts.o
+ .debug_line    0x00001cd4      0x191 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
+ .debug_line    0x00001e65      0x46e build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
+ .debug_line    0x000022d3      0x1e3 build/sam_v71_xult/production/_ext/1320227943/freertos_hooks.o
+ .debug_line    0x000024b6      0x1c3 build/sam_v71_xult/production/_ext/1320227943/tasks.o
+ .debug_line    0x00002679      0x35f build/sam_v71_xult/production/_ext/977623654/port.o
+ .debug_line    0x000029d8      0x1dd build/sam_v71_xult/production/_ext/1665200909/heap_1.o
+ .debug_line    0x00002bb5      0x2d4 build/sam_v71_xult/production/_ext/404212886/list.o
+ .debug_line    0x00002e89      0xe88 build/sam_v71_xult/production/_ext/404212886/queue.o
+ .debug_line    0x00003d11     0x1752 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+ .debug_line    0x00005463      0x138 build/sam_v71_xult/production/_ext/1360937237/main.o
+ .debug_line    0x0000559b      0x24e build/sam_v71_xult/production/_ext/1360937237/task1.o
+ .debug_line    0x000057e9      0x236 build/sam_v71_xult/production/_ext/1360937237/task2.o
+ .debug_line    0x00005a1f      0x110 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
+ .debug_line    0x00005b2f      0x24c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
+ .debug_line    0x00005d7b      0x132 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
+ .debug_line    0x00005ead       0xf2 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
+ .debug_line    0x00005f9f       0xea c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
+ .debug_line    0x00006089      0x19f c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
 
-.debug_str      0x00000000      0xa54
+.debug_str      0x00000000      0x8ad
  .debug_str     0x00000000        0x0 build/sam_v71_xult/production/_ext/1379310441/bsp.o
  .debug_str     0x00000000        0x0 build/sam_v71_xult/production/_ext/1157990217/plib_clk.o
  .debug_str     0x00000000       0x14 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
  .debug_str     0x00000014       0x28 build/sam_v71_xult/production/_ext/1537621011/plib_nvic.o
  .debug_str     0x0000003c       0x59 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
  .debug_str     0x00000095       0xb1 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
- .debug_str     0x00000146       0xa4 build/sam_v71_xult/production/_ext/1320227943/initialization.o
- .debug_str     0x000001ea        0x0 build/sam_v71_xult/production/_ext/1320227943/interrupts.o
- .debug_str     0x000001ea        0x0 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
- .debug_str     0x000001ea       0x2f build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
- .debug_str     0x00000219       0x25 build/sam_v71_xult/production/_ext/1320227943/freertos_hooks.o
- .debug_str     0x0000023e       0x5d build/sam_v71_xult/production/_ext/1320227943/tasks.o
- .debug_str     0x0000029b       0x26 build/sam_v71_xult/production/_ext/977623654/port.o
- .debug_str     0x000002c1       0x3c build/sam_v71_xult/production/_ext/1665200909/heap_1.o
- .debug_str     0x000002fd       0x2b build/sam_v71_xult/production/_ext/404212886/list.o
- .debug_str     0x00000328      0x27f build/sam_v71_xult/production/_ext/404212886/queue.o
- .debug_str     0x000005a7      0x275 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
- .debug_str     0x0000081c       0x19 build/sam_v71_xult/production/_ext/1360937237/main.o
- .debug_str     0x00000835       0x62 build/sam_v71_xult/production/_ext/1360937237/task1.o
- .debug_str     0x00000897       0x50 build/sam_v71_xult/production/_ext/1360937237/task2.o
- .debug_str     0x000008e7       0xc9 build/sam_v71_xult/production/_ext/1360937237/task3.o
- .debug_str     0x000009b0       0xa4 build/sam_v71_xult/production/_ext/1360937237/task4.o
- .debug_str     0x00000a54        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
- .debug_str     0x00000a54        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
- .debug_str     0x00000a54        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
- .debug_str     0x00000a54        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
- .debug_str     0x00000a54        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
- .debug_str     0x00000a54        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
+ .debug_str     0x00000146       0x82 build/sam_v71_xult/production/_ext/1320227943/initialization.o
+ .debug_str     0x000001c8        0x0 build/sam_v71_xult/production/_ext/1320227943/interrupts.o
+ .debug_str     0x000001c8        0x0 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
+ .debug_str     0x000001c8       0x2f build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
+ .debug_str     0x000001f7       0x25 build/sam_v71_xult/production/_ext/1320227943/freertos_hooks.o
+ .debug_str     0x0000021c       0x45 build/sam_v71_xult/production/_ext/1320227943/tasks.o
+ .debug_str     0x00000261       0x26 build/sam_v71_xult/production/_ext/977623654/port.o
+ .debug_str     0x00000287       0x3c build/sam_v71_xult/production/_ext/1665200909/heap_1.o
+ .debug_str     0x000002c3       0x2b build/sam_v71_xult/production/_ext/404212886/list.o
+ .debug_str     0x000002ee      0x27f build/sam_v71_xult/production/_ext/404212886/queue.o
+ .debug_str     0x0000056d      0x275 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+ .debug_str     0x000007e2       0x19 build/sam_v71_xult/production/_ext/1360937237/main.o
+ .debug_str     0x000007fb       0x62 build/sam_v71_xult/production/_ext/1360937237/task1.o
+ .debug_str     0x0000085d       0x50 build/sam_v71_xult/production/_ext/1360937237/task2.o
+ .debug_str     0x000008ad        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
+ .debug_str     0x000008ad        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
+ .debug_str     0x000008ad        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
+ .debug_str     0x000008ad        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
+ .debug_str     0x000008ad        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
+ .debug_str     0x000008ad        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
 
-.debug_frame    0x00000000     0x10c0
+.debug_frame    0x00000000      0xff8
  .debug_frame   0x00000000       0x20 build/sam_v71_xult/production/_ext/1379310441/bsp.o
  .debug_frame   0x00000020       0x20 build/sam_v71_xult/production/_ext/1157990217/plib_clk.o
- .debug_frame   0x00000040       0xc0 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
- .debug_frame   0x00000100       0x50 build/sam_v71_xult/production/_ext/1537621011/plib_nvic.o
- .debug_frame   0x00000150      0x11c build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
- .debug_frame   0x0000026c      0x19c build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
- .debug_frame   0x00000408       0x28 build/sam_v71_xult/production/_ext/1320227943/initialization.o
- .debug_frame   0x00000430       0x20 build/sam_v71_xult/production/_ext/1320227943/interrupts.o
- .debug_frame   0x00000450       0x70 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
- .debug_frame   0x000004c0       0x38 build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
- .debug_frame   0x000004f8       0x6c build/sam_v71_xult/production/_ext/1320227943/freertos_hooks.o
- .debug_frame   0x00000564       0x90 build/sam_v71_xult/production/_ext/1320227943/tasks.o
- .debug_frame   0x000005f4       0xe8 build/sam_v71_xult/production/_ext/977623654/port.o
- .debug_frame   0x000006dc       0x5c build/sam_v71_xult/production/_ext/1665200909/heap_1.o
- .debug_frame   0x00000738       0x6c build/sam_v71_xult/production/_ext/404212886/list.o
- .debug_frame   0x000007a4      0x280 build/sam_v71_xult/production/_ext/404212886/queue.o
- .debug_frame   0x00000a24      0x46c build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
- .debug_frame   0x00000e90       0x28 build/sam_v71_xult/production/_ext/1360937237/main.o
- .debug_frame   0x00000eb8       0x48 build/sam_v71_xult/production/_ext/1360937237/task1.o
- .debug_frame   0x00000f00       0x40 build/sam_v71_xult/production/_ext/1360937237/task2.o
- .debug_frame   0x00000f40       0x68 build/sam_v71_xult/production/_ext/1360937237/task3.o
- .debug_frame   0x00000fa8       0x5c build/sam_v71_xult/production/_ext/1360937237/task4.o
- .debug_frame   0x00001004       0x38 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
- .debug_frame   0x0000103c       0x3c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
- .debug_frame   0x00001078       0x28 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
- .debug_frame   0x000010a0       0x20 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
+ .debug_frame   0x00000040       0xec build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
+ .debug_frame   0x0000012c       0x50 build/sam_v71_xult/production/_ext/1537621011/plib_nvic.o
+ .debug_frame   0x0000017c      0x11c build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
+ .debug_frame   0x00000298      0x19c build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
+ .debug_frame   0x00000434       0x28 build/sam_v71_xult/production/_ext/1320227943/initialization.o
+ .debug_frame   0x0000045c       0x20 build/sam_v71_xult/production/_ext/1320227943/interrupts.o
+ .debug_frame   0x0000047c       0x70 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
+ .debug_frame   0x000004ec       0x38 build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
+ .debug_frame   0x00000524       0x6c build/sam_v71_xult/production/_ext/1320227943/freertos_hooks.o
+ .debug_frame   0x00000590       0x60 build/sam_v71_xult/production/_ext/1320227943/tasks.o
+ .debug_frame   0x000005f0       0xe8 build/sam_v71_xult/production/_ext/977623654/port.o
+ .debug_frame   0x000006d8       0x5c build/sam_v71_xult/production/_ext/1665200909/heap_1.o
+ .debug_frame   0x00000734       0x6c build/sam_v71_xult/production/_ext/404212886/list.o
+ .debug_frame   0x000007a0      0x280 build/sam_v71_xult/production/_ext/404212886/queue.o
+ .debug_frame   0x00000a20      0x46c build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+ .debug_frame   0x00000e8c       0x28 build/sam_v71_xult/production/_ext/1360937237/main.o
+ .debug_frame   0x00000eb4       0x48 build/sam_v71_xult/production/_ext/1360937237/task1.o
+ .debug_frame   0x00000efc       0x40 build/sam_v71_xult/production/_ext/1360937237/task2.o
+ .debug_frame   0x00000f3c       0x38 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
+ .debug_frame   0x00000f74       0x3c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
+ .debug_frame   0x00000fb0       0x28 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
+ .debug_frame   0x00000fd8       0x20 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
 
-.debug_loc      0x00000000     0x5542
- .debug_loc     0x00000000      0x458 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
- .debug_loc     0x00000458      0x124 build/sam_v71_xult/production/_ext/1537621011/plib_nvic.o
- .debug_loc     0x0000057c      0x371 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
- .debug_loc     0x000008ed      0xab0 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
- .debug_loc     0x0000139d       0x45 build/sam_v71_xult/production/_ext/1320227943/initialization.o
- .debug_loc     0x000013e2       0xa7 build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
- .debug_loc     0x00001489       0x82 build/sam_v71_xult/production/_ext/1320227943/freertos_hooks.o
- .debug_loc     0x0000150b      0x14c build/sam_v71_xult/production/_ext/1320227943/tasks.o
- .debug_loc     0x00001657      0x13a build/sam_v71_xult/production/_ext/977623654/port.o
- .debug_loc     0x00001791       0x80 build/sam_v71_xult/production/_ext/1665200909/heap_1.o
- .debug_loc     0x00001811       0xbf build/sam_v71_xult/production/_ext/404212886/list.o
- .debug_loc     0x000018d0     0x16e4 build/sam_v71_xult/production/_ext/404212886/queue.o
- .debug_loc     0x00002fb4     0x211d build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
- .debug_loc     0x000050d1       0x20 build/sam_v71_xult/production/_ext/1360937237/main.o
- .debug_loc     0x000050f1       0x6f build/sam_v71_xult/production/_ext/1360937237/task1.o
- .debug_loc     0x00005160       0x4f build/sam_v71_xult/production/_ext/1360937237/task2.o
- .debug_loc     0x000051af      0x122 build/sam_v71_xult/production/_ext/1360937237/task3.o
- .debug_loc     0x000052d1       0xfc build/sam_v71_xult/production/_ext/1360937237/task4.o
- .debug_loc     0x000053cd       0x14 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
- .debug_loc     0x000053e1       0x51 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
- .debug_loc     0x00005432       0xba c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
- .debug_loc     0x000054ec       0x56 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
+.debug_loc      0x00000000     0x5453
+ .debug_loc     0x00000000      0x611 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
+ .debug_loc     0x00000611      0x124 build/sam_v71_xult/production/_ext/1537621011/plib_nvic.o
+ .debug_loc     0x00000735      0x371 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
+ .debug_loc     0x00000aa6      0xab0 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
+ .debug_loc     0x00001556       0x45 build/sam_v71_xult/production/_ext/1320227943/initialization.o
+ .debug_loc     0x0000159b       0xa7 build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
+ .debug_loc     0x00001642       0x82 build/sam_v71_xult/production/_ext/1320227943/freertos_hooks.o
+ .debug_loc     0x000016c4       0xc2 build/sam_v71_xult/production/_ext/1320227943/tasks.o
+ .debug_loc     0x00001786      0x13a build/sam_v71_xult/production/_ext/977623654/port.o
+ .debug_loc     0x000018c0       0x80 build/sam_v71_xult/production/_ext/1665200909/heap_1.o
+ .debug_loc     0x00001940       0xbf build/sam_v71_xult/production/_ext/404212886/list.o
+ .debug_loc     0x000019ff     0x16e4 build/sam_v71_xult/production/_ext/404212886/queue.o
+ .debug_loc     0x000030e3     0x211d build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+ .debug_loc     0x00005200       0x20 build/sam_v71_xult/production/_ext/1360937237/main.o
+ .debug_loc     0x00005220       0x6f build/sam_v71_xult/production/_ext/1360937237/task1.o
+ .debug_loc     0x0000528f       0x4f build/sam_v71_xult/production/_ext/1360937237/task2.o
+ .debug_loc     0x000052de       0x14 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
+ .debug_loc     0x000052f2       0x51 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
+ .debug_loc     0x00005343       0xba c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
+ .debug_loc     0x000053fd       0x56 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
 
 .note.GNU-stack
                 0x00000000        0x0
@@ -1251,8 +1214,8 @@ LOAD data_init
  .note.GNU-stack
                 0x00000000        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
 
-.stack          0x2040a630      0x100
- .stack         0x2040a630      0x100 stack
+.stack          0x2040a618      0x100
+ .stack         0x2040a618      0x100 stack
 
 .bss.ucHeap%1   0x20400000     0xa000
  .bss.ucHeap    0x20400000     0xa000 build/sam_v71_xult/production/_ext/1665200909/heap_1.o
@@ -1328,9 +1291,9 @@ LOAD data_init
                 0x2040a390        0x6 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
                 0x2040a390                portNumCb
 
-.bss.cmd.7928%15
+.bss.cmd.7938%15
                 0x2040a398        0x4
- .bss.cmd.7928  0x2040a398        0x4 build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
+ .bss.cmd.7938  0x2040a398        0x4 build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
 
 .bss.xTASK1_Tasks%16
                 0x2040a39c        0x4
@@ -1344,838 +1307,709 @@ LOAD data_init
                 0x2040a3a0        0x4 build/sam_v71_xult/production/_ext/1320227943/tasks.o
                 0x2040a3a0                xTASK2_Tasks
 
-.bss.xTASK3_Tasks%18
+.data.uxCriticalNesting%18
                 0x2040a3a4        0x4
- .bss.xTASK3_Tasks
-                0x2040a3a4        0x4 build/sam_v71_xult/production/_ext/1320227943/tasks.o
-                0x2040a3a4                xTASK3_Tasks
-
-.bss.xTASK4_Tasks%19
-                0x2040a3a8        0x4
- .bss.xTASK4_Tasks
-                0x2040a3a8        0x4 build/sam_v71_xult/production/_ext/1320227943/tasks.o
-                0x2040a3a8                xTASK4_Tasks
-
-.data.uxCriticalNesting%20
-                0x2040a3ac        0x4
  .data.uxCriticalNesting
-                0x2040a3ac        0x4 build/sam_v71_xult/production/_ext/977623654/port.o
+                0x2040a3a4        0x4 build/sam_v71_xult/production/_ext/977623654/port.o
 
-.bss.pucAlignedHeap.6163%21
-                0x2040a3b0        0x4
+.bss.pucAlignedHeap.6163%19
+                0x2040a3a8        0x4
  .bss.pucAlignedHeap.6163
-                0x2040a3b0        0x4 build/sam_v71_xult/production/_ext/1665200909/heap_1.o
+                0x2040a3a8        0x4 build/sam_v71_xult/production/_ext/1665200909/heap_1.o
 
-.bss.xNextFreeByte%22
-                0x2040a3b4        0x4
+.bss.xNextFreeByte%20
+                0x2040a3ac        0x4
  .bss.xNextFreeByte
-                0x2040a3b4        0x4 build/sam_v71_xult/production/_ext/1665200909/heap_1.o
+                0x2040a3ac        0x4 build/sam_v71_xult/production/_ext/1665200909/heap_1.o
 
-.bss.pxCurrentTCB%23
-                0x2040a3b8        0x4
+.bss.pxCurrentTCB%21
+                0x2040a3b0        0x4
  .bss.pxCurrentTCB
-                0x2040a3b8        0x4 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-                0x2040a3b8                pxCurrentTCB
+                0x2040a3b0        0x4 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x2040a3b0                pxCurrentTCB
 
-.bss.pxDelayedTaskList%24
-                0x2040a3bc        0x4
+.bss.pxDelayedTaskList%22
+                0x2040a3b4        0x4
  .bss.pxDelayedTaskList
+                0x2040a3b4        0x4 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+
+.bss.pxOverflowDelayedTaskList%23
+                0x2040a3b8        0x4
+ .bss.pxOverflowDelayedTaskList
+                0x2040a3b8        0x4 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+
+.bss.uxCurrentNumberOfTasks%24
+                0x2040a3bc        0x4
+ .bss.uxCurrentNumberOfTasks
                 0x2040a3bc        0x4 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
 
-.bss.pxOverflowDelayedTaskList%25
+.bss.uxDeletedTasksWaitingCleanUp%25
                 0x2040a3c0        0x4
- .bss.pxOverflowDelayedTaskList
+ .bss.uxDeletedTasksWaitingCleanUp
                 0x2040a3c0        0x4 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
 
-.bss.uxCurrentNumberOfTasks%26
+.bss.uxSchedulerSuspended%26
                 0x2040a3c4        0x4
- .bss.uxCurrentNumberOfTasks
+ .bss.uxSchedulerSuspended
                 0x2040a3c4        0x4 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
 
-.bss.uxDeletedTasksWaitingCleanUp%27
+.bss.uxTaskNumber%27
                 0x2040a3c8        0x4
- .bss.uxDeletedTasksWaitingCleanUp
+ .bss.uxTaskNumber
                 0x2040a3c8        0x4 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
 
-.bss.uxSchedulerSuspended%28
+.bss.uxTopReadyPriority%28
                 0x2040a3cc        0x4
- .bss.uxSchedulerSuspended
+ .bss.uxTopReadyPriority
                 0x2040a3cc        0x4 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
 
-.bss.uxTaskNumber%29
+.bss.xIdleTaskHandle%29
                 0x2040a3d0        0x4
- .bss.uxTaskNumber
+ .bss.xIdleTaskHandle
                 0x2040a3d0        0x4 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
 
-.bss.uxTopReadyPriority%30
+.bss.xNextTaskUnblockTime%30
                 0x2040a3d4        0x4
- .bss.uxTopReadyPriority
+ .bss.xNextTaskUnblockTime
                 0x2040a3d4        0x4 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
 
-.bss.xIdleTaskHandle%31
+.bss.xNumOfOverflows%31
                 0x2040a3d8        0x4
- .bss.xIdleTaskHandle
+ .bss.xNumOfOverflows
                 0x2040a3d8        0x4 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
 
-.bss.xNextTaskUnblockTime%32
+.bss.xPendedTicks%32
                 0x2040a3dc        0x4
- .bss.xNextTaskUnblockTime
+ .bss.xPendedTicks
                 0x2040a3dc        0x4 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
 
-.bss.xNumOfOverflows%33
+.bss.xSchedulerRunning%33
                 0x2040a3e0        0x4
- .bss.xNumOfOverflows
+ .bss.xSchedulerRunning
                 0x2040a3e0        0x4 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
 
-.bss.xPendedTicks%34
+.bss.xTickCount%34
                 0x2040a3e4        0x4
- .bss.xPendedTicks
+ .bss.xTickCount
                 0x2040a3e4        0x4 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
 
-.bss.xSchedulerRunning%35
+.bss.xYieldPending%35
                 0x2040a3e8        0x4
- .bss.xSchedulerRunning
+ .bss.xYieldPending
                 0x2040a3e8        0x4 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
 
-.bss.xTickCount%36
+.bss.uartMutexLock%36
                 0x2040a3ec        0x4
- .bss.xTickCount
-                0x2040a3ec        0x4 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-
-.bss.xYieldPending%37
-                0x2040a3f0        0x4
- .bss.xYieldPending
-                0x2040a3f0        0x4 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-
-.bss.uartMutexLock%38
-                0x2040a3f4        0x4
  .bss.uartMutexLock
-                0x2040a3f4        0x4 build/sam_v71_xult/production/_ext/1360937237/task1.o
-                0x2040a3f4                uartMutexLock
+                0x2040a3ec        0x4 build/sam_v71_xult/production/_ext/1360937237/task1.o
+                0x2040a3ec                uartMutexLock
 
-.bss.dataRxSemaphore%39
-                0x2040a3f8        0x4
- .bss.dataRxSemaphore
-                0x2040a3f8        0x4 build/sam_v71_xult/production/_ext/1360937237/task3.o
+.bss%37         0x2040a3f0        0x8
+ .bss           0x2040a3f0        0x4 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
+ .bss           0x2040a3f4        0x4 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
+                0x2040a3f4                __environ
+                0x2040a3f4                environ
+                0x2040a3f4                ___environ
+                0x2040a3f4                _environ
 
-.bss.switchPressSemaphore%40
-                0x2040a3fc        0x4
- .bss.switchPressSemaphore
-                0x2040a3fc        0x4 build/sam_v71_xult/production/_ext/1360937237/task4.o
-
-.bss%41         0x2040a400        0x8
- .bss           0x2040a400        0x4 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
- .bss           0x2040a404        0x4 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
-                0x2040a404                __environ
-                0x2040a404                environ
-                0x2040a404                ___environ
-                0x2040a404                _environ
-
-.bss.task4Data%43
-                0x2040a408        0x1
- .bss.task4Data
-                0x2040a408        0x1 build/sam_v71_xult/production/_ext/1360937237/task4.o
-                0x2040a408                task4Data
-
-.bss.task3Data%44
-                0x2040a40c        0x1
- .bss.task3Data
-                0x2040a40c        0x1 build/sam_v71_xult/production/_ext/1360937237/task3.o
-                0x2040a40c                task3Data
-
-.bss.task2Data%45
-                0x2040a410        0x1
+.bss.task2Data%39
+                0x2040a3f8        0x1
  .bss.task2Data
-                0x2040a410        0x1 build/sam_v71_xult/production/_ext/1360937237/task2.o
-                0x2040a410                task2Data
+                0x2040a3f8        0x1 build/sam_v71_xult/production/_ext/1360937237/task2.o
+                0x2040a3f8                task2Data
 
-.bss.task1Data%46
-                0x2040a414        0x1
+.bss.task1Data%40
+                0x2040a3fc        0x1
  .bss.task1Data
-                0x2040a414        0x1 build/sam_v71_xult/production/_ext/1360937237/task1.o
-                0x2040a414                task1Data
+                0x2040a3fc        0x1 build/sam_v71_xult/production/_ext/1360937237/task1.o
+                0x2040a3fc                task1Data
 
 .eh_frame%z1    0x00000000        0x0
  .eh_frame      0x00000000        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+dp/hard/crtbegin.o
 
-.config_D0000000.__config_D0000000%47
+.config_D0000000.__config_D0000000%41
                 0xd0000000        0x4
  .config_D0000000.__config_D0000000
                 0xd0000000        0x4 build/sam_v71_xult/production/_ext/1320227943/initialization.o
                 0xd0000000                __config_D0000000
 
-.dinit%48       0x00400188      0x240
- .dinit         0x00400188      0x240 data_init
+.dinit%42       0x00400188      0x200
+ .dinit         0x00400188      0x200 data_init
 
-.text.xTaskCreate%49
-                0x004003c8      0x1e4
+.text.xTaskCreate%43
+                0x00400388      0x1e4
  .text.xTaskCreate
-                0x004003c8      0x1e4 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-                0x004003c8                xTaskCreate
+                0x00400388      0x1e4 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x00400388                xTaskCreate
 
-.text.USART1_InterruptHandler%50
-                0x004005ac      0x17c
+.text.USART1_InterruptHandler%44
+                0x0040056c      0x17c
  .text.USART1_InterruptHandler
-                0x004005ac      0x17c build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
-                0x004005ac                USART1_InterruptHandler
+                0x0040056c      0x17c build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
+                0x0040056c                USART1_InterruptHandler
 
-.text.Reset_Handler%51
-                0x00400728      0x178
+.text.Reset_Handler%45
+                0x004006e8      0x178
  .text.Reset_Handler
-                0x00400728      0x178 build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
-                0x00400728                Reset_Handler
+                0x004006e8      0x178 build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
+                0x004006e8                Reset_Handler
 
-.text.xQueueSemaphoreTake%52
-                0x004008a0      0x158
+.text.xQueueSemaphoreTake%46
+                0x00400860      0x158
  .text.xQueueSemaphoreTake
-                0x004008a0      0x158 build/sam_v71_xult/production/_ext/404212886/queue.o
-                0x004008a0                xQueueSemaphoreTake
+                0x00400860      0x158 build/sam_v71_xult/production/_ext/404212886/queue.o
+                0x00400860                xQueueSemaphoreTake
 
-.text.xQueueGenericSend%53
-                0x004009f8      0x128
+.text.xQueueGenericSend%47
+                0x004009b8      0x128
  .text.xQueueGenericSend
-                0x004009f8      0x128 build/sam_v71_xult/production/_ext/404212886/queue.o
-                0x004009f8                xQueueGenericSend
+                0x004009b8      0x128 build/sam_v71_xult/production/_ext/404212886/queue.o
+                0x004009b8                xQueueGenericSend
 
-.text.xTaskIncrementTick%54
-                0x00400b20      0x114
+.text.xTaskIncrementTick%48
+                0x00400ae0      0x114
  .text.xTaskIncrementTick
-                0x00400b20      0x114 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-                0x00400b20                xTaskIncrementTick
+                0x00400ae0      0x114 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x00400ae0                xTaskIncrementTick
 
-.text.PIO_Initialize%55
-                0x00400c34       0xf0
+.text.PIO_Initialize%49
+                0x00400bf4       0xf0
  .text.PIO_Initialize
-                0x00400c34       0xf0 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
-                0x00400c34                PIO_Initialize
+                0x00400bf4       0xf0 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
+                0x00400bf4                PIO_Initialize
 
-.text.xTaskResumeAll%56
-                0x00400d24       0xe4
+.text.xTaskResumeAll%50
+                0x00400ce4       0xe4
  .text.xTaskResumeAll
-                0x00400d24       0xe4 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-                0x00400d24                xTaskResumeAll
+                0x00400ce4       0xe4 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x00400ce4                xTaskResumeAll
 
-.text.TASK3_Tasks%57
-                0x00400e08       0xe4
- .text.TASK3_Tasks
-                0x00400e08       0xe4 build/sam_v71_xult/production/_ext/1360937237/task3.o
-                0x00400e08                TASK3_Tasks
-
-.text.TASK4_Tasks%58
-                0x00400eec       0xac
- .text.TASK4_Tasks
-                0x00400eec       0xac build/sam_v71_xult/production/_ext/1360937237/task4.o
-                0x00400eec                TASK4_Tasks
-
-.text.vTaskSwitchContext%59
-                0x00400f98       0xa8
+.text.vTaskSwitchContext%51
+                0x00400dc8       0xa8
  .text.vTaskSwitchContext
-                0x00400f98       0xa8 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-                0x00400f98                vTaskSwitchContext
+                0x00400dc8       0xa8 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x00400dc8                vTaskSwitchContext
 
-.text.xTaskPriorityInherit%60
-                0x00401040       0xa8
+.text.xTaskPriorityInherit%52
+                0x00400e70       0xa8
  .text.xTaskPriorityInherit
-                0x00401040       0xa8 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-                0x00401040                xTaskPriorityInherit
+                0x00400e70       0xa8 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x00400e70                xTaskPriorityInherit
 
-.text.USART1_Write%61
-                0x004010e8       0xa4
+.text.USART1_Write%53
+                0x00400f18       0xa4
  .text.USART1_Write
-                0x004010e8       0xa4 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
-                0x004010e8                USART1_Write
+                0x00400f18       0xa4 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
+                0x00400f18                USART1_Write
 
-.text.prvAddCurrentTaskToDelayedList%62
-                0x0040118c       0x94
+.text.prvAddCurrentTaskToDelayedList%54
+                0x00400fbc       0x94
  .text.prvAddCurrentTaskToDelayedList
-                0x0040118c       0x94 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x00400fbc       0x94 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
 
-.text.SYS_Tasks%63
-                0x00401220       0x90
- .text.SYS_Tasks
-                0x00401220       0x90 build/sam_v71_xult/production/_ext/1320227943/tasks.o
-                0x00401220                SYS_Tasks
-
-.text.__pic32c_data_initialization%64
-                0x004012b0       0x88
+.text.__pic32c_data_initialization%55
+                0x00401050       0x88
  .text.__pic32c_data_initialization
-                0x004012b0       0x88 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
-                0x004012b0                __pic32c_data_initialization
+                0x00401050       0x88 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
+                0x00401050                __pic32c_data_initialization
 
-.text.vTaskPriorityDisinheritAfterTimeout%65
-                0x00401338       0x80
+.text.vTaskPriorityDisinheritAfterTimeout%56
+                0x004010d8       0x80
  .text.vTaskPriorityDisinheritAfterTimeout
-                0x00401338       0x80 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-                0x00401338                vTaskPriorityDisinheritAfterTimeout
+                0x004010d8       0x80 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x004010d8                vTaskPriorityDisinheritAfterTimeout
 
-.text.prvUnlockQueue%66
-                0x004013b8       0x7e
+.text.prvUnlockQueue%57
+                0x00401158       0x7e
  .text.prvUnlockQueue
-                0x004013b8       0x7e build/sam_v71_xult/production/_ext/404212886/queue.o
+                0x00401158       0x7e build/sam_v71_xult/production/_ext/404212886/queue.o
 
-.text.xTaskPriorityDisinherit%67
-                0x00401438       0x7c
+.text.xTaskPriorityDisinherit%58
+                0x004011d8       0x7c
  .text.xTaskPriorityDisinherit
-                0x00401438       0x7c build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-                0x00401438                xTaskPriorityDisinherit
+                0x004011d8       0x7c build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x004011d8                xTaskPriorityDisinherit
 
-.text.xTaskRemoveFromEventList%68
-                0x004014b4       0x78
+.text.xTaskRemoveFromEventList%59
+                0x00401254       0x78
  .text.xTaskRemoveFromEventList
-                0x004014b4       0x78 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-                0x004014b4                xTaskRemoveFromEventList
+                0x00401254       0x78 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x00401254                xTaskRemoveFromEventList
 
-.text.prvCopyDataToQueue%69
-                0x0040152c       0x72
+.text.prvCopyDataToQueue%60
+                0x004012cc       0x72
  .text.prvCopyDataToQueue
-                0x0040152c       0x72 build/sam_v71_xult/production/_ext/404212886/queue.o
+                0x004012cc       0x72 build/sam_v71_xult/production/_ext/404212886/queue.o
 
-.text.xQueueGenericReset%70
-                0x004015a0       0x70
+.text.xQueueGenericReset%61
+                0x00401340       0x70
  .text.xQueueGenericReset
-                0x004015a0       0x70 build/sam_v71_xult/production/_ext/404212886/queue.o
-                0x004015a0                xQueueGenericReset
+                0x00401340       0x70 build/sam_v71_xult/production/_ext/404212886/queue.o
+                0x00401340                xQueueGenericReset
 
-.text.prvIdleTask%71
-                0x00401610       0x70
+.text.prvIdleTask%62
+                0x004013b0       0x70
  .text.prvIdleTask
-                0x00401610       0x70 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x004013b0       0x70 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
 
-.text.USART1_Initialize%72
-                0x00401680       0x6c
+.text.USART1_Initialize%63
+                0x00401420       0x6c
  .text.USART1_Initialize
-                0x00401680       0x6c build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
-                0x00401680                USART1_Initialize
+                0x00401420       0x6c build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
+                0x00401420                USART1_Initialize
 
-.text.pvPortMalloc%73
-                0x004016ec       0x6c
+.text.pvPortMalloc%64
+                0x0040148c       0x6c
  .text.pvPortMalloc
-                0x004016ec       0x6c build/sam_v71_xult/production/_ext/1665200909/heap_1.o
-                0x004016ec                pvPortMalloc
+                0x0040148c       0x6c build/sam_v71_xult/production/_ext/1665200909/heap_1.o
+                0x0040148c                pvPortMalloc
 
-.text.TASK1_Tasks%74
-                0x00401758       0x6c
+.text.TASK1_Tasks%65
+                0x004014f8       0x6c
  .text.TASK1_Tasks
-                0x00401758       0x6c build/sam_v71_xult/production/_ext/1360937237/task1.o
-                0x00401758                TASK1_Tasks
+                0x004014f8       0x6c build/sam_v71_xult/production/_ext/1360937237/task1.o
+                0x004014f8                TASK1_Tasks
 
-.text.TASK2_Tasks%75
-                0x004017c4       0x6c
+.text.TASK2_Tasks%66
+                0x00401564       0x6c
  .text.TASK2_Tasks
-                0x004017c4       0x6c build/sam_v71_xult/production/_ext/1360937237/task2.o
-                0x004017c4                TASK2_Tasks
+                0x00401564       0x6c build/sam_v71_xult/production/_ext/1360937237/task2.o
+                0x00401564                TASK2_Tasks
 
-.text.vTaskStartScheduler%76
-                0x00401830       0x68
+.text.vTaskStartScheduler%67
+                0x004015d0       0x68
  .text.vTaskStartScheduler
-                0x00401830       0x68 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-                0x00401830                vTaskStartScheduler
+                0x004015d0       0x68 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x004015d0                vTaskStartScheduler
 
-.text.CLOCK_Initialize%77
-                0x00401898       0x64
+.text.CLOCK_Initialize%68
+                0x00401638       0x64
  .text.CLOCK_Initialize
-                0x00401898       0x64 build/sam_v71_xult/production/_ext/1157990217/plib_clk.o
-                0x00401898                CLOCK_Initialize
+                0x00401638       0x64 build/sam_v71_xult/production/_ext/1157990217/plib_clk.o
+                0x00401638                CLOCK_Initialize
 
-.text.PIO_PinInterruptCallbackRegister%78
-                0x004018fc       0x64
- .text.PIO_PinInterruptCallbackRegister
-                0x004018fc       0x64 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
-                0x004018fc                PIO_PinInterruptCallbackRegister
-
-.text.xPortPendSVHandler%79
-                0x00401960       0x64
+.text.xPortPendSVHandler%69
+                0x004016a0       0x64
  .text.xPortPendSVHandler
-                0x00401960       0x64 build/sam_v71_xult/production/_ext/977623654/port.o
-                0x00401960                xPortPendSVHandler
+                0x004016a0       0x64 build/sam_v71_xult/production/_ext/977623654/port.o
+                0x004016a0                xPortPendSVHandler
 
-.text.xQueueGiveFromISR%80
-                0x004019c4       0x64
- .text.xQueueGiveFromISR
-                0x004019c4       0x64 build/sam_v71_xult/production/_ext/404212886/queue.o
-                0x004019c4                xQueueGiveFromISR
-
-.rodata%81      0x00401a28       0x60
- .rodata        0x00401a28       0x60 build/sam_v71_xult/production/_ext/1360937237/task4.o
-
-.text.xTaskCheckForTimeOut%82
-                0x00401a88       0x5c
+.text.xTaskCheckForTimeOut%70
+                0x00401704       0x5c
  .text.xTaskCheckForTimeOut
-                0x00401a88       0x5c build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-                0x00401a88                xTaskCheckForTimeOut
+                0x00401704       0x5c build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x00401704                xTaskCheckForTimeOut
 
-.text.__libc_start_init%83
-                0x00401ae4       0x5c
+.text.__libc_start_init%71
+                0x00401760       0x5c
  .text.__libc_start_init
-                0x00401ae4       0x5c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
-                0x00401ae4                __libc_init_array
+                0x00401760       0x5c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
+                0x00401760                __libc_init_array
 
-.text._PIO_Interrupt_Handler%84
-                0x00401b40       0x58
+.text._PIO_Interrupt_Handler%72
+                0x004017bc       0x58
  .text._PIO_Interrupt_Handler
-                0x00401b40       0x58 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
-                0x00401b40                _PIO_Interrupt_Handler
+                0x004017bc       0x58 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
+                0x004017bc                _PIO_Interrupt_Handler
 
-.text.USART1_Read%85
-                0x00401b98       0x58
- .text.USART1_Read
-                0x00401b98       0x58 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
-                0x00401b98                USART1_Read
+.text.SYS_Tasks%73
+                0x00401814       0x50
+ .text.SYS_Tasks
+                0x00401814       0x50 build/sam_v71_xult/production/_ext/1320227943/tasks.o
+                0x00401814                SYS_Tasks
 
-.text.xPortStartScheduler%86
-                0x00401bf0       0x48
+.text.xPortStartScheduler%74
+                0x00401864       0x48
  .text.xPortStartScheduler
-                0x00401bf0       0x48 build/sam_v71_xult/production/_ext/977623654/port.o
-                0x00401bf0                xPortStartScheduler
+                0x00401864       0x48 build/sam_v71_xult/production/_ext/977623654/port.o
+                0x00401864                xPortStartScheduler
 
-.rodata%87      0x00401c38       0x48
- .rodata        0x00401c38       0x48 build/sam_v71_xult/production/_ext/1360937237/task3.o
+.text%75        0x004018ac       0x40
+ .text          0x004018ac       0x40 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+dp/hard/crtbegin.o
 
-.text%88        0x00401c80       0x40
- .text          0x00401c80       0x40 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+dp/hard/crtbegin.o
-
-.text.NVIC_Initialize%89
-                0x00401cc0       0x40
+.text.NVIC_Initialize%76
+                0x004018ec       0x40
  .text.NVIC_Initialize
-                0x00401cc0       0x40 build/sam_v71_xult/production/_ext/1537621011/plib_nvic.o
-                0x00401cc0                NVIC_Initialize
+                0x004018ec       0x40 build/sam_v71_xult/production/_ext/1537621011/plib_nvic.o
+                0x004018ec                NVIC_Initialize
 
-.rodata%90      0x00401d00       0x40
- .rodata        0x00401d00       0x40 build/sam_v71_xult/production/_ext/1360937237/task1.o
+.rodata%77      0x0040192c       0x40
+ .rodata        0x0040192c       0x40 build/sam_v71_xult/production/_ext/1360937237/task1.o
 
-.text.SYS_Initialize%91
-                0x00401d40       0x3c
+.text.SYS_Initialize%78
+                0x0040196c       0x34
  .text.SYS_Initialize
-                0x00401d40       0x3c build/sam_v71_xult/production/_ext/1320227943/initialization.o
-                0x00401d40                SYS_Initialize
+                0x0040196c       0x34 build/sam_v71_xult/production/_ext/1320227943/initialization.o
+                0x0040196c                SYS_Initialize
 
-.text.vListInsert%92
-                0x00401d7c       0x34
+.text.vListInsert%79
+                0x004019a0       0x34
  .text.vListInsert
-                0x00401d7c       0x34 build/sam_v71_xult/production/_ext/404212886/list.o
-                0x00401d7c                vListInsert
+                0x004019a0       0x34 build/sam_v71_xult/production/_ext/404212886/list.o
+                0x004019a0                vListInsert
 
-.text.vTaskDelay%93
-                0x00401db0       0x34
+.text.vTaskDelay%80
+                0x004019d4       0x34
  .text.vTaskDelay
-                0x00401db0       0x34 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-                0x00401db0                vTaskDelay
+                0x004019d4       0x34 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x004019d4                vTaskDelay
 
-.text.uartReadEventHandler%94
-                0x00401de4       0x34
- .text.uartReadEventHandler
-                0x00401de4       0x34 build/sam_v71_xult/production/_ext/1360937237/task3.o
-                0x00401de4                uartReadEventHandler
-
-.rodata%95      0x00401e18       0x30
- .rodata        0x00401e18       0x30 build/sam_v71_xult/production/_ext/1320227943/tasks.o
-
-.text.xPortSysTickHandler%96
-                0x00401e48       0x30
+.text.xPortSysTickHandler%81
+                0x00401a08       0x30
  .text.xPortSysTickHandler
-                0x00401e48       0x30 build/sam_v71_xult/production/_ext/977623654/port.o
-                0x00401e48                xPortSysTickHandler
+                0x00401a08       0x30 build/sam_v71_xult/production/_ext/977623654/port.o
+                0x00401a08                xPortSysTickHandler
 
-.text.xQueueGenericCreate%97
-                0x00401e78       0x30
+.text.xQueueGenericCreate%82
+                0x00401a38       0x30
  .text.xQueueGenericCreate
-                0x00401e78       0x30 build/sam_v71_xult/production/_ext/404212886/queue.o
-                0x00401e78                xQueueGenericCreate
+                0x00401a38       0x30 build/sam_v71_xult/production/_ext/404212886/queue.o
+                0x00401a38                xQueueGenericCreate
 
-.rodata%98      0x00401ea8       0x30
- .rodata        0x00401ea8       0x30 build/sam_v71_xult/production/_ext/1360937237/task2.o
+.rodata%83      0x00401a68       0x30
+ .rodata        0x00401a68       0x30 build/sam_v71_xult/production/_ext/1360937237/task2.o
 
-.text.SwitchPress_Handler%99
-                0x00401ed8       0x30
- .text.SwitchPress_Handler
-                0x00401ed8       0x30 build/sam_v71_xult/production/_ext/1360937237/task4.o
-
-.text.pxPortInitialiseStack%100
-                0x00401f08       0x2c
+.text.pxPortInitialiseStack%84
+                0x00401a98       0x2c
  .text.pxPortInitialiseStack
-                0x00401f08       0x2c build/sam_v71_xult/production/_ext/977623654/port.o
-                0x00401f08                pxPortInitialiseStack
+                0x00401a98       0x2c build/sam_v71_xult/production/_ext/977623654/port.o
+                0x00401a98                pxPortInitialiseStack
 
-.text.prvResetNextTaskUnblockTime%101
-                0x00401f34       0x2c
+.text.prvResetNextTaskUnblockTime%85
+                0x00401ac4       0x2c
  .text.prvResetNextTaskUnblockTime
-                0x00401f34       0x2c build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x00401ac4       0x2c build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
 
-.text.TASK1_Initialize%102
-                0x00401f60       0x2c
+.text.TASK1_Initialize%86
+                0x00401af0       0x2c
  .text.TASK1_Initialize
-                0x00401f60       0x2c build/sam_v71_xult/production/_ext/1360937237/task1.o
-                0x00401f60                TASK1_Initialize
+                0x00401af0       0x2c build/sam_v71_xult/production/_ext/1360937237/task1.o
+                0x00401af0                TASK1_Initialize
 
-.text.prvPortStartFirstTask%103
-                0x00401f8c       0x28
+.text.prvPortStartFirstTask%87
+                0x00401b1c       0x28
  .text.prvPortStartFirstTask
-                0x00401f8c       0x28 build/sam_v71_xult/production/_ext/977623654/port.o
+                0x00401b1c       0x28 build/sam_v71_xult/production/_ext/977623654/port.o
 
-.text.vPortSetupTimerInterrupt%104
-                0x00401fb4       0x28
+.text.vPortSetupTimerInterrupt%88
+                0x00401b44       0x28
  .text.vPortSetupTimerInterrupt
-                0x00401fb4       0x28 build/sam_v71_xult/production/_ext/977623654/port.o
-                0x00401fb4                vPortSetupTimerInterrupt
+                0x00401b44       0x28 build/sam_v71_xult/production/_ext/977623654/port.o
+                0x00401b44                vPortSetupTimerInterrupt
 
-.text.uxListRemove%105
-                0x00401fdc       0x26
+.text.uxListRemove%89
+                0x00401b6c       0x26
  .text.uxListRemove
-                0x00401fdc       0x26 build/sam_v71_xult/production/_ext/404212886/list.o
-                0x00401fdc                uxListRemove
+                0x00401b6c       0x26 build/sam_v71_xult/production/_ext/404212886/list.o
+                0x00401b6c                uxListRemove
 
-.text.prvTaskExitError%106
-                0x00402002       0x24
+.text.prvTaskExitError%90
+                0x00401b92       0x24
  .text.prvTaskExitError
-                0x00402002       0x24 build/sam_v71_xult/production/_ext/977623654/port.o
+                0x00401b92       0x24 build/sam_v71_xult/production/_ext/977623654/port.o
 
-.text.vPortSVCHandler%107
-                0x00402030       0x24
+.text.vPortSVCHandler%91
+                0x00401bc0       0x24
  .text.vPortSVCHandler
-                0x00402030       0x24 build/sam_v71_xult/production/_ext/977623654/port.o
-                0x00402030                vPortSVCHandler
+                0x00401bc0       0x24 build/sam_v71_xult/production/_ext/977623654/port.o
+                0x00401bc0                vPortSVCHandler
 
-.text.vPortEnterCritical%108
-                0x00402054       0x24
+.text.vPortEnterCritical%92
+                0x00401be4       0x24
  .text.vPortEnterCritical
-                0x00402054       0x24 build/sam_v71_xult/production/_ext/977623654/port.o
-                0x00402054                vPortEnterCritical
+                0x00401be4       0x24 build/sam_v71_xult/production/_ext/977623654/port.o
+                0x00401be4                vPortEnterCritical
 
-.text.xQueueCreateMutex%109
-                0x00402078       0x24
+.text.xQueueCreateMutex%93
+                0x00401c08       0x24
  .text.xQueueCreateMutex
-                0x00402078       0x24 build/sam_v71_xult/production/_ext/404212886/queue.o
-                0x00402078                xQueueCreateMutex
+                0x00401c08       0x24 build/sam_v71_xult/production/_ext/404212886/queue.o
+                0x00401c08                xQueueCreateMutex
 
-.text.BSP_Initialize%110
-                0x0040209c       0x20
+.text.BSP_Initialize%94
+                0x00401c2c       0x20
  .text.BSP_Initialize
-                0x0040209c       0x20 build/sam_v71_xult/production/_ext/1379310441/bsp.o
-                0x0040209c                BSP_Initialize
+                0x00401c2c       0x20 build/sam_v71_xult/production/_ext/1379310441/bsp.o
+                0x00401c2c                BSP_Initialize
 
-.text.USART1_WritePendingBytesGet%111
-                0x004020bc       0x1c
+.text.USART1_WritePendingBytesGet%95
+                0x00401c4c       0x1c
  .text.USART1_WritePendingBytesGet
-                0x004020bc       0x1c build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
+                0x00401c4c       0x1c build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
 
-.text.USART1_ReadCountGet%112
-                0x004020d8       0x1c
+.text.USART1_ReadCountGet%96
+                0x00401c68       0x1c
  .text.USART1_ReadCountGet
-                0x004020d8       0x1c build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
-                0x004020d8                USART1_ReadCountGet
+                0x00401c68       0x1c build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
+                0x00401c68                USART1_ReadCountGet
 
-.text.vTaskPlaceOnEventList%113
-                0x004020f4       0x1c
+.text.vTaskPlaceOnEventList%97
+                0x00401c84       0x1c
  .text.vTaskPlaceOnEventList
-                0x004020f4       0x1c build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-                0x004020f4                vTaskPlaceOnEventList
+                0x00401c84       0x1c build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x00401c84                vTaskPlaceOnEventList
 
-.text.pvTaskIncrementMutexHeldCount%114
-                0x00402110       0x1c
+.text.pvTaskIncrementMutexHeldCount%98
+                0x00401ca0       0x1c
  .text.pvTaskIncrementMutexHeldCount
-                0x00402110       0x1c build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-                0x00402110                pvTaskIncrementMutexHeldCount
+                0x00401ca0       0x1c build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x00401ca0                pvTaskIncrementMutexHeldCount
 
-.text.USART1_ReadNotificationEnable%115
-                0x0040212c       0x18
- .text.USART1_ReadNotificationEnable
-                0x0040212c       0x18 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
-                0x0040212c                USART1_ReadNotificationEnable
+.rodata%99      0x00401cbc       0x18
+ .rodata        0x00401cbc       0x18 build/sam_v71_xult/production/_ext/1320227943/tasks.o
 
-.text.vTaskInternalSetTimeOutState%116
-                0x00402144       0x18
+.text.vTaskInternalSetTimeOutState%100
+                0x00401cd4       0x18
  .text.vTaskInternalSetTimeOutState
-                0x00402144       0x18 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-                0x00402144                vTaskInternalSetTimeOutState
+                0x00401cd4       0x18 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x00401cd4                vTaskInternalSetTimeOutState
 
-.text.vApplicationStackOverflowHook%117
-                0x0040215c       0x16
+.text.vApplicationStackOverflowHook%101
+                0x00401cec       0x16
  .text.vApplicationStackOverflowHook
-                0x0040215c       0x16 build/sam_v71_xult/production/_ext/1320227943/freertos_hooks.o
-                0x0040215c                vApplicationStackOverflowHook
+                0x00401cec       0x16 build/sam_v71_xult/production/_ext/1320227943/freertos_hooks.o
+                0x00401cec                vApplicationStackOverflowHook
 
-.text.vApplicationMallocFailedHook%118
-                0x00402172       0x16
+.text.vApplicationMallocFailedHook%102
+                0x00401d02       0x16
  .text.vApplicationMallocFailedHook
-                0x00402172       0x16 build/sam_v71_xult/production/_ext/1320227943/freertos_hooks.o
-                0x00402172                vApplicationMallocFailedHook
+                0x00401d02       0x16 build/sam_v71_xult/production/_ext/1320227943/freertos_hooks.o
+                0x00401d02                vApplicationMallocFailedHook
 
-.text.vListInitialise%119
-                0x00402188       0x16
+.text.vListInitialise%103
+                0x00401d18       0x16
  .text.vListInitialise
-                0x00402188       0x16 build/sam_v71_xult/production/_ext/404212886/list.o
-                0x00402188                vListInitialise
+                0x00401d18       0x16 build/sam_v71_xult/production/_ext/404212886/list.o
+                0x00401d18                vListInitialise
 
-.text.vListInsertEnd%120
-                0x0040219e       0x16
+.text.vListInsertEnd%104
+                0x00401d2e       0x16
  .text.vListInsertEnd
-                0x0040219e       0x16 build/sam_v71_xult/production/_ext/404212886/list.o
-                0x0040219e                vListInsertEnd
+                0x00401d2e       0x16 build/sam_v71_xult/production/_ext/404212886/list.o
+                0x00401d2e                vListInsertEnd
 
-.text.prvIsQueueEmpty%121
-                0x004021b4       0x16
+.text.prvIsQueueEmpty%105
+                0x00401d44       0x16
  .text.prvIsQueueEmpty
-                0x004021b4       0x16 build/sam_v71_xult/production/_ext/404212886/queue.o
+                0x00401d44       0x16 build/sam_v71_xult/production/_ext/404212886/queue.o
 
-.text.memcpy%122
-                0x004021ca       0x16
- .text.memcpy   0x004021ca       0x16 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
-                0x004021ca                memcpy
+.text.memcpy%106
+                0x00401d5a       0x16
+ .text.memcpy   0x00401d5a       0x16 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
+                0x00401d5a                memcpy
 
-.text.USART1_WriteFreeBufferCountGet%123
-                0x004021e0       0x14
+.text.USART1_WriteFreeBufferCountGet%107
+                0x00401d70       0x14
  .text.USART1_WriteFreeBufferCountGet
-                0x004021e0       0x14 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
-                0x004021e0                USART1_WriteFreeBufferCountGet
+                0x00401d70       0x14 build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
+                0x00401d70                USART1_WriteFreeBufferCountGet
 
-.text.vPortEnableVFP%124
-                0x004021f4       0x14
+.text.vPortEnableVFP%108
+                0x00401d84       0x14
  .text.vPortEnableVFP
-                0x004021f4       0x14 build/sam_v71_xult/production/_ext/977623654/port.o
+                0x00401d84       0x14 build/sam_v71_xult/production/_ext/977623654/port.o
 
-.text.vPortExitCritical%125
-                0x00402208       0x14
+.text.vPortExitCritical%109
+                0x00401d98       0x14
  .text.vPortExitCritical
-                0x00402208       0x14 build/sam_v71_xult/production/_ext/977623654/port.o
-                0x00402208                vPortExitCritical
+                0x00401d98       0x14 build/sam_v71_xult/production/_ext/977623654/port.o
+                0x00401d98                vPortExitCritical
 
-.text.EFC_Initialize%126
-                0x0040221c       0x10
+.text.EFC_Initialize%110
+                0x00401dac       0x10
  .text.EFC_Initialize
-                0x0040221c       0x10 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
-                0x0040221c                EFC_Initialize
+                0x00401dac       0x10 build/sam_v71_xult/production/_ext/1157988489/plib_efc.o
+                0x00401dac                EFC_Initialize
 
-.text.PIOA_InterruptHandler%127
-                0x0040222c       0x10
+.text.PIOA_InterruptHandler%111
+                0x00401dbc       0x10
  .text.PIOA_InterruptHandler
-                0x0040222c       0x10 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
-                0x0040222c                PIOA_InterruptHandler
+                0x00401dbc       0x10 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
+                0x00401dbc                PIOA_InterruptHandler
 
-.text.vTaskSuspendAll%128
-                0x0040223c       0x10
+.text.vTaskSuspendAll%112
+                0x00401dcc       0x10
  .text.vTaskSuspendAll
-                0x0040223c       0x10 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-                0x0040223c                vTaskSuspendAll
+                0x00401dcc       0x10 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x00401dcc                vTaskSuspendAll
 
-.text.memset%129
-                0x0040224c       0x10
- .text.memset   0x0040224c       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
-                0x0040224c                memset
+.text.memset%113
+                0x00401ddc       0x10
+ .text.memset   0x00401ddc       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
+                0x00401ddc                memset
 
-.text.main%130  0x0040225c        0xe
- .text.main     0x0040225c        0xe build/sam_v71_xult/production/_ext/1360937237/main.o
-                0x0040225c                main
+.text.main%114  0x00401dec        0xe
+ .text.main     0x00401dec        0xe build/sam_v71_xult/production/_ext/1360937237/main.o
+                0x00401dec                main
 
-.text.USART1_ReadThresholdSet%131
-                0x0040226c        0xc
- .text.USART1_ReadThresholdSet
-                0x0040226c        0xc build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
-                0x0040226c                USART1_ReadThresholdSet
-
-.text.USART1_ReadCallbackRegister%132
-                0x00402278        0xc
- .text.USART1_ReadCallbackRegister
-                0x00402278        0xc build/sam_v71_xult/production/_ext/415242918/plib_usart1.o
-                0x00402278                USART1_ReadCallbackRegister
-
-.text.xTaskGetTickCount%133
-                0x00402284        0xc
+.text.xTaskGetTickCount%115
+                0x00401dfc        0xc
  .text.xTaskGetTickCount
-                0x00402284        0xc build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-                0x00402284                xTaskGetTickCount
+                0x00401dfc        0xc build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x00401dfc                xTaskGetTickCount
 
-.text.vTaskMissedYield%134
-                0x00402290        0xc
+.text.vTaskMissedYield%116
+                0x00401e08        0xc
  .text.vTaskMissedYield
-                0x00402290        0xc build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-                0x00402290                vTaskMissedYield
+                0x00401e08        0xc build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
+                0x00401e08                vTaskMissedYield
 
-.text.TASK2_Initialize%135
-                0x0040229c        0xc
+.text.TASK2_Initialize%117
+                0x00401e14        0xc
  .text.TASK2_Initialize
-                0x0040229c        0xc build/sam_v71_xult/production/_ext/1360937237/task2.o
-                0x0040229c                TASK2_Initialize
+                0x00401e14        0xc build/sam_v71_xult/production/_ext/1360937237/task2.o
+                0x00401e14                TASK2_Initialize
 
-.text.TASK3_Initialize%136
-                0x004022a8        0xc
- .text.TASK3_Initialize
-                0x004022a8        0xc build/sam_v71_xult/production/_ext/1360937237/task3.o
-                0x004022a8                TASK3_Initialize
-
-.text.TASK4_Initialize%137
-                0x004022b4        0xc
- .text.TASK4_Initialize
-                0x004022b4        0xc build/sam_v71_xult/production/_ext/1360937237/task4.o
-                0x004022b4                TASK4_Initialize
-
-.text._TASK1_Tasks%138
-                0x00402026        0x8
+.text._TASK1_Tasks%118
+                0x00401bb6        0x8
  .text._TASK1_Tasks
-                0x00402026        0x8 build/sam_v71_xult/production/_ext/1320227943/tasks.o
-                0x00402026                _TASK1_Tasks
+                0x00401bb6        0x8 build/sam_v71_xult/production/_ext/1320227943/tasks.o
+                0x00401bb6                _TASK1_Tasks
 
-.text._TASK2_Tasks%139
-                0x004022c0        0x8
+.text._TASK2_Tasks%119
+                0x00401e20        0x8
  .text._TASK2_Tasks
-                0x004022c0        0x8 build/sam_v71_xult/production/_ext/1320227943/tasks.o
-                0x004022c0                _TASK2_Tasks
+                0x00401e20        0x8 build/sam_v71_xult/production/_ext/1320227943/tasks.o
+                0x00401e20                _TASK2_Tasks
 
-.text._TASK3_Tasks%140
-                0x004022c8        0x8
- .text._TASK3_Tasks
-                0x004022c8        0x8 build/sam_v71_xult/production/_ext/1320227943/tasks.o
-                0x004022c8                _TASK3_Tasks
+.rodata%120     0x00401e28        0x8
+ .rodata        0x00401e28        0x8 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
 
-.text._TASK4_Tasks%141
-                0x004022d0        0x8
- .text._TASK4_Tasks
-                0x004022d0        0x8 build/sam_v71_xult/production/_ext/1320227943/tasks.o
-                0x004022d0                _TASK4_Tasks
-
-.rodata%142     0x004022d8        0x8
- .rodata        0x004022d8        0x8 build/sam_v71_xult/production/_ext/404212886/FreeRTOS_tasks.o
-
-.text.vListInitialiseItem%143
-                0x004022e0        0x6
+.text.vListInitialiseItem%121
+                0x00401e30        0x6
  .text.vListInitialiseItem
-                0x004022e0        0x6 build/sam_v71_xult/production/_ext/404212886/list.o
-                0x004022e0                vListInitialiseItem
+                0x00401e30        0x6 build/sam_v71_xult/production/_ext/404212886/list.o
+                0x00401e30                vListInitialiseItem
 
-.text.PIO_PortInterruptEnable%144
-                0x004022e6        0x4
- .text.PIO_PortInterruptEnable
-                0x004022e6        0x4 build/sam_v71_xult/production/_ext/1157977813/plib_pio.o
-                0x004022e6                PIO_PortInterruptEnable
-
-.text.Dummy_Handler%145
-                0x00401436        0x2
+.text.Dummy_Handler%122
+                0x004011d6        0x2
  .text.Dummy_Handler
-                0x00401436        0x2 build/sam_v71_xult/production/_ext/1320227943/interrupts.o
-                0x00401436                DACC_Handler
-                0x00401436                TC0_CH2_Handler
-                0x00401436                TC3_CH1_Handler
-                0x00401436                UART3_Handler
-                0x00401436                UART2_Handler
-                0x00401436                TRNG_Handler
-                0x00401436                AFEC1_Handler
-                0x00401436                TC0_CH1_Handler
-                0x00401436                QSPI_Handler
-                0x00401436                ISI_Handler
-                0x00401436                MCAN0_INT0_Handler
-                0x00401436                RSWDT_Handler
-                0x00401436                USART0_Handler
-                0x00401436                TC1_CH2_Handler
-                0x00401436                RTT_Handler
-                0x00401436                USBHS_Handler
-                0x00401436                IXC_Handler
-                0x00401436                CCF_Handler
-                0x00401436                PIOB_Handler
-                0x00401436                RTC_Handler
-                0x00401436                WDT_Handler
-                0x00401436                MCAN1_INT1_Handler
-                0x00401436                HSMCI_Handler
-                0x00401436                UART1_Handler
-                0x00401436                Dummy_Handler
-                0x00401436                TWIHS1_Handler
-                0x00401436                TC3_CH2_Handler
-                0x00401436                XDMAC_Handler
-                0x00401436                UART4_Handler
-                0x00401436                TC2_CH0_Handler
-                0x00401436                PWM1_Handler
-                0x00401436                PWM0_Handler
-                0x00401436                AFEC0_Handler
-                0x00401436                CCW_Handler
-                0x00401436                TC3_CH0_Handler
-                0x00401436                SSC_Handler
-                0x00401436                TC1_CH0_Handler
-                0x00401436                ACC_Handler
-                0x00401436                PMC_Handler
-                0x00401436                GMAC_Handler
-                0x00401436                TC2_CH2_Handler
-                0x00401436                MCAN0_INT1_Handler
-                0x00401436                GMAC_Q5_Handler
-                0x00401436                SUPC_Handler
-                0x00401436                TC2_CH1_Handler
-                0x00401436                MCAN1_INT0_Handler
-                0x00401436                EFC_Handler
-                0x00401436                GMAC_Q1_Handler
-                0x00401436                USART2_Handler
-                0x00401436                SDRAMC_Handler
-                0x00401436                GMAC_Q2_Handler
-                0x00401436                PIOE_Handler
-                0x00401436                SPI1_Handler
-                0x00401436                TC1_CH1_Handler
-                0x00401436                GMAC_Q3_Handler
-                0x00401436                PIOD_Handler
-                0x00401436                TWIHS2_Handler
-                0x00401436                MLB_Handler
-                0x00401436                I2SC0_Handler
-                0x00401436                UART0_Handler
-                0x00401436                I2SC1_Handler
-                0x00401436                TC0_CH0_Handler
-                0x00401436                PIOC_Handler
-                0x00401436                GMAC_Q4_Handler
-                0x00401436                FPU_Handler
-                0x00401436                RSTC_Handler
-                0x00401436                ICM_Handler
-                0x00401436                AES_Handler
-                0x00401436                TWIHS0_Handler
-                0x00401436                SPI0_Handler
+                0x004011d6        0x2 build/sam_v71_xult/production/_ext/1320227943/interrupts.o
+                0x004011d6                DACC_Handler
+                0x004011d6                TC0_CH2_Handler
+                0x004011d6                TC3_CH1_Handler
+                0x004011d6                UART3_Handler
+                0x004011d6                UART2_Handler
+                0x004011d6                TRNG_Handler
+                0x004011d6                AFEC1_Handler
+                0x004011d6                TC0_CH1_Handler
+                0x004011d6                QSPI_Handler
+                0x004011d6                ISI_Handler
+                0x004011d6                MCAN0_INT0_Handler
+                0x004011d6                RSWDT_Handler
+                0x004011d6                USART0_Handler
+                0x004011d6                TC1_CH2_Handler
+                0x004011d6                RTT_Handler
+                0x004011d6                USBHS_Handler
+                0x004011d6                IXC_Handler
+                0x004011d6                CCF_Handler
+                0x004011d6                PIOB_Handler
+                0x004011d6                RTC_Handler
+                0x004011d6                WDT_Handler
+                0x004011d6                MCAN1_INT1_Handler
+                0x004011d6                HSMCI_Handler
+                0x004011d6                UART1_Handler
+                0x004011d6                Dummy_Handler
+                0x004011d6                TWIHS1_Handler
+                0x004011d6                TC3_CH2_Handler
+                0x004011d6                XDMAC_Handler
+                0x004011d6                UART4_Handler
+                0x004011d6                TC2_CH0_Handler
+                0x004011d6                PWM1_Handler
+                0x004011d6                PWM0_Handler
+                0x004011d6                AFEC0_Handler
+                0x004011d6                CCW_Handler
+                0x004011d6                TC3_CH0_Handler
+                0x004011d6                SSC_Handler
+                0x004011d6                TC1_CH0_Handler
+                0x004011d6                ACC_Handler
+                0x004011d6                PMC_Handler
+                0x004011d6                GMAC_Handler
+                0x004011d6                TC2_CH2_Handler
+                0x004011d6                MCAN0_INT1_Handler
+                0x004011d6                GMAC_Q5_Handler
+                0x004011d6                SUPC_Handler
+                0x004011d6                TC2_CH1_Handler
+                0x004011d6                MCAN1_INT0_Handler
+                0x004011d6                EFC_Handler
+                0x004011d6                GMAC_Q1_Handler
+                0x004011d6                USART2_Handler
+                0x004011d6                SDRAMC_Handler
+                0x004011d6                GMAC_Q2_Handler
+                0x004011d6                PIOE_Handler
+                0x004011d6                SPI1_Handler
+                0x004011d6                TC1_CH1_Handler
+                0x004011d6                GMAC_Q3_Handler
+                0x004011d6                PIOD_Handler
+                0x004011d6                TWIHS2_Handler
+                0x004011d6                MLB_Handler
+                0x004011d6                I2SC0_Handler
+                0x004011d6                UART0_Handler
+                0x004011d6                I2SC1_Handler
+                0x004011d6                TC0_CH0_Handler
+                0x004011d6                PIOC_Handler
+                0x004011d6                GMAC_Q4_Handler
+                0x004011d6                FPU_Handler
+                0x004011d6                RSTC_Handler
+                0x004011d6                ICM_Handler
+                0x004011d6                AES_Handler
+                0x004011d6                TWIHS0_Handler
+                0x004011d6                SPI0_Handler
 
-.text.NonMaskableInt_Handler%146
-                0x0040159e        0x2
+.text.NonMaskableInt_Handler%123
+                0x0040133e        0x2
  .text.NonMaskableInt_Handler
-                0x0040159e        0x2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
-                0x0040159e                NonMaskableInt_Handler
+                0x0040133e        0x2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
+                0x0040133e                NonMaskableInt_Handler
 
-.text.HardFault_Handler%147
-                0x0040226a        0x2
+.text.HardFault_Handler%124
+                0x00401dfa        0x2
  .text.HardFault_Handler
-                0x0040226a        0x2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
-                0x0040226a                HardFault_Handler
+                0x00401dfa        0x2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
+                0x00401dfa                HardFault_Handler
 
-.text.DebugMonitor_Handler%148
-                0x0040202e        0x2
+.text.DebugMonitor_Handler%125
+                0x00401bbe        0x2
  .text.DebugMonitor_Handler
-                0x0040202e        0x2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
-                0x0040202e                DebugMonitor_Handler
+                0x00401bbe        0x2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
+                0x00401bbe                DebugMonitor_Handler
 
-.text.MemoryManagement_Handler%149
-                0x004022ea        0x2
+.text.MemoryManagement_Handler%126
+                0x0040169c        0x2
  .text.MemoryManagement_Handler
-                0x004022ea        0x2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
-                0x004022ea                MemoryManagement_Handler
+                0x0040169c        0x2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
+                0x0040169c                MemoryManagement_Handler
 
-.text.BusFault_Handler%150
-                0x004022ec        0x2
+.text.BusFault_Handler%127
+                0x0040169e        0x2
  .text.BusFault_Handler
-                0x004022ec        0x2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
-                0x004022ec                BusFault_Handler
+                0x0040169e        0x2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
+                0x0040169e                BusFault_Handler
 
-.text.UsageFault_Handler%151
-                0x004022ee        0x2
+.text.UsageFault_Handler%128
+                0x00401e36        0x2
  .text.UsageFault_Handler
-                0x004022ee        0x2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
-                0x004022ee                UsageFault_Handler
+                0x00401e36        0x2 build/sam_v71_xult/production/_ext/1320227943/exceptions.o
+                0x00401e36                UsageFault_Handler
 
-.text.Dummy_App_Func%152
-                0x004022f0        0x2
+.text.Dummy_App_Func%129
+                0x00401e38        0x2
  .text.Dummy_App_Func
-                0x004022f0        0x2 build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
-                0x004022f0                _on_reset
-                0x004022f0                _on_bootstrap
-                0x004022f0                __xc32_on_reset
-                0x004022f0                Dummy_App_Func
-                0x004022f0                __xc32_on_bootstrap
+                0x00401e38        0x2 build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o
+                0x00401e38                _on_reset
+                0x00401e38                _on_bootstrap
+                0x00401e38                __xc32_on_reset
+                0x00401e38                Dummy_App_Func
+                0x00401e38                __xc32_on_bootstrap
 
-.text.vPortFree%153
-                0x004022f2        0x2
+.text.vPortFree%130
+                0x00401e3a        0x2
  .text.vPortFree
-                0x004022f2        0x2 build/sam_v71_xult/production/_ext/1665200909/heap_1.o
-                0x004022f2                vPortFree
+                0x00401e3a        0x2 build/sam_v71_xult/production/_ext/1665200909/heap_1.o
+                0x00401e3a                vPortFree
 
-.text.__dummy%154
-                0x004022f4        0x2
- .text.__dummy  0x004022f4        0x2 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
-                0x004022f4                __init_stdio
-                0x004022f4                __init_host
+.text.__dummy%131
+                0x00401e3c        0x2
+ .text.__dummy  0x00401e3c        0x2 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
+                0x00401e3c                __init_stdio
+                0x00401e3c                __init_host

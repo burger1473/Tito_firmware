@@ -131,8 +131,6 @@ void SYS_Initialize ( void* data )
 
     TASK1_Initialize();
     TASK2_Initialize();
-    TASK3_Initialize();
-    TASK4_Initialize();
 
 
     NVIC_Initialize();

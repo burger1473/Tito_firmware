@@ -64,7 +64,7 @@ children:
       - type: Boolean
         attributes: {id: enabled}
         children:
-        - {type: Value, value: 'true'}
+        - {type: Value, value: 'false'}
       - type: String
         attributes: {id: name}
         children:
@@ -77,7 +77,7 @@ children:
       - type: Boolean
         attributes: {id: enabled}
         children:
-        - {type: Value, value: 'true'}
+        - {type: Value, value: 'false'}
       - type: String
         attributes: {id: name}
         children:
@@ -90,7 +90,7 @@ children:
       - type: Boolean
         attributes: {id: enabled}
         children:
-        - {type: Value, value: 'true'}
+        - {type: Value, value: 'false'}
       - type: String
         attributes: {id: name}
         children:
@@ -103,7 +103,7 @@ children:
       - type: Boolean
         attributes: {id: enabled}
         children:
-        - {type: Value, value: 'true'}
+        - {type: Value, value: 'false'}
       - type: String
         attributes: {id: name}
         children:
@@ -187,7 +187,7 @@ children:
       - type: Boolean
         attributes: {id: visible}
         children:
-        - {type: Value, value: 'true'}
+        - {type: Value, value: 'false'}
   - type: Menu
     attributes: {id: GEN_APP_RTOS_TASK_CONF_MENU3}
     children:
@@ -196,7 +196,7 @@ children:
       - type: Boolean
         attributes: {id: visible}
         children:
-        - {type: Value, value: 'true'}
+        - {type: Value, value: 'false'}
   - type: Menu
     attributes: {id: GEN_APP_TASK_CONF_MENU0}
     children:
@@ -223,7 +223,7 @@ children:
       - type: Boolean
         attributes: {id: visible}
         children:
-        - {type: Value, value: 'true'}
+        - {type: Value, value: 'false'}
   - type: Menu
     attributes: {id: GEN_APP_TASK_CONF_MENU3}
     children:
@@ -232,14 +232,14 @@ children:
       - type: Boolean
         attributes: {id: visible}
         children:
-        - {type: Value, value: 'true'}
+        - {type: Value, value: 'false'}
   - type: Integer
     attributes: {id: GEN_APP_TASK_COUNT}
     children:
     - type: Values
       children:
       - type: User
-        attributes: {value: '4'}
+        attributes: {value: '2'}
   - type: Menu
     attributes: {id: GEN_APP_TASK_MENU}
     children:

@@ -14,6 +14,7 @@ build/sam_v71_xult/production/_ext/1157990217/plib_clk.o: \
  ../src/packs/ATSAMV71Q21B_DFP/component/chipid.h \
  ../src/packs/ATSAMV71Q21B_DFP/component/dacc.h \
  ../src/packs/ATSAMV71Q21B_DFP/component/efc.h \
+ ../src/packs/ATSAMV71Q21B_DFP/component/fuses.h \
  ../src/packs/ATSAMV71Q21B_DFP/component/gmac.h \
  ../src/packs/ATSAMV71Q21B_DFP/component/gpbr.h \
  ../src/packs/ATSAMV71Q21B_DFP/component/hsmci.h \
@@ -52,6 +53,7 @@ build/sam_v71_xult/production/_ext/1157990217/plib_clk.o: \
  ../src/packs/ATSAMV71Q21B_DFP/instance/chipid.h \
  ../src/packs/ATSAMV71Q21B_DFP/instance/dacc.h \
  ../src/packs/ATSAMV71Q21B_DFP/instance/efc.h \
+ ../src/packs/ATSAMV71Q21B_DFP/instance/fuses.h \
  ../src/packs/ATSAMV71Q21B_DFP/instance/gmac.h \
  ../src/packs/ATSAMV71Q21B_DFP/instance/gpbr.h \
  ../src/packs/ATSAMV71Q21B_DFP/instance/hsmci.h \
@@ -137,6 +139,8 @@ build/sam_v71_xult/production/_ext/1157990217/plib_clk.o: \
 
 ../src/packs/ATSAMV71Q21B_DFP/component/efc.h:
 
+../src/packs/ATSAMV71Q21B_DFP/component/fuses.h:
+
 ../src/packs/ATSAMV71Q21B_DFP/component/gmac.h:
 
 ../src/packs/ATSAMV71Q21B_DFP/component/gpbr.h:
@@ -212,6 +216,8 @@ build/sam_v71_xult/production/_ext/1157990217/plib_clk.o: \
 ../src/packs/ATSAMV71Q21B_DFP/instance/dacc.h:
 
 ../src/packs/ATSAMV71Q21B_DFP/instance/efc.h:
+
+../src/packs/ATSAMV71Q21B_DFP/instance/fuses.h:
 
 ../src/packs/ATSAMV71Q21B_DFP/instance/gmac.h:
 
