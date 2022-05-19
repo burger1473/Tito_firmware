@@ -16,7 +16,6 @@ build/sam_v71_xult/production/_ext/1320227943/interrupts.o: \
  ../src/packs/ATSAMV71Q21B_DFP/component/chipid.h \
  ../src/packs/ATSAMV71Q21B_DFP/component/dacc.h \
  ../src/packs/ATSAMV71Q21B_DFP/component/efc.h \
- ../src/packs/ATSAMV71Q21B_DFP/component/fuses.h \
  ../src/packs/ATSAMV71Q21B_DFP/component/gmac.h \
  ../src/packs/ATSAMV71Q21B_DFP/component/gpbr.h \
  ../src/packs/ATSAMV71Q21B_DFP/component/hsmci.h \
@@ -55,7 +54,6 @@ build/sam_v71_xult/production/_ext/1320227943/interrupts.o: \
  ../src/packs/ATSAMV71Q21B_DFP/instance/chipid.h \
  ../src/packs/ATSAMV71Q21B_DFP/instance/dacc.h \
  ../src/packs/ATSAMV71Q21B_DFP/instance/efc.h \
- ../src/packs/ATSAMV71Q21B_DFP/instance/fuses.h \
  ../src/packs/ATSAMV71Q21B_DFP/instance/gmac.h \
  ../src/packs/ATSAMV71Q21B_DFP/instance/gpbr.h \
  ../src/packs/ATSAMV71Q21B_DFP/instance/hsmci.h \
@@ -117,6 +115,8 @@ build/sam_v71_xult/production/_ext/1320227943/interrupts.o: \
  ../src/config/sam_v71_xult/definitions.h \
  ../src/config/sam_v71_xult/peripheral/clk/plib_clk.h \
  ../src/config/sam_v71_xult/peripheral/nvic/plib_nvic.h \
+ ../src/config/sam_v71_xult/peripheral/mcan/plib_mcan1.h \
+ ../src/config/sam_v71_xult/peripheral/mcan/plib_mcan_common.h \
  ../src/config/sam_v71_xult/peripheral/efc/plib_efc.h \
  ../src/third_party/rtos/FreeRTOS/Source/Include/FreeRTOS.h \
  ../src/config/sam_v71_xult/FreeRTOSConfig.h \
@@ -175,8 +175,6 @@ build/sam_v71_xult/production/_ext/1320227943/interrupts.o: \
 ../src/packs/ATSAMV71Q21B_DFP/component/dacc.h:
 
 ../src/packs/ATSAMV71Q21B_DFP/component/efc.h:
-
-../src/packs/ATSAMV71Q21B_DFP/component/fuses.h:
 
 ../src/packs/ATSAMV71Q21B_DFP/component/gmac.h:
 
@@ -253,8 +251,6 @@ build/sam_v71_xult/production/_ext/1320227943/interrupts.o: \
 ../src/packs/ATSAMV71Q21B_DFP/instance/dacc.h:
 
 ../src/packs/ATSAMV71Q21B_DFP/instance/efc.h:
-
-../src/packs/ATSAMV71Q21B_DFP/instance/fuses.h:
 
 ../src/packs/ATSAMV71Q21B_DFP/instance/gmac.h:
 
@@ -377,6 +373,10 @@ build/sam_v71_xult/production/_ext/1320227943/interrupts.o: \
 ../src/config/sam_v71_xult/peripheral/clk/plib_clk.h:
 
 ../src/config/sam_v71_xult/peripheral/nvic/plib_nvic.h:
+
+../src/config/sam_v71_xult/peripheral/mcan/plib_mcan1.h:
+
+../src/config/sam_v71_xult/peripheral/mcan/plib_mcan_common.h:
 
 ../src/config/sam_v71_xult/peripheral/efc/plib_efc.h:
 
