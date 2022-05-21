@@ -10,28 +10,28 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: mcan1, value: '0'}
+        attributes: {id: mcan1, value: '2000'}
   - type: String
     attributes: {id: CALCULATED_DATA_ERRORRATE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: mcan1, value: '-100.000'}
+        attributes: {id: mcan1, value: '0.000'}
   - type: Integer
     attributes: {id: CALCULATED_NOMINAL_BITRATE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: mcan1, value: '0'}
+        attributes: {id: mcan1, value: '500'}
   - type: String
     attributes: {id: CALCULATED_NOMINAL_ERRORRATE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: mcan1, value: '-100.000'}
+        attributes: {id: mcan1, value: '0.000'}
   - type: Integer
     attributes: {id: DATA_BITRATE}
     children:
@@ -54,7 +54,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: mcan1, value: '0.000'}
+        attributes: {id: mcan1, value: '20.000'}
   - type: Integer
     attributes: {id: DBTP_DBRP}
     children:
@@ -68,28 +68,28 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: mcan1, value: '0'}
+        attributes: {id: mcan1, value: '7'}
   - type: Integer
     attributes: {id: DBTP_DTSEG1}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: mcan1, value: '-1'}
+        attributes: {id: mcan1, value: '17'}
   - type: Integer
     attributes: {id: DBTP_DTSEG2}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: mcan1, value: '0'}
+        attributes: {id: mcan1, value: '7'}
   - type: Integer
     attributes: {id: DBTP_TOTAL_TIME_QUANTA}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: mcan1, value: '4'}
+        attributes: {id: mcan1, value: '25'}
   - type: Integer
     attributes: {id: FILTERS_EXT}
     children:
@@ -246,7 +246,7 @@ children:
       - type: Boolean
         attributes: {id: visible}
         children:
-        - {type: Value, value: 'true'}
+        - {type: Value, value: 'false'}
   - type: Comment
     attributes: {id: MCAN_DATA_ERRORRATE_COMMENT}
     children:
@@ -255,7 +255,7 @@ children:
       - type: Boolean
         attributes: {id: visible}
         children:
-        - {type: Value, value: 'true'}
+        - {type: Value, value: 'false'}
   - type: Boolean
     attributes: {id: MCAN_MATRIX_CAN_ENABLE}
     children:
@@ -271,7 +271,7 @@ children:
       - type: Boolean
         attributes: {id: visible}
         children:
-        - {type: Value, value: 'true'}
+        - {type: Value, value: 'false'}
   - type: Combo
     attributes: {id: MCAN_OPMODE}
     children:
@@ -292,7 +292,7 @@ children:
       - type: Boolean
         attributes: {id: visible}
         children:
-        - {type: Value, value: 'true'}
+        - {type: Value, value: 'false'}
   - type: Integer
     attributes: {id: NBTP_NBRP}
     children:
@@ -306,35 +306,35 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: mcan1, value: '0'}
+        attributes: {id: mcan1, value: '5'}
   - type: Integer
     attributes: {id: NBTP_NTSEG1}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: mcan1, value: '-1'}
+        attributes: {id: mcan1, value: '14'}
   - type: Integer
     attributes: {id: NBTP_NTSEG2}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: mcan1, value: '0'}
+        attributes: {id: mcan1, value: '5'}
   - type: Integer
     attributes: {id: NBTP_TOTAL_TIME_QUANTA}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: mcan1, value: '4'}
+        attributes: {id: mcan1, value: '20'}
   - type: String
     attributes: {id: NOMINAL_TIME_QUANTA_PERIOD}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: mcan1, value: '0.000'}
+        attributes: {id: mcan1, value: '100.000'}
   - type: Boolean
     attributes: {id: RXBUF_USE}
     children:
