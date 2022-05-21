@@ -111,7 +111,7 @@ void TAREA_PRINCIPAL_Tasks ( void )
 void TAREA_Can1(void *pvParameters ){
   xSemaphoreTake(canMutexLock, portMAX_DELAY);                    //Tomo semaforo para proteger el bus can ya que es un recurso compartico con otras tareas
   static uint8_t message[4] = {0}; message[0]='T'; message[1]='I'; message[2]='T'; message[3]='O';
-  mcan_fd_interrupt_enviar((uint32_t) 0x45A, message, MCAN_MODE_FD_WITH_BRS, MCAN_MSG_ATTR_TX_FIFO_DATA_FRAME); //Envio trama por can bus
+  mcan_fd_interrupt_enviar((uint32_t) 0x45A, message, 4, MCAN_MODE_FD_WITH_BRS, MCAN_MSG_ATTR_TX_FIFO_DATA_FRAME); //Envio trama por can bus
   while (1){
     uint8_t resultado = Resultado();                              //Obtengo resultado de la transmision previa
     if ((resultado==2) || (resultado==4)){                        //Si la transmicion se realizo bien o erroneamente
@@ -119,19 +119,18 @@ void TAREA_Can1(void *pvParameters ){
         xSemaphoreTake(uartMutexLock, portMAX_DELAY);             //Tomo semaforo para proteger el envio por uart ya que es un recurso compartico con otras tareas
         USART1_Write((uint8_t*)"Envio ok\r\n", 10);               //Envio 20 bytes por uart
         xSemaphoreGive(uartMutexLock);                            //Libero semaforo
-        xSemaphoreGive(canMutexLock);                             //Libero semaforo
         break;                                                    //Salgo del while
       }else{                                                      //Si la transmicion se realizo mal
         xSemaphoreTake(uartMutexLock, portMAX_DELAY);             //Tomo semaforo para proteger el envio por uart ya que es un recurso compartico con otras tareas
         USART1_Write((uint8_t*)"Fallo envio\r\n", 13);            //Envio 13 bytes por uart
         xSemaphoreGive(uartMutexLock);                            //Libero semaforo
-        xSemaphoreGive(canMutexLock);                             //Libero semaforo
         break;                                                    //Salgo del while
       }
     }
     vTaskDelay(10 / portTICK_PERIOD_MS );                         //Deje que la tarea quede inactiva por un tiempo determinado dejando que se produzca el cambio de contexto a otra tarea.
   }
-  
+  mcan_fd_interrupt_habilitar();                                  //Libero la maquina de estado del mcan para que otra tarea o funcion pueda enviar o recibir por can
+  xSemaphoreGive(canMutexLock);                                   //Libero semaforo
   if(xTAREA_Can1 != NULL){vTaskDelete(xTAREA_Can1); xTAREA_Can1=NULL;} //Elimino esta tarea
 }
 
@@ -160,11 +159,11 @@ void TAREA_Can2(void *pvParameters ){
         xSemaphoreGive(uartMutexLock);                            //Libero semaforo
         break;                                                    //Salgo del while
       }
-      mcan_fd_interrupt_habilitar();                              //Libero la maquina de estado del mcan para que otra tarea o funcion pueda enviar o recibir por can
-      xSemaphoreGive(canMutexLock);                             //Libero semaforo
     }
     vTaskDelay(10 / portTICK_PERIOD_MS );                         //Deje que la tarea quede inactiva por un tiempo determinado dejando que se produzca el cambio de contexto a otra tarea.
   }
+  mcan_fd_interrupt_habilitar();                                  //Libero la maquina de estado del mcan para que otra tarea o funcion pueda enviar o recibir por can
+  xSemaphoreGive(canMutexLock);                                   //Libero semaforo
   xSemaphoreTake(uartMutexLock, portMAX_DELAY);                   //Tomo semaforo para proteger el envio por uart ya que es un recurso compartico con otras tareas
   USART1_Write((uint8_t*)"Elimino\r\n", 9);                       //Envio 9 bytes por uart
   xSemaphoreGive(uartMutexLock);                                  //Libero semaforo

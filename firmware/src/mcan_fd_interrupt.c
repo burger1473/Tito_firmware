@@ -88,13 +88,14 @@ void mcan_fd_interrupt_config(uint8_t *msgRAMConfigBaseAddress){
   Funcion: mcan_fd_interrupt_enviar
   Descripcion: Envia mensaje por canbus
   Parametro de entrada:
-                        uint32_t messageID:  Id can a donde enviar el mensaje de 11 bits/29 bits.
-                        uint8_t *message:    Puntero del mensaje a enviar
-                        MCAN_MODE MCAN_MODE: Modo de operacion can
-                                             Mensajes FD (can FD) hata 64 bytes:                   MCAN_MODE_FD_WITH_BRS
-                                             Mensajes estandar normal (can clasico) hasta 8 bytes: MCAN_MODE_NORMAL
-                        MCAN_MSG_ATTR_TX:    Trama de datos o trama remota usando Tx FIFO o Tx Buffer.
-                                             MCAN_MSG_ATTR_TX_FIFO_DATA_FRAME
+                        uint32_t messageID:     Id can a donde enviar el mensaje de 11 bits/29 bits.
+                        uint8_t *message:       Puntero del mensaje a enviar
+                        uint8_t messageLength:  Tamaño del arreglo a enviar
+                        MCAN_MODE MCAN_MODE:    Modo de operacion can
+                                                Mensajes FD (can FD) hata 64 bytes:                   MCAN_MODE_FD_WITH_BRS
+                                                Mensajes estandar normal (can clasico) hasta 8 bytes: MCAN_MODE_NORMAL
+                        MCAN_MSG_ATTR_TX:       Trama de datos o trama remota usando Tx FIFO o Tx Buffer.
+                                                MCAN_MSG_ATTR_TX_FIFO_DATA_FRAME
   Retorna: dato bool indicando si se pudo transmitir el mensaje true o false.
   ========================================================================*/
 bool mcan_fd_interrupt_enviar(uint32_t messageID , uint8_t *message, uint8_t messageLength, MCAN_MODE MCAN_MODE, MCAN_MSG_TX_ATTRIBUTE MCAN_MSG_ATTR_TX){
