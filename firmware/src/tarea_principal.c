@@ -144,9 +144,6 @@ void TAREA_Can1(void *pvParameters ){
 void TAREA_Can2(void *pvParameters ){
   xSemaphoreTake(canMutexLock, portMAX_DELAY);                    //Tomo semaforo para proteger el bus can ya que es un recurso compartico con otras tareas
   static uint8_t message[64] = {0};
-  for (uint8_t loop_count = 0; loop_count < 8; loop_count++){
-    message[loop_count] = loop_count;
-  }
   message[0]='R'; message[1]='o'; message[2]='v'; message[3]='e'; message[4]='r';
   mcan_fd_interrupt_enviar((uint32_t) 0x469, message, 8, MCAN_MODE_NORMAL, MCAN_MSG_ATTR_TX_FIFO_DATA_FRAME); //Envio trama por can bus
   while (1){
