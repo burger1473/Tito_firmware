@@ -8,10 +8,11 @@
  *===========================================================================*/
 
 /*=====================[ Inclusiones ]============================*/
-  #include "tarea_principal.h"
-  #include "definitions.h"
-  #include <string.h>
-  #include "mcan_fd_interrupt.h"
+#include "tarea_principal.h"
+#include "definitions.h"
+#include <string.h>
+#include <stdio.h>
+#include "mcan_fd_interrupt.h"
 
 /*=====================[Variables]================================*/
   TAREA_PRINCIPAL_DATA tarea_principalData;       //Estructura que contiene la informacion de la tarea como por ejemplo, el estado de esta
@@ -34,14 +35,16 @@
   void TAREA_Can(void *pvParameters );
   void TAREA_Can1(void *pvParameters );
   void TAREA_Can2(void *pvParameters );
+  
 /*=====================[Implementaciones]==============================*/
 
+  
 /*========================================================================
   Funcion: TAREA_PRINCIPAL_Initialize
   Descripcion: Tarea para iniciar la maquina de estado de la tarea y para crear semaforo para proteger el recurso compartido de uart
   Sin parametro de entrada
   No retorna nada
-  ========================================================================*/
+  ========================================================================*/  
 void TAREA_PRINCIPAL_Initialize ( void )
 {
     tarea_principalData.state = TAREA_PRINCIPAL_STATE_INIT; //Se inicia la maquina de estado mediante su estructura. Se establece en 1
@@ -68,7 +71,7 @@ void TAREA_PRINCIPAL_Initialize ( void )
   No retorna nada
   ========================================================================*/
 void TAREA_PRINCIPAL_Tasks ( void )
-{ 
+{
     mcan_fd_interrupt_config(Can1MessageRAM);               //Configuro memoria ram de mensaje can
     xTaskCreate((TaskFunction_t) TAREA_Can, "TAREA_Can", 512, NULL, 5, &xTAREA_Can);
     while (1)
@@ -122,6 +125,7 @@ void TAREA_PRINCIPAL_Tasks ( void )
         vTaskDelay(1500 / portTICK_PERIOD_MS );               //Deje que la tarea quede inactiva por un tiempo determinado dejando que se produzca el cambio de contexto a otra tarea.
     }
 }
+
 
 /*========================================================================
   Funcion: TAREA_Can1
@@ -234,6 +238,7 @@ void TAREA_Can(void *pvParameters ){
         default:                                                                
             break;
     }
+    vTaskDelay(1500 / portTICK_PERIOD_MS );                   //Deje que la tarea quede inactiva por un tiempo determinado dejando que se produzca el cambio de contexto a otra tarea.
   }
   if(xTAREA_Can != NULL){vTaskDelete(xTAREA_Can); xTAREA_Can=NULL;} //Elimino esta tarea
 }

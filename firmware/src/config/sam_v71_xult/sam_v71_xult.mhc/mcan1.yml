@@ -241,8 +241,8 @@ children:
       - type: String
         attributes: {id: text}
         children:
-        - {type: Value, value: Warning!!! MCAN1 Clock Frequency is too low for required
-            Nominal Bit Timing}
+        - {type: Value, value: Warning!!! MCAN1 Clock Frequency is too high for required
+            Data Bit Timing}
       - type: Boolean
         attributes: {id: visible}
         children:
@@ -287,8 +287,8 @@ children:
       - type: String
         attributes: {id: text}
         children:
-        - {type: Value, value: Warning!!! Number of Time Quanta is too low for required
-            Nominal Bit Timing}
+        - {type: Value, value: Warning!!! Number of Time Quanta is too high for required
+            Data Bit Timing}
       - type: Boolean
         attributes: {id: visible}
         children:
@@ -420,4 +420,4 @@ children:
       - type: User
         attributes: {value: '7'}
 - type: ElementPosition
-  attributes: {x: '600', y: '20', id: mcan1}
+  attributes: {x: '624', y: '21', id: mcan1}

@@ -126,13 +126,12 @@ void SYS_Initialize ( void* data )
 
     USART1_Initialize();
 
-	BSP_Initialize();
 
 
 
 
     TAREA_PRINCIPAL_Initialize();
-    TAREA_2_Initialize();
+    TAREA2_Initialize();
     TAREA_UART_Initialize();
 
 

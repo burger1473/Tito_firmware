@@ -8,47 +8,48 @@
  *===========================================================================*/
 
 /*=======================[Definiciones]================================*/
-  #ifndef _TAREA_UART_H
-  #define _TAREA_UART_H
-  // DOM-IGNORE-BEGIN
-  #ifdef __cplusplus  // Provide C++ Compatibility
-
-  extern "C" {
-
-  #endif
-  // DOM-IGNORE-END
+#ifndef _TAREA_UART_H
+#define _TAREA_UART_H
 
 /*=====================[ Inclusiones ]============================*/
-  #include <stdint.h>
-  #include <stdbool.h>
-  #include <stddef.h>
-  #include <stdlib.h>
-  #include "configuration.h"
-
-
-/*=================[Prototipos de funciones]======================*/
-  void TAREA_UART_Initialize ( void );
-  void TAREA_UART_Tasks( void );
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdlib.h>
+#include "configuration.h"
 
 /*=====================[Variables]================================*/
-  typedef enum                  //Sirve para definir constantes enteras con nombre en C
-  {
-      TAREA_UART_STATE_INIT=0,
-      TAREA_UART_STATE_SERVICE_TASKS,
-  } TAREA_UART_STATES;          //Numeracion para establecer el estado de la tarea
+typedef enum
+   {
+       TAREA_UART_STATE_INIT=0,
+       TAREA_UART_STATE_SERVICE_TASKS,
+   } TAREA_UART_STATES;
 
 
-  typedef struct
+typedef struct
   {
       TAREA_UART_STATES state;  //Variable del tipo Numeracion para establecer el estado de la tarea
   } TAREA_UART_DATA;            //Estructura que contiene los datos de la tarea
 
 
+/*=================[Prototipos de funciones]======================*/
+void TAREA_UART_Initialize ( void );
+void TAREA_UART_Tasks( void );
+
+
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
+
+extern "C" {
+
+#endif
+// DOM-IGNORE-END
+
 
 //DOM-IGNORE-BEGIN
-  #ifdef __cplusplus
-  }
-  #endif
+#ifdef __cplusplus
+}
+#endif
 //DOM-IGNORE-END
 
 #endif /* _TAREA_UART_H */

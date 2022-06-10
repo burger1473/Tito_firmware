@@ -12,15 +12,14 @@
  *===========================================================================*/
 
 /*=====================[ Inclusiones ]============================*/
-  #include "tarea_uart.h"
-  #include "definitions.h"
-  #include "portmacro.h"
-  #include <string.h>
+#include "tarea_uart.h"
+#include "definitions.h"
+#include "portmacro.h"
+#include <string.h>
 
 /*=================[Prototipos de funciones]======================*/
 
 /*=====================[Variables]================================*/
-
   TAREA_UART_DATA tarea_uartData;             //Estructura que contiene la informacion de la tarea como por ejemplo, el estado de esta
   static SemaphoreHandle_t dataRxSemaphore;   //Variable Mutex para semaforo binario para bloquer tarea uart hasta que se llame a la funcion de interupcion de uart. (uartReadEventHandler)
   uint8_t readByte_global=' ';                //Variable para guadar el byte leido globalmente.
@@ -48,8 +47,6 @@ void uartReadEventHandler(USART_EVENT event, uintptr_t context )
                                                                               //Pase el valor xHigherPriorityTaskWoken a portYIELD_FROM_ISR(). Si xHigherPriorityTaskWoken se configuró en pdTRUE dentro de xTimerPendFunctionCallFromISR(), al llamar a portYIELD_FROM_ISR() se solicitará un cambio de contexto. Si xHigherPriorityTaskWoken sigue siendo pdFALSE, llamar a portYIELD_FROM_ISR() no tendrá ningún efecto.
     } 
 }
-
-
 
 /*========================================================================
   Funcion: TAREA_UART_Initialize

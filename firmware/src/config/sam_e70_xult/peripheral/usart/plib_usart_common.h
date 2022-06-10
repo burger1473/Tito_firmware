@@ -128,19 +128,17 @@ typedef struct
 {
     uint8_t *               txBuffer;
     size_t                  txSize;
-    volatile size_t         txProcessedSize;
+    size_t                  txProcessedSize;
     USART_CALLBACK          txCallback;
     uintptr_t               txContext;
     bool                    txBusyStatus;
 
     uint8_t *               rxBuffer;
     size_t                  rxSize;
-    volatile size_t         rxProcessedSize;
+    size_t                  rxProcessedSize;
     USART_CALLBACK          rxCallback;
     uintptr_t               rxContext;
     bool                    rxBusyStatus;
-
-    volatile USART_ERROR    errorStatus;
 
 } USART_OBJECT ;
 
@@ -172,37 +170,31 @@ typedef struct
 {
     USART_RING_BUFFER_CALLBACK                          wrCallback;
 
-    uintptr_t                                           wrContext;
+    uintptr_t                               			wrContext;
 
-    volatile uint32_t                                   wrInIndex;
+    volatile uint32_t                       			wrInIndex;
 
-    volatile uint32_t                                   wrOutIndex;
+    volatile uint32_t                       			wrOutIndex;
 
-    uint32_t                                            wrBufferSize;
+    bool                                    			isWrNotificationEnabled;
 
-    bool                                                isWrNotificationEnabled;
+    uint32_t                                			wrThreshold;
 
-    uint32_t                                            wrThreshold;
-
-    bool                                                isWrNotifyPersistently;
+    bool                                    			isWrNotifyPersistently;
 
     USART_RING_BUFFER_CALLBACK                          rdCallback;
 
-    uintptr_t                                           rdContext;
+    uintptr_t                               			rdContext;
 
-    volatile uint32_t                                   rdInIndex;
+    volatile uint32_t                       			rdInIndex;
 
-    volatile uint32_t                                   rdOutIndex;
+    volatile uint32_t                       			rdOutIndex;
 
-    uint32_t                                            rdBufferSize;
+    bool                                    			isRdNotificationEnabled;
 
-    bool                                                isRdNotificationEnabled;
+    uint32_t                                			rdThreshold;
 
-    uint32_t                                            rdThreshold;
-
-    bool                                                isRdNotifyPersistently;
-
-    volatile USART_ERROR                                errorStatus;
+    bool                                    			isRdNotifyPersistently;
 
 } USART_RING_BUFFER_OBJECT;
 

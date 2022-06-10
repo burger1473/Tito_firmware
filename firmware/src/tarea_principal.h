@@ -8,39 +8,41 @@
  *===========================================================================*/
 
 /*==================[Definiciones]================================*/
-  #ifndef _TAREA_PRINCIPAL_H
-  #define _TAREA_PRINCIPAL_H
-  // DOM-IGNORE-BEGIN
-  #ifdef __cplusplus  // Provide C++ Compatibility
-
-  extern "C" {
-
-  #endif
-  // DOM-IGNORE-END
+#ifndef _TAREA_PRINCIPAL_H
+#define _TAREA_PRINCIPAL_H
 
 /*=====================[ Inclusiones ]============================*/
-  #include <stdint.h>
-  #include <stdbool.h>
-  #include <stddef.h>
-  #include <stdlib.h>
-  #include "configuration.h"
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdlib.h>
+#include "configuration.h"
 
-/*=================[Prototipos de funciones]======================*/
-  void TAREA_PRINCIPAL_Initialize ( void );
-  void TAREA_PRINCIPAL_Tasks( void );
+  
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
+
+extern "C" {
+
+#endif
+// DOM-IGNORE-END
 
 /*=====================[Variables]================================*/
-typedef enum                                //Sirve para definir constantes enteras con nombre en C
+typedef enum
 {
     TAREA_PRINCIPAL_STATE_INIT=0,
     TAREA_PRINCIPAL_STATE_SERVICE_TASKS,
-} TAREA_PRINCIPAL_STATES;                   //Numeracion para establecer el estado de la tarea
+} TAREA_PRINCIPAL_STATES;
 
 typedef struct
 {
-    TAREA_PRINCIPAL_STATES state;           //Variable del tipo Numeracion para establecer el estado de la tarea
-} TAREA_PRINCIPAL_DATA;                     //Estructura que contiene los datos de la tarea
+    TAREA_PRINCIPAL_STATES state;
+} TAREA_PRINCIPAL_DATA;
 
+
+/*=================[Prototipos de funciones]======================*/
+void TAREA_PRINCIPAL_Initialize ( void );
+void TAREA_PRINCIPAL_Tasks( void );
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
@@ -49,4 +51,8 @@ typedef struct
 //DOM-IGNORE-END
 
 #endif /* _TAREA_PRINCIPAL_H */
+
+/*******************************************************************************
+ End of File
+ */
 

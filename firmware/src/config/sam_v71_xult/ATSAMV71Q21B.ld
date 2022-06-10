@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------------------
  * MPLAB XC32 Compiler -  ATSAMV71Q21B linker script
  * 
- * Copyright (c) 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ * Copyright (c) 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.
  * 
  * This software is developed by Microchip Technology Inc. and its
@@ -77,7 +77,16 @@ ENTRY(__XC32_RESET_HANDLER_NAME)
 #elif (RAM_LENGTH > 0x60000)
 #  error RAM_LENGTH is greater than the max size of 0x60000
 #endif
-  
+
+#ifndef SRAM_NOCACHE
+# define SRAM_NOCACHE 0x2045F000
+#endif
+#ifndef SRAM_NOCACHE_LENGTH
+# define SRAM_NOCACHE_LENGTH 0x00001000
+#elif (SRAM_NOCACHE_LENGTH > 0x60000)
+# error SRAM_NOCACHE_LENGTH is greater than the max size of 0x60000
+#endif
+
 #ifndef ITCM_ORIGIN
 #  define ITCM_ORIGIN 0x0
 #endif
@@ -112,9 +121,10 @@ MEMORY
   ram (WX!R) : ORIGIN = RAM_ORIGIN, LENGTH = RAM_LENGTH-__XC32_ITCM_LENGTH-__XC32_DTCM_LENGTH
   itcm (WX) : ORIGIN = ITCM_ORIGIN, LENGTH = __XC32_ITCM_LENGTH
   dtcm (WX!R) : ORIGIN = DTCM_ORIGIN, LENGTH = __XC32_DTCM_LENGTH
+  ram_nocache (RWX) : ORIGIN = SRAM_NOCACHE, LENGTH = SRAM_NOCACHE_LENGTH
   config_D0000000 : ORIGIN = 0xD0000000, LENGTH = 0x4
-  config_D0000008 : ORIGIN = 0xD0000008, LENGTH = 0x4
   config_D0000004 : ORIGIN = 0xD0000004, LENGTH = 0x4
+  config_D0000008 : ORIGIN = 0xD0000008, LENGTH = 0x4
   config_D000000C : ORIGIN = 0xD000000C, LENGTH = 0x4
   config_D0000010 : ORIGIN = 0xD0000010, LENGTH = 0x4
 
@@ -156,12 +166,12 @@ SECTIONS
     .config_D0000000 : {
       KEEP(*(.config_D0000000))
     } > config_D0000000
-    .config_D0000008 : {
-      KEEP(*(.config_D0000008))
-    } > config_D0000008
     .config_D0000004 : {
       KEEP(*(.config_D0000004))
     } > config_D0000004
+    .config_D0000008 : {
+      KEEP(*(.config_D0000008))
+    } > config_D0000008
     .config_D000000C : {
       KEEP(*(.config_D000000C))
     } > config_D000000C
@@ -246,6 +256,25 @@ SECTIONS
 
     . = ALIGN(4);
     _etext = .;
+
+    .ram_nocache (NOLOAD):
+    {
+    . = ALIGN(4);
+    _s_ram_nocache = .;
+    *(.ram_nocache)
+    . = ALIGN(4);
+    _e_ram_nocache = .;
+    } > ram_nocache
+
+    .ram_nocache_data : AT (_etext)
+    {
+    . = ALIGN(4);
+    _s_ram_nocache_vma = .;
+    _s_ram_nocache_lma = LOADADDR(.ram_nocache_data);
+    *(.ram_nocache_data)
+    . = ALIGN(4);
+    _e_ram_nocache_vma = .;
+    } > ram_nocache
 
     /*
      *  Align here to ensure that the .bss section occupies space up to
