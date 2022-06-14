@@ -1,13 +1,19 @@
 build/sam_v71_xult/production/_ext/1320227943/exceptions.o: \
  ../src/config/sam_v71_xult/exceptions.c \
  ../src/config/sam_v71_xult/configuration.h \
- ../src/config/sam_v71_xult/user.h ../src/config/sam_v71_xult/bsp/bsp.h \
+ ../src/config/sam_v71_xult/user.h \
+ ../src/config/sam_v71_xult/toolchain_specifics.h \
+ ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h \
+ ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_gcc.h \
+ ../src/config/sam_v71_xult/interrupts.h \
+ ../src/config/sam_v71_xult/definitions.h \
+ ../src/config/sam_v71_xult/peripheral/clk/plib_clk.h \
+ ../src/config/sam_v71_xult/peripheral/pio/plib_pio.h \
  ../src/config/sam_v71_xult/device.h \
  ../src/packs/ATSAMV71Q21B_DFP/samv71q21b.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/core_cm7.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_version.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h \
- ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_gcc.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h \
  ../src/packs/ATSAMV71Q21B_DFP/component/acc.h \
@@ -107,25 +113,20 @@ build/sam_v71_xult/production/_ext/1320227943/exceptions.o: \
  ../src/packs/ATSAMV71Q21B_DFP/pio/samv71q21b.h \
  ../src/config/sam_v71_xult/device_cache.h \
  ../src/config/sam_v71_xult/device.h \
- ../src/config/sam_v71_xult/toolchain_specifics.h \
- ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h \
- ../src/config/sam_v71_xult/peripheral/pio/plib_pio.h \
- ../src/config/sam_v71_xult/interrupts.h \
- ../src/config/sam_v71_xult/definitions.h \
- ../src/config/sam_v71_xult/peripheral/clk/plib_clk.h \
  ../src/config/sam_v71_xult/peripheral/nvic/plib_nvic.h \
+ ../src/config/sam_v71_xult/peripheral/mpu/plib_mpu.h \
  ../src/config/sam_v71_xult/peripheral/mcan/plib_mcan1.h \
  ../src/config/sam_v71_xult/peripheral/mcan/plib_mcan_common.h \
  ../src/config/sam_v71_xult/peripheral/efc/plib_efc.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/FreeRTOS.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h \
  ../src/config/sam_v71_xult/FreeRTOSConfig.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/projdefs.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/portable.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/deprecated_definitions.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/projdefs.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/portable.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/deprecated_definitions.h \
  ../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/CM7/portmacro.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/mpu_wrappers.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/task.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/list.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/task.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/list.h \
  ../src/config/sam_v71_xult/peripheral/usart/plib_usart1.h \
  ../src/config/sam_v71_xult/peripheral/usart/plib_usart_common.h \
  ../src/config/sam_v71_xult/system/int/sys_int.h \
@@ -135,17 +136,29 @@ build/sam_v71_xult/production/_ext/1320227943/exceptions.o: \
  ../src/config/sam_v71_xult/configuration.h \
  ../src/config/sam_v71_xult/osal/osal_definitions.h \
  ../src/config/sam_v71_xult/osal/osal_freertos.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/queue.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/task.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/semphr.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/queue.h \
- ../src/tarea_principal.h ../src/tarea_2.h ../src/tarea_uart.h
+ ../src/third_party/rtos/FreeRTOS/Source/include/queue.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/task.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/semphr.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/queue.h \
+ ../src/tarea_principal.h
 
 ../src/config/sam_v71_xult/configuration.h:
 
 ../src/config/sam_v71_xult/user.h:
 
-../src/config/sam_v71_xult/bsp/bsp.h:
+../src/config/sam_v71_xult/toolchain_specifics.h:
+
+../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h:
+
+../src/packs/CMSIS/CMSIS/Core/Include/cmsis_gcc.h:
+
+../src/config/sam_v71_xult/interrupts.h:
+
+../src/config/sam_v71_xult/definitions.h:
+
+../src/config/sam_v71_xult/peripheral/clk/plib_clk.h:
+
+../src/config/sam_v71_xult/peripheral/pio/plib_pio.h:
 
 ../src/config/sam_v71_xult/device.h:
 
@@ -156,8 +169,6 @@ build/sam_v71_xult/production/_ext/1320227943/exceptions.o: \
 ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_version.h:
 
 ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h:
-
-../src/packs/CMSIS/CMSIS/Core/Include/cmsis_gcc.h:
 
 ../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h:
 
@@ -357,19 +368,9 @@ build/sam_v71_xult/production/_ext/1320227943/exceptions.o: \
 
 ../src/config/sam_v71_xult/device.h:
 
-../src/config/sam_v71_xult/toolchain_specifics.h:
-
-../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h:
-
-../src/config/sam_v71_xult/peripheral/pio/plib_pio.h:
-
-../src/config/sam_v71_xult/interrupts.h:
-
-../src/config/sam_v71_xult/definitions.h:
-
-../src/config/sam_v71_xult/peripheral/clk/plib_clk.h:
-
 ../src/config/sam_v71_xult/peripheral/nvic/plib_nvic.h:
+
+../src/config/sam_v71_xult/peripheral/mpu/plib_mpu.h:
 
 ../src/config/sam_v71_xult/peripheral/mcan/plib_mcan1.h:
 
@@ -377,23 +378,23 @@ build/sam_v71_xult/production/_ext/1320227943/exceptions.o: \
 
 ../src/config/sam_v71_xult/peripheral/efc/plib_efc.h:
 
-../src/third_party/rtos/FreeRTOS/Source/Include/FreeRTOS.h:
+../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h:
 
 ../src/config/sam_v71_xult/FreeRTOSConfig.h:
 
-../src/third_party/rtos/FreeRTOS/Source/Include/projdefs.h:
+../src/third_party/rtos/FreeRTOS/Source/include/projdefs.h:
 
-../src/third_party/rtos/FreeRTOS/Source/Include/portable.h:
+../src/third_party/rtos/FreeRTOS/Source/include/portable.h:
 
-../src/third_party/rtos/FreeRTOS/Source/Include/deprecated_definitions.h:
+../src/third_party/rtos/FreeRTOS/Source/include/deprecated_definitions.h:
 
 ../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/CM7/portmacro.h:
 
-../src/third_party/rtos/FreeRTOS/Source/Include/mpu_wrappers.h:
+../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h:
 
-../src/third_party/rtos/FreeRTOS/Source/Include/task.h:
+../src/third_party/rtos/FreeRTOS/Source/include/task.h:
 
-../src/third_party/rtos/FreeRTOS/Source/Include/list.h:
+../src/third_party/rtos/FreeRTOS/Source/include/list.h:
 
 ../src/config/sam_v71_xult/peripheral/usart/plib_usart1.h:
 
@@ -413,16 +414,12 @@ build/sam_v71_xult/production/_ext/1320227943/exceptions.o: \
 
 ../src/config/sam_v71_xult/osal/osal_freertos.h:
 
-../src/third_party/rtos/FreeRTOS/Source/Include/queue.h:
+../src/third_party/rtos/FreeRTOS/Source/include/queue.h:
 
-../src/third_party/rtos/FreeRTOS/Source/Include/task.h:
+../src/third_party/rtos/FreeRTOS/Source/include/task.h:
 
-../src/third_party/rtos/FreeRTOS/Source/Include/semphr.h:
+../src/third_party/rtos/FreeRTOS/Source/include/semphr.h:
 
-../src/third_party/rtos/FreeRTOS/Source/Include/queue.h:
+../src/third_party/rtos/FreeRTOS/Source/include/queue.h:
 
 ../src/tarea_principal.h:
-
-../src/tarea_2.h:
-
-../src/tarea_uart.h:

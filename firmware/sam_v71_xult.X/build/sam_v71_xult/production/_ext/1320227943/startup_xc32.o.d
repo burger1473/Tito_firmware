@@ -106,7 +106,8 @@ build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o: \
  ../src/config/sam_v71_xult/device_cache.h \
  ../src/config/sam_v71_xult/toolchain_specifics.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h \
- ../src/config/sam_v71_xult/interrupts.h
+ ../src/config/sam_v71_xult/interrupts.h \
+ ../src/config/sam_v71_xult/peripheral/mpu/plib_mpu.h
 
 ../src/config/sam_v71_xult/device.h:
 
@@ -321,3 +322,5 @@ build/sam_v71_xult/production/_ext/1320227943/startup_xc32.o: \
 ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h:
 
 ../src/config/sam_v71_xult/interrupts.h:
+
+../src/config/sam_v71_xult/peripheral/mpu/plib_mpu.h:

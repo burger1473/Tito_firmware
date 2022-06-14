@@ -1,23 +1,16 @@
 /*=============================================================================
- * Author: Spacebeetech - Navegación
+ * Author: Spacebeetech - Navegacion
  * Date: 16/05/2022 
  * Board: Atmel ARM Cortex-M7 Xplained Ultra Dev Board ATSAMV71-XULT ATSAMV71Q21B
  * Entorno de programacion: MPLABX - Harmony
  *
- * Descripción: Libreria CAN bus en modo fd por interrupcion
+ * Descripcion: Libreria CAN bus en modo fd por interrupcion
  *===========================================================================*/
 
 /*==================[Definiciones]================================*/
   #ifndef _MCAN_FD_INTERRUPT_H
   #define _MCAN_FD_INTERRUPT_H
-  // DOM-IGNORE-BEGIN
-  #ifdef __cplusplus  // Provide C++ Compatibility
-
-  extern "C" {
-
-  #endif
-  // DOM-IGNORE-END
-
+  
 /*=====================[ Inclusiones ]============================*/
   #include <stddef.h>                     //Define NULL
   #include <stdbool.h>                    //Define true
@@ -42,11 +35,6 @@ typedef enum
         CAN_TRANSMICION_ERROR,   //Error al transmitir un dato por can bus luego de llamar a la funcion mcan_fd_interrupt_enviar()
     } CAN_ESTADO;                //Enumaracion de los estados posibles
 
-//DOM-IGNORE-BEGIN
-#ifdef __cplusplus
-}
-#endif
-//DOM-IGNORE-END
 
 #endif /* _TAREA_PRINCIPAL_H */
 
