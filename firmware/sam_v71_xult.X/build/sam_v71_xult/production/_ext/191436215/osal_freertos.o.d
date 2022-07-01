@@ -1,18 +1,18 @@
 build/sam_v71_xult/production/_ext/191436215/osal_freertos.o: \
  ../src/config/sam_v71_xult/osal/osal_freertos.c \
- ../src/third_party/rtos/FreeRTOS/Source/Include/FreeRTOS.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h \
  ../src/config/sam_v71_xult/FreeRTOSConfig.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/projdefs.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/portable.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/deprecated_definitions.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/projdefs.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/portable.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/deprecated_definitions.h \
  ../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/CM7/portmacro.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/mpu_wrappers.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/queue.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/task.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/list.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/semphr.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/queue.h \
- ../src/third_party/rtos/FreeRTOS/Source/Include/task.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/queue.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/task.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/list.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/semphr.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/queue.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/task.h \
  ../src/config/sam_v71_xult/osal/osal_freertos.h \
  ../src/config/sam_v71_xult/device.h \
  ../src/packs/ATSAMV71Q21B_DFP/samv71q21b.h \
@@ -122,31 +122,31 @@ build/sam_v71_xult/production/_ext/191436215/osal_freertos.o: \
  ../src/config/sam_v71_xult/toolchain_specifics.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h
 
-../src/third_party/rtos/FreeRTOS/Source/Include/FreeRTOS.h:
+../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h:
 
 ../src/config/sam_v71_xult/FreeRTOSConfig.h:
 
-../src/third_party/rtos/FreeRTOS/Source/Include/projdefs.h:
+../src/third_party/rtos/FreeRTOS/Source/include/projdefs.h:
 
-../src/third_party/rtos/FreeRTOS/Source/Include/portable.h:
+../src/third_party/rtos/FreeRTOS/Source/include/portable.h:
 
-../src/third_party/rtos/FreeRTOS/Source/Include/deprecated_definitions.h:
+../src/third_party/rtos/FreeRTOS/Source/include/deprecated_definitions.h:
 
 ../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/CM7/portmacro.h:
 
-../src/third_party/rtos/FreeRTOS/Source/Include/mpu_wrappers.h:
+../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h:
 
-../src/third_party/rtos/FreeRTOS/Source/Include/queue.h:
+../src/third_party/rtos/FreeRTOS/Source/include/queue.h:
 
-../src/third_party/rtos/FreeRTOS/Source/Include/task.h:
+../src/third_party/rtos/FreeRTOS/Source/include/task.h:
 
-../src/third_party/rtos/FreeRTOS/Source/Include/list.h:
+../src/third_party/rtos/FreeRTOS/Source/include/list.h:
 
-../src/third_party/rtos/FreeRTOS/Source/Include/semphr.h:
+../src/third_party/rtos/FreeRTOS/Source/include/semphr.h:
 
-../src/third_party/rtos/FreeRTOS/Source/Include/queue.h:
+../src/third_party/rtos/FreeRTOS/Source/include/queue.h:
 
-../src/third_party/rtos/FreeRTOS/Source/Include/task.h:
+../src/third_party/rtos/FreeRTOS/Source/include/task.h:
 
 ../src/config/sam_v71_xult/osal/osal_freertos.h:
 
