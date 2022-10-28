@@ -346,7 +346,7 @@ int main ( void )
         {
             /* Read user input */
             scanf("%c", (char *) &user_input);
-            
+            Enable_testmode(0);
             switch (user_input)
             {
 				case '0':

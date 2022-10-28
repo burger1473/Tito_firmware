@@ -1050,6 +1050,33 @@ void MCAN1_INT0_InterruptHandler(void)
     }
 }
 
+// *****************************************************************************
+/* Function:
+    void Enable_testmode(uint8_t modo)
+   Descripcion: Activa el modo test del MCAN1 ya sea en External Loop Back Mode o Internal Loop Back Mode
+   Parametro de entrada:
+                            uint8_t modo:  si esta 1 configura Internal Loop Back Mode  si esta en 0 configura External Loop Back Mode
+   No retorna nada
+*/
+void Enable_testmode(uint8_t modo){
+ /* Set MCAN CCCR Init for Message RAM Configuration */
+    MCAN1_REGS->MCAN_CCCR = MCAN_CCCR_INIT_ENABLED;
+    while ((MCAN1_REGS->MCAN_CCCR & MCAN_CCCR_INIT_Msk) != MCAN_CCCR_INIT_Msk);
+
+    /* Set CCE to unlock the configuration registers */
+    MCAN1_REGS->MCAN_CCCR |= MCAN_CCCR_CCE_Msk;
+
+    MCAN1_REGS->MCAN_CCCR = MCAN_CCCR_INIT_ENABLED | MCAN_CCCR_FDOE_ENABLED | MCAN_CCCR_BRSE_ENABLED | MCAN_CCCR_TEST_ENABLED;       //Activo modo test y CCR_init
+
+    MCAN1_REGS->MCAN_TEST |= MCAN_TEST_LBCK_ENABLED;                                                                                 //Activo modo External Loop Back Mode (es necesario tener MCAN_CCCR.TEST en 1 MCAN_CCCR.INIT en 1)
+    if(modo==1){
+        MCAN1_REGS->MCAN_CCCR |= MCAN_CCCR_MON_ENABLED;                                                                              //Configuro modo monitor
+    }
+    //MCAN1_REGS->MCAN_CCCR |= MCAN_CCCR_DAR_NO_AUTO_RETX;                                                                           //Desactiva la retransmicion automatica
+    MCAN1_REGS->MCAN_CCCR = MCAN_CCCR_INIT_DISABLED | MCAN_CCCR_FDOE_ENABLED | MCAN_CCCR_BRSE_ENABLED | MCAN_CCCR_TEST_ENABLED;      //Comnpleta configuracion en modo test limpiando MCAN con CCCR Init 
+    while ((MCAN1_REGS->MCAN_CCCR & MCAN_CCCR_INIT_Msk) == MCAN_CCCR_INIT_Msk);
+}
+            
 /*******************************************************************************
  End of File
 */
