@@ -43,7 +43,6 @@
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-#include "configuration.h"
 #include "definitions.h"
 #include "device.h"
 
@@ -95,6 +94,26 @@
 // *****************************************************************************
 // *****************************************************************************
 
+/*******************************************************************************
+  Function:
+    void STDIO_BufferModeSet ( void )
+
+  Summary:
+    Sets the buffering mode for stdin and stdout
+
+  Remarks:
+ ********************************************************************************/
+static void STDIO_BufferModeSet(void)
+{
+
+    /* Make stdin unbuffered */
+    setbuf(stdin, NULL);
+
+    /* Make stdout unbuffered */
+    setbuf(stdout, NULL);
+}
+
+
 
 
 /*******************************************************************************
@@ -109,6 +128,9 @@
 
 void SYS_Initialize ( void* data )
 {
+
+    STDIO_BufferModeSet();
+
 
 
     EFC_Initialize();
@@ -128,9 +150,6 @@ void SYS_Initialize ( void* data )
 
 
 
-
-
-    TAREA_PRINCIPAL_Initialize();
 
 
     NVIC_Initialize();

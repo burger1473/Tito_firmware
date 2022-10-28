@@ -306,110 +306,26 @@ children:
         children:
         - {type: Value, value: 'true'}
   - type: Boolean
-    attributes: {id: NVIC_-1_0_ENABLE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: 'true'}
-  - type: String
-    attributes: {id: NVIC_-1_0_HANDLER}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: xPortSysTickHandler}
-  - type: Boolean
-    attributes: {id: NVIC_-1_0_HANDLER_LOCK}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: 'true'}
-  - type: Combo
-    attributes: {id: NVIC_-1_0_PRIORITY}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: FreeRTOS, value: '7'}
-  - type: Boolean
-    attributes: {id: NVIC_-1_0_PRIORITY_LOCK}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: FreeRTOS, value: 'true'}
-  - type: Boolean
-    attributes: {id: NVIC_-2_0_ENABLE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: 'true'}
-  - type: String
-    attributes: {id: NVIC_-2_0_HANDLER}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: xPortPendSVHandler}
-  - type: Boolean
-    attributes: {id: NVIC_-2_0_HANDLER_LOCK}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: 'true'}
-  - type: Boolean
-    attributes: {id: NVIC_-5_0_ENABLE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: 'true'}
-  - type: String
-    attributes: {id: NVIC_-5_0_HANDLER}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: vPortSVCHandler}
-  - type: Boolean
-    attributes: {id: NVIC_-5_0_HANDLER_LOCK}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: 'true'}
-  - type: Boolean
-    attributes: {id: NVIC_-5_0_PRIORITY_LOCK}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: FreeRTOS, value: 'true'}
-  - type: Boolean
     attributes: {id: NVIC_14_0_ENABLE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'true'}
+        attributes: {id: core, value: 'false'}
   - type: String
     attributes: {id: NVIC_14_0_HANDLER}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: USART1_InterruptHandler}
+        attributes: {id: core, value: USART1_Handler}
   - type: Boolean
     attributes: {id: NVIC_14_0_HANDLER_LOCK}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'true'}
+        attributes: {id: core, value: 'false'}
   - type: Boolean
     attributes: {id: NVIC_37_0_ENABLE}
     children:
@@ -481,33 +397,12 @@ children:
       - type: User
         attributes: {value: '32000'}
   - type: String
-    attributes: {id: PCK4_CLOCK_FREQUENCY}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: '150000000'}
-  - type: String
     attributes: {id: PCK5_CLOCK_FREQUENCY}
     children:
     - type: Values
       children:
       - type: User
         attributes: {value: '50000000'}
-  - type: String
-    attributes: {id: PCK6_CLOCK_FREQUENCY}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: '32000'}
-  - type: String
-    attributes: {id: PCK7_CLOCK_FREQUENCY}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: '32000'}
   - type: String
     attributes: {id: PIN_105_FUNCTION_TYPE}
     children:
@@ -593,33 +488,12 @@ children:
       - type: Dynamic
         attributes: {id: core, value: '150000000'}
   - type: Hex
-    attributes: {id: PIOA_OER_VALUE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: '0'}
-  - type: Hex
     attributes: {id: PIOA_PDR_VALUE}
     children:
     - type: Values
       children:
       - type: Dynamic
         attributes: {id: core, value: '2097152'}
-  - type: Hex
-    attributes: {id: PIOA_PUER_VALUE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: '0'}
-  - type: Hex
-    attributes: {id: PIOA_SODR_VALUE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: '0'}
   - type: Hex
     attributes: {id: PIOB_ABCDSR1_VALUE}
     children:
@@ -649,26 +523,12 @@ children:
       - type: Dynamic
         attributes: {id: core, value: '150000000'}
   - type: Hex
-    attributes: {id: PIOB_OER_VALUE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: '0'}
-  - type: Hex
     attributes: {id: PIOB_PDR_VALUE}
     children:
     - type: Values
       children:
       - type: Dynamic
         attributes: {id: core, value: '16'}
-  - type: Hex
-    attributes: {id: PIOB_PUER_VALUE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: '0'}
   - type: Hex
     attributes: {id: PIOC_ABCDSR1_VALUE}
     children:
@@ -698,26 +558,12 @@ children:
       - type: Dynamic
         attributes: {id: core, value: '150000000'}
   - type: Hex
-    attributes: {id: PIOC_OER_VALUE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: '0'}
-  - type: Hex
     attributes: {id: PIOC_PDR_VALUE}
     children:
     - type: Values
       children:
       - type: Dynamic
         attributes: {id: core, value: '20480'}
-  - type: Hex
-    attributes: {id: PIOC_SODR_VALUE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: '0'}
   - type: Boolean
     attributes: {id: PIOD_CLOCK_ENABLE}
     children:
@@ -795,13 +641,6 @@ children:
       - type: Dynamic
         attributes: {id: core, value: '32'}
   - type: Combo
-    attributes: {id: PMC_PCK4_CSS}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: MCK}
-  - type: Combo
     attributes: {id: PMC_PCK5_CSS}
     children:
     - type: Values
@@ -836,8 +675,6 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: 'false'}
-      - type: User
-        attributes: {value: 'true'}
   - type: Boolean
     attributes: {id: PMC_SCER_PCK5}
     children:
@@ -880,34 +717,6 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '150000000'}
-  - type: Boolean
-    attributes: {id: PendSV_INTERRUPT_ENABLE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: 'true'}
-  - type: Boolean
-    attributes: {id: PendSV_INTERRUPT_ENABLE_UPDATE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: 'false'}
-  - type: String
-    attributes: {id: PendSV_INTERRUPT_HANDLER}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: xPortPendSVHandler}
-  - type: Boolean
-    attributes: {id: PendSV_INTERRUPT_HANDLER_LOCK}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: 'true'}
   - type: Integer
     attributes: {id: QSPI_CLOCK_FREQUENCY}
     children:
@@ -944,13 +753,6 @@ children:
       - type: Dynamic
         attributes: {id: core, value: 'false'}
   - type: Integer
-    attributes: {id: SDRAMC_CLOCK_FREQUENCY}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: '150000000'}
-  - type: Integer
     attributes: {id: SMC_CLOCK_FREQUENCY}
     children:
     - type: Values
@@ -978,34 +780,6 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '150000000'}
-  - type: Boolean
-    attributes: {id: SVCall_INTERRUPT_ENABLE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: 'true'}
-  - type: Boolean
-    attributes: {id: SVCall_INTERRUPT_ENABLE_UPDATE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: 'false'}
-  - type: String
-    attributes: {id: SVCall_INTERRUPT_HANDLER}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: vPortSVCHandler}
-  - type: Boolean
-    attributes: {id: SVCall_INTERRUPT_HANDLER_LOCK}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: 'true'}
   - type: String
     attributes: {id: SYSTICK_CLOCK_FREQUENCY}
     children:
@@ -1013,15 +787,6 @@ children:
       children:
       - type: User
         attributes: {value: '150000000'}
-  - type: Comment
-    attributes: {id: SYSTICK_COMMENT}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: visible}
-        children:
-        - {type: Value, value: 'true'}
   - type: String
     attributes: {id: SYSTICK_PERIOD}
     children:
@@ -1036,34 +801,6 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '1000'}
-  - type: Boolean
-    attributes: {id: SysTick_INTERRUPT_ENABLE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: 'true'}
-  - type: Boolean
-    attributes: {id: SysTick_INTERRUPT_ENABLE_UPDATE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: 'false'}
-  - type: String
-    attributes: {id: SysTick_INTERRUPT_HANDLER}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: xPortSysTickHandler}
-  - type: Boolean
-    attributes: {id: SysTick_INTERRUPT_HANDLER_LOCK}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: 'true'}
   - type: Boolean
     attributes: {id: TCM_ENABLE}
     children:
@@ -1126,28 +863,28 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: usart1, value: 'true'}
+        attributes: {id: usart1, value: 'false'}
   - type: Boolean
     attributes: {id: USART1_INTERRUPT_ENABLE_UPDATE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'false'}
+        attributes: {id: core, value: 'true'}
   - type: String
     attributes: {id: USART1_INTERRUPT_HANDLER}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: usart1, value: USART1_InterruptHandler}
+        attributes: {id: usart1, value: USART1_Handler}
   - type: Boolean
     attributes: {id: USART1_INTERRUPT_HANDLER_LOCK}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: usart1, value: 'true'}
+        attributes: {id: usart1, value: 'false'}
   - type: Boolean
     attributes: {id: WDT_INTERRUPT_ENABLE}
     children:
@@ -1183,14 +920,5 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '150000000'}
-  - type: Boolean
-    attributes: {id: systickEnable}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: visible}
-        children:
-        - {type: Value, value: 'false'}
 - type: ElementPosition
-  attributes: {x: '35', y: '17', id: core}
+  attributes: {x: '240', y: '20', id: core}

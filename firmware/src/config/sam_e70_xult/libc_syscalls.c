@@ -24,21 +24,24 @@
 // DOM-IGNORE-END
 
 #include <stdio.h>
-#include <stdarg.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <device.h> /* for ARM CMSIS __BKPT() */
+#include <stdbool.h>
+#include "device.h" /* for ARM CMSIS __BKPT() */
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+
+/* MISRAC 2012 deviation block start */
+/* MISRA C-2012 Rule 21.2 deviated twice.  Deviation record ID -  H3_MISRAC_2012_R_21_2_DR_1 */
 /* Harmony specific
  * We implement only the syscalls we want over the stubs provided by libpic32c
  */
 extern void _exit(int status);
 
-extern void _exit(int status)
+void _exit(int status)
 {
     /* Software breakpoint */
 #ifdef __DEBUG
@@ -46,7 +49,7 @@ extern void _exit(int status)
 #endif
 
     /* halt CPU */
-    while (1)
+    while (true)
     {
     }
 }
@@ -54,3 +57,5 @@ extern void _exit(int status)
 #ifdef __cplusplus
 }
 #endif
+
+/* MISRAC 2012 deviation block end */

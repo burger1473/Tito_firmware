@@ -44,7 +44,6 @@
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-#include "configuration.h"
 #include "interrupts.h"
 #include "definitions.h"
 
@@ -118,4 +117,3 @@ void __attribute__((noreturn)) UsageFault_Handler(void)
 /*******************************************************************************
  End of File
  */
-
