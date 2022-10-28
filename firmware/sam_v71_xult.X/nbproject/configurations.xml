@@ -66,7 +66,6 @@
             <itemPath>../src/packs/ATSAMV71Q21B_DFP/component/rswdt.h</itemPath>
             <itemPath>../src/packs/ATSAMV71Q21B_DFP/component/rtc.h</itemPath>
             <itemPath>../src/packs/ATSAMV71Q21B_DFP/component/rtt.h</itemPath>
-            <itemPath>../src/packs/ATSAMV71Q21B_DFP/component/sdramc.h</itemPath>
             <itemPath>../src/packs/ATSAMV71Q21B_DFP/component/smc.h</itemPath>
             <itemPath>../src/packs/ATSAMV71Q21B_DFP/component/spi.h</itemPath>
             <itemPath>../src/packs/ATSAMV71Q21B_DFP/component/ssc.h</itemPath>
@@ -80,8 +79,9 @@
             <itemPath>../src/packs/ATSAMV71Q21B_DFP/component/utmi.h</itemPath>
             <itemPath>../src/packs/ATSAMV71Q21B_DFP/component/wdt.h</itemPath>
             <itemPath>../src/packs/ATSAMV71Q21B_DFP/component/xdmac.h</itemPath>
+            <itemPath>../src/packs/ATSAMV71Q21B_DFP/component/fuses.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f3" displayName="instance" projectFiles="true">
+          <logicalFolder name="f2" displayName="instance" projectFiles="true">
             <itemPath>../src/packs/ATSAMV71Q21B_DFP/instance/acc.h</itemPath>
             <itemPath>../src/packs/ATSAMV71Q21B_DFP/instance/aes.h</itemPath>
             <itemPath>../src/packs/ATSAMV71Q21B_DFP/instance/afec0.h</itemPath>
@@ -113,7 +113,6 @@
             <itemPath>../src/packs/ATSAMV71Q21B_DFP/instance/rswdt.h</itemPath>
             <itemPath>../src/packs/ATSAMV71Q21B_DFP/instance/rtc.h</itemPath>
             <itemPath>../src/packs/ATSAMV71Q21B_DFP/instance/rtt.h</itemPath>
-            <itemPath>../src/packs/ATSAMV71Q21B_DFP/instance/sdramc.h</itemPath>
             <itemPath>../src/packs/ATSAMV71Q21B_DFP/instance/smc.h</itemPath>
             <itemPath>../src/packs/ATSAMV71Q21B_DFP/instance/spi0.h</itemPath>
             <itemPath>../src/packs/ATSAMV71Q21B_DFP/instance/spi1.h</itemPath>
@@ -139,8 +138,9 @@
             <itemPath>../src/packs/ATSAMV71Q21B_DFP/instance/utmi.h</itemPath>
             <itemPath>../src/packs/ATSAMV71Q21B_DFP/instance/wdt.h</itemPath>
             <itemPath>../src/packs/ATSAMV71Q21B_DFP/instance/xdmac.h</itemPath>
+            <itemPath>../src/packs/ATSAMV71Q21B_DFP/instance/fuses.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="pio" projectFiles="true">
+          <logicalFolder name="f3" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAMV71Q21B_DFP/pio/samv71q21b.h</itemPath>
           </logicalFolder>
           <itemPath>../src/packs/ATSAMV71Q21B_DFP/samv71q21b.h</itemPath>
@@ -168,8 +168,21 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="sam_v71_xult.mhc" projectFiles="true">
+        <itemPath>../src/config/sam_v71_xult/sam_v71_xult.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_v71_xult/sam_v71_xult.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_v71_xult/sam_v71_xult.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_v71_xult/sam_v71_xult.mhc/efc.yml</itemPath>
+        <itemPath>../src/config/sam_v71_xult/sam_v71_xult.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_v71_xult/sam_v71_xult.mhc/mcan1.yml</itemPath>
+        <itemPath>../src/config/sam_v71_xult/sam_v71_xult.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_v71_xult/sam_v71_xult.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/sam_v71_xult/sam_v71_xult.mhc/stdio.yml</itemPath>
+        <itemPath>../src/config/sam_v71_xult/sam_v71_xult.mhc/usart1.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_v71_xult/harmony-manifest-success.yml</itemPath>
+      <itemPath>mcan_fd_operation_interrupt_timestamp_sam_v71_xult.mc3</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -219,6 +232,7 @@
   </logicalFolder>
   <sourceRootList>
     <Elem>../src</Elem>
+    <Elem>../lib</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -230,12 +244,12 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.50</languageToolchainVersion>
+        <languageToolchainVersion>4.10</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
+        <pack name="SAMV71_DFP" vendor="Microchip" version="4.6.90"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
-        <pack name="SAMV71_DFP" vendor="Microchip" version="4.4.78"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -297,7 +311,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_v71_xult;../src/packs/ATSAMV71Q21B_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
+                  value="../src;../src/config/sam_v71_xult;../src/packs/ATSAMV71Q21B_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -309,6 +323,7 @@
         <property key="preprocessor-macros" value=""/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
+        <property key="tentative-definitions" value="-fno-common"/>
         <property key="toplevel-reordering" value=""/>
         <property key="unaligned-access" value=""/>
         <property key="use-cci" value="false"/>
@@ -341,6 +356,7 @@
       </C32-AS>
       <C32-CO>
         <property key="coverage-enable" value=""/>
+        <property key="stack-guidance" value="false"/>
       </C32-CO>
       <C32-LD>
         <property key="additional-options-use-response-files" value="false"/>
@@ -381,7 +397,6 @@
         <property key="symbol-stripping" value=""/>
         <property key="trace-symbols" value=""/>
         <property key="warn-section-align" value="false"/>
-        <appendMe value="-T ../../firmware/src/config/sam_v71_xult/ATSAMV71Q21B.ld"/>
       </C32-LD>
       <C32CPP>
         <property key="additional-warnings" value="false"/>
@@ -395,7 +410,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_v71_xult;../src/packs/ATSAMV71Q21B_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
+                  value="../src;../src/config/sam_v71_xult;../src/packs/ATSAMV71Q21B_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -423,6 +438,7 @@
         <property key="omit-pack-options" value="1"/>
         <property key="relaxed-math" value="false"/>
         <property key="save-temps" value="false"/>
+        <property key="stack-smashing" value=""/>
         <property key="wpo-lto" value="false"/>
       </C32Global>
       <EdbgTool>
@@ -432,6 +448,8 @@
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
@@ -440,6 +458,7 @@
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
         <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -453,10 +472,7 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="400000-5fffff"/>
-        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="D:/H3/csp_apps_sam_e70_s70_v70_v71/apps/mcan/mcan_fd_operation_interrupt_timestamp/firmware/sam_v71_xult.X/debug/sam_v71_xult/sam_v71_xult_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
@@ -468,7 +484,7 @@
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
         <property key="script.has_reset" value="true"/>
-        <property key="script.log_level" value="0"/>
+        <property key="script.log_level" value="1"/>
         <property key="script.reset_delay" value="0"/>
         <property key="script.show_output" value="false"/>
         <property key="toolpack.updateoptions"
@@ -965,6 +981,61 @@
                   value=""/>
         <property key="warningmessagebreakoptions.warningmessages" value="holdstate"/>
       </Simulator>
+      <Tool>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="arm.use_vtor" value="false"/>
+        <property key="arm.vtor_adr" value="exception_table"/>
+        <property key="communication.activationmode" value="nohv"/>
+        <property key="communication.interface" value="swd"/>
+        <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="firmware.path"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="firmware.toolpack"
+                  value="Press to select which tool pack to use"/>
+        <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
+        <property key="memories.aux" value="false"/>
+        <property key="memories.bootflash" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.configurationmemory2" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.exclude.configurationmemory" value="true"/>
+        <property key="memories.flashdata" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.instruction.ram.ranges"
+                  value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="400000-5fffff"/>
+        <property key="memories.rww" value="true"/>
+        <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="D:/H3/csp_apps_sam_e70_s70_v70_v71/apps/mcan/mcan_fd_operation_interrupt_timestamp/firmware/sam_v71_xult.X/debug/sam_v71_xult/sam_v71_xult_ptg"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges"
+                  value="${memories.dataflash.default}"/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges" value=""/>
+        <property key="programoptions.preserveprogram.ranges" value="0-2045ffff"/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.programuserotp" value="false"/>
+        <property key="script.has_reset" value="true"/>
+        <property key="script.log_level" value="1"/>
+        <property key="script.reset_delay" value="0"/>
+        <property key="script.show_output" value="false"/>
+        <property key="toolpack.updateoptions"
+                  value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion"
+                  value="Press to select which tool pack to use"/>
+        <property key="voltagevalue" value=""/>
+      </Tool>
     </conf>
   </confs>
 </configurationDescriptor>
