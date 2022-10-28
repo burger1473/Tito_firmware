@@ -56,9 +56,6 @@
 #include "peripheral/mcan/plib_mcan1.h"
 #include "peripheral/efc/plib_efc.h"
 #include "peripheral/usart/plib_usart1.h"
-#include "FreeRTOS.h"
-#include "task.h"
-#include "system/cache/sys_cache.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility

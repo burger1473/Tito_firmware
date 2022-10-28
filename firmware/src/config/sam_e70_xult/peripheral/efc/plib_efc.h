@@ -64,17 +64,18 @@
 #define EFC_LOCKSIZE                0x4000
 
 
-#define EFC_ERROR_NONE              0x1
+typedef enum
+{
+    EFC_ERROR_NONE = 0x1,
     /*In-valid command*/
-#define EFC_CMD_ERROR               0x2
+    EFC_CMD_ERROR = 0x2,
     /*Flash region is locked*/
-#define EFC_LOCK_ERROR              0x4
+    EFC_LOCK_ERROR = 0x4,
     /*Flash Error*/
-#define EFC_FLERR_ERROR             0x8
+    EFC_FLERR_ERROR = 0x8,
     /*Flash Encountered an ECC error*/
-#define EFC_ECC_ERROR               0xF0000
-
-typedef uint32_t EFC_ERROR;
+    EFC_ECC_ERROR = 0xF0000,
+} EFC_ERROR;
 
 
 void EFC_Initialize(void);
@@ -82,10 +83,6 @@ void EFC_Initialize(void);
 bool EFC_Read( uint32_t *data, uint32_t length, uint32_t address );
 
 bool EFC_SectorErase( uint32_t address );
-
-bool EFC_PageBufferWrite( uint32_t *data, const uint32_t address);
-
-bool EFC_PageBufferCommit( const uint32_t address);
 
 bool EFC_PageWrite( uint32_t *data, uint32_t address );
 
