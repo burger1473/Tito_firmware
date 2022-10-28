@@ -1049,7 +1049,6 @@ void MCAN1_INT0_InterruptHandler(void)
         }
     }
 }
-
 // *****************************************************************************
 /* Function:
     void Enable_testmode(uint8_t modo)
@@ -1076,7 +1075,7 @@ void Enable_testmode(uint8_t modo){
     MCAN1_REGS->MCAN_CCCR = MCAN_CCCR_INIT_DISABLED | MCAN_CCCR_FDOE_ENABLED | MCAN_CCCR_BRSE_ENABLED | MCAN_CCCR_TEST_ENABLED;      //Comnpleta configuracion en modo test limpiando MCAN con CCCR Init 
     while ((MCAN1_REGS->MCAN_CCCR & MCAN_CCCR_INIT_Msk) == MCAN_CCCR_INIT_Msk);
 }
-            
+
 /*******************************************************************************
  End of File
 */

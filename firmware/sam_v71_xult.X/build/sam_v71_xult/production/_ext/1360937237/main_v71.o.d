@@ -114,8 +114,23 @@ build/sam_v71_xult/production/_ext/1360937237/main_v71.o: \
  ../src/config/sam_v71_xult/peripheral/mcan/plib_mcan1.h \
  ../src/config/sam_v71_xult/peripheral/mcan/plib_mcan_common.h \
  ../src/config/sam_v71_xult/peripheral/efc/plib_efc.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h \
+ ../src/config/sam_v71_xult/FreeRTOSConfig.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/projdefs.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/portable.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/deprecated_definitions.h \
+ ../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/CM7/portmacro.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/semphr.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/queue.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/task.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/list.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/task.h \
  ../src/config/sam_v71_xult/peripheral/usart/plib_usart1.h \
- ../src/config/sam_v71_xult/peripheral/usart/plib_usart_common.h
+ ../src/config/sam_v71_xult/peripheral/usart/plib_usart_common.h \
+ ../src/config/sam_v71_xult/system/cache/sys_cache.h \
+ ../src/tarea_principal.h ../src/config/sam_v71_xult/configuration.h \
+ ../src/config/sam_v71_xult/user.h
 
 ../src/config/sam_v71_xult/definitions.h:
 
@@ -347,6 +362,38 @@ build/sam_v71_xult/production/_ext/1360937237/main_v71.o: \
 
 ../src/config/sam_v71_xult/peripheral/efc/plib_efc.h:
 
+../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h:
+
+../src/config/sam_v71_xult/FreeRTOSConfig.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/projdefs.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/portable.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/deprecated_definitions.h:
+
+../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/CM7/portmacro.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/semphr.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/queue.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/task.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/list.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/task.h:
+
 ../src/config/sam_v71_xult/peripheral/usart/plib_usart1.h:
 
 ../src/config/sam_v71_xult/peripheral/usart/plib_usart_common.h:
+
+../src/config/sam_v71_xult/system/cache/sys_cache.h:
+
+../src/tarea_principal.h:
+
+../src/config/sam_v71_xult/configuration.h:
+
+../src/config/sam_v71_xult/user.h:
