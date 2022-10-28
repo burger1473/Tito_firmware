@@ -143,7 +143,7 @@ static void display_menu(void)
 	       "  1: Send FD standard message with ID: 0x469 and 64 byte data 128 to 191. \r\n"
 	       "  2: Send FD extended message with ID: 0x100000A5 and 64 byte data 0 to 63. \r\n"
 	       "  3: Send FD extended message with ID: 0x10000096 and 64 byte data 128 to 191. \r\n"
-	       "  4: Send normal standard message with ID: 0x469 and 8 byte data 0 to 7. \r\n"
+	       "  4: Sendd normal standard message with ID: 0x469 and 8 byte data 0 to 7. \r\n"
 	       "  m: Display menu \r\n\r\n");
 }
 
@@ -431,7 +431,7 @@ int main ( void )
 					for (loop_count = 0; loop_count < 8; loop_count++){
 						txBuffer->data[loop_count] = loop_count;
 					}                
- 					printf("  4: Send normal standard message with ID: 0x469 and 8 byte data 0 to 7.\r\n");
+ 					printf("  4: Sendd normal standard message with ID: 0x469 and 8 byte data 0 to 7.\r\n");
 					MCAN1_TxFifoCallbackRegister( APP_MCAN_TxFifoCallback, (uintptr_t)APP_STATE_MCAN_TRANSMIT );
                     state = APP_STATE_MCAN_IDLE;
 					if (MCAN1_MessageTransmitFifo(1, txBuffer) == false)
