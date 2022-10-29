@@ -13,7 +13,7 @@
 #include <string.h>
 #include <stdio.h>
 #include "../lib/Usart1_FreeRTOS/Uart1_FreeRTOS.h"
-#include "../lib/mcan_fd_interrupt/mcan_fd_interrupt.h"
+#include "../lib/epos4/epos4.h"
 
 /*=====================[Variables]================================*/
   TAREA_PRINCIPAL_DATA tarea_principalData;       //Estructura que contiene la informacion de la tarea como por ejemplo, el estado de esta
@@ -23,9 +23,8 @@
   
   
   //uint8_t Can1MessageRAM[MCAN1_MESSAGE_RAM_CONFIG_SIZE] __attribute__((aligned (32)))__attribute__((space(data), section (".ram_nocache")));
-  uint8_t Mcan1MessageRAM[MCAN1_MESSAGE_RAM_CONFIG_SIZE] __attribute__((aligned (32)))__attribute__((space(data), section (".ram_nocache")));
-  SemaphoreHandle_t canMutexLock;                 //Mutex de semaforo utilizado para proteger el recurso compartido de CAN con otras tareas
   
+ 
   
   
 
@@ -45,18 +44,12 @@ void TAREA_PRINCIPAL_Initialize ( void )
 {
     tarea_principalData.state = TAREA_PRINCIPAL_STATE_INIT; //Se inicia la maquina de estado mediante su estructura. Se establece en 1
     Uart1_FreeRTOS_Config();
-    //uint8_t resultado=CANopen_init();
-    uint8_t resultado=1;    
+    uint8_t resultado=CANopen_init();
+    //uint8_t resultado=1;    
     if (resultado == 0){ Uart1_println("CANopen was initialized and is in pre-operational mode"); }
     if (resultado == 1){ Uart1_println("No se pudo crear el bloqueo mutex"); }
-   // if (resultado == 2){ Uart1_println("Error al mandar mensaje Boot_Up");  CANopen_STOP(); }
+    if (resultado == 2){ Uart1_println("Error al mandar mensaje Boot_Up");  CANopen_STOP(); }
     
-    canMutexLock = xSemaphoreCreateMutex();                //Creo semaforo para proteger el recurso compartido de CAN con otras tareas
-    if(canMutexLock == NULL)                               //Si no se creo el semaforo
-    {
-        /* No habia suficiente almacenamiento dinamico de FreeRTOS disponible para que el semaforo se creara correctamente. */
-        USART1_Write((uint8_t*)"No se pudo crear el bloqueo mutex2\r\n", strlen("No se pudo crear el bloqueo mutex2\r\n"));  //Escribo por uart
-    }
 }
 
 /*========================================================================
@@ -67,8 +60,6 @@ void TAREA_PRINCIPAL_Initialize ( void )
   ========================================================================*/
 void TAREA_PRINCIPAL_Tasks ( void )
 {
-    mcan_fd_interrupt_config(Mcan1MessageRAM);               //Configuro memoria ram de mensaje can
-    
     while (1)
     {
         
@@ -107,17 +98,19 @@ void TAREA_PRINCIPAL_Tasks ( void )
   ========================================================================*/
 void TAREA_Can1(void *pvParameters ){
   
-  xSemaphoreTake(canMutexLock, portMAX_DELAY);                         //Tomo semaforo para proteger el bus can ya que es un recurso compartico con otras tareas
-  static uint8_t message[4] = {0}; message[0]='T'; message[1]='I'; message[2]='T'; message[3]='O';
   Enable_testmode(0);
-  bool retorno = mcan_fd_interrupt_enviar((uint32_t) 0x45A, message, 4, MCAN_MODE_NORMAL); //Envio trama por can bus
-  if ( retorno == false)
-  {
-    Uart1_print("\r\nError");
-  }             
+  uint8_t EPOS4_id = 1;
+
+  //Escribo posicion
+  uint8_t pos[3]={0}; pos[0]=0x42; pos[1]=0x13; pos[2]=0x23; pos[3]=0x87;
+  if(Epos4_write_target_position(EPOS4_id, pos)==true){}else{Uart1_print("\r\nFallo escritura EPOS4");}
+
+  //Leo posicion actual
+  //uint8_t pos_actual[3]={0};
+  //if(Epos4_read_actual_position(EPOS4_id, pos_actual)==true){}else{Uart1_println("\r\nFallo lectura EPOS4");}
+
   //mcan_fd_interrupt_habilitar();                                     //Libero la maquina de estado del mcan para que otra tarea o funcion pueda enviar o recibir por can
-  xSemaphoreGive(canMutexLock);                                        //Libero semaforo
-  
+
   Uart1_print("\r\nFin tarea can 1");
   if(xTAREA_Can1 != NULL){vTaskDelete(xTAREA_Can1); xTAREA_Can1=NULL;} //Elimino esta tarea
 }

@@ -45,7 +45,7 @@ typedef enum
 /*=================[Prototipos de funciones]======================*/
  void mcan_fd_interrupt_config(uint8_t *msgRAMConfigBaseAddress);
  bool mcan_fd_interrupt_enviar(uint32_t messageID , uint8_t *message, uint8_t messageLength, MCAN_MODE MCAN_MODE_L);
- //bool mcan_fd_interrupt_recibir(uint32_t *rx_messageID, uint8_t *rx_message, uint8_t *rx_messageLength, uint16_t *timestamp, MCAN_MSG_RX_ATTRIBUTE MCAN_MSG_ATTR_RX, MCAN_MSG_RX_FRAME_ATTRIBUTE *msgFrameAttr);
+ bool mcan_fd_interrupt_recibir(uint32_t *rx_messageID, uint8_t *rx_message, uint8_t *rx_messageLength);
  uint8_t Resultado(void);
  void mcan_fd_interrupt_habilitar(void);
 

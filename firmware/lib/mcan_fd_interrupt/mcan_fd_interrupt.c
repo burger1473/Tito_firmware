@@ -21,6 +21,10 @@
   #include <stdlib.h>                       //Define EXIT_FAILURE
   #include <stdio.h>                        //Para sizeof
   #include "definitions.h"                  //Prototipos de funciones SYS
+  
+  /* Standard identifier id[28:18]*/
+  #define WRITE_ID(id) (id << 18)
+  #define READ_ID(id)  (id >> 18)
 
 /*=====================[Variables]================================*/
     typedef enum
@@ -98,6 +102,7 @@ static uint8_t MCANDlcToLengthGet(uint8_t dlc)
 }
 
 /* Print Rx Message */
+//print_message(numberOfMessage, (MCAN_RX_BUFFER *)rxFiFo0, MCAN1_RX_FIFO0_ELEMENT_SIZE, 0);
 static void print_message(uint8_t numberOfMessage, MCAN_RX_BUFFER *rxBuf, uint8_t rxBufLen, uint8_t rxFifoBuf)
 {
     uint8_t length = 0;
@@ -115,7 +120,7 @@ static void print_message(uint8_t numberOfMessage, MCAN_RX_BUFFER *rxBuf, uint8_
     {
         /* Print message to Console */
         printf(" New Message Received\r\n");
-        id = rxBuf->xtd ? rxBuf->id : rxBuf->id;
+        id = rxBuf->xtd ? rxBuf->id : READ_ID(rxBuf->id);
         msgLength = MCANDlcToLengthGet(rxBuf->dlc);
         length = msgLength;
         printf(" Message - Timestamp : 0x%x ID : 0x%x Length : 0x%x ", (unsigned int)rxBuf->rxts, (unsigned int)id, (unsigned int)msgLength);
@@ -284,6 +289,27 @@ void APP_MCAN_RxFifo1Callback(uint8_t numberOfMessage, uintptr_t context)
     }
 }
 
+
+/*========================================================================
+  Funcion: mcan_fd_interrupt_recibir
+  Descripcion: Recibe mensaje por canbus
+  Parametro de entrada:
+                        uint32_t *rx_messageID:     Id can del mensaje recibido (de 11 bits/29 bits).
+                        uint8_t *rx_message:        Puntero de la variable donde guardar el mensaje
+                        uint8_t *rx_messageLength:  Puntero de la variable donde guardar el tamaÃ±o del mensaje
+                        uint16_t *timestamp:        Puntero a la marca de tiempo del mensaje Rx, el valor de la marca de tiempo es 0 si la marca de tiempo estÃ¡ deshabilitada
+                        MCAN_MSG_ATTR_RX:           Trama de datos o trama remota usando Tx FIFO o Tx Buffer. Mensaje para ser leÃ­do desde Rx FIFO0 o Rx FIFO1 o Rx Buffer
+                                                    MCAN_MSG_ATTR_RX_BUFFER
+                                                    MCAN_MSG_ATTR_RX_FIFO0
+                                                    MCAN_MSG_ATTR_RX_FIFO1
+                        msgFrameAttr:               Trama de datos o trama remota a recibir  ej:  MCAN_MSG_RX_DATA_FRAME
+  Retorna: dato bool indicando si se pudo transmitir el mensaje true o false.
+  ========================================================================*/
+bool mcan_fd_interrupt_recibir(uint32_t *rx_messageID, uint8_t *rx_message, uint8_t *rx_messageLength){  
+    
+    return false;                                                                                              //Retorno falso si no se esperaba al usuario para enviar o recibir mensaje
+}
+
 /*========================================================================
   Funcion: mcan_fd_interrupt_config
   Descripcion: Establece la configuracion de RAM de mensajes can. Previamente se debe haber llamado a MCAN1_Initialize para la instancia de MCAN asociada.
@@ -294,9 +320,9 @@ void APP_MCAN_RxFifo1Callback(uint8_t numberOfMessage, uintptr_t context)
   ========================================================================*/
 void mcan_fd_interrupt_config(uint8_t *msgRAMConfigBaseAddress){
     MCAN1_MessageRAMConfigSet(msgRAMConfigBaseAddress);     //Establece configuraciÃ³n de RAM de mensajes
-    MCAN1_RxFifoCallbackRegister(MCAN_RX_FIFO_0, APP_MCAN_RxFifo0Callback, APP_STATE_MCAN_RECEIVE);
-    MCAN1_RxFifoCallbackRegister(MCAN_RX_FIFO_1, APP_MCAN_RxFifo1Callback, APP_STATE_MCAN_RECEIVE);
-    MCAN1_RxBuffersCallbackRegister(APP_MCAN_RxBufferCallback, APP_STATE_MCAN_RECEIVE);
+    MCAN1_RxFifoCallbackRegister(MCAN_RX_FIFO_0, APP_MCAN_RxFifo0Callback, APP_STATE_MCAN_RECEIVE);  //Configuro callback recepcion por fifo0
+    MCAN1_RxFifoCallbackRegister(MCAN_RX_FIFO_1, APP_MCAN_RxFifo1Callback, APP_STATE_MCAN_RECEIVE);  //Configuro callback recepcion por fifo01
+    MCAN1_RxBuffersCallbackRegister(APP_MCAN_RxBufferCallback, APP_STATE_MCAN_RECEIVE);              //Configuro callback recepcion por buffer
 }
 
 
@@ -319,7 +345,7 @@ bool mcan_fd_interrupt_enviar(uint32_t messageID , uint8_t *message, uint8_t mes
         MCAN_TX_BUFFER *txBuffer = NULL;
         memset(txFiFo, 0x00, MCAN1_TX_FIFO_BUFFER_ELEMENT_SIZE);
         txBuffer = (MCAN_TX_BUFFER *)txFiFo;
-        txBuffer->id = messageID;
+        txBuffer->id = WRITE_ID(messageID);
         txBuffer->dlc = MCANLengthToDlcGet(messageLength);
         if(MCAN_MODE_L==MCAN_MODE_FD_EXTENDED){                                              //Si es mensaje FD extendido
         txBuffer->xtd = 1;
@@ -331,7 +357,6 @@ bool mcan_fd_interrupt_enviar(uint32_t messageID , uint8_t *message, uint8_t mes
         for (uint8_t loop_count = 0; loop_count < messageLength; loop_count++){
 			txBuffer->data[loop_count] = message[loop_count];
 		}
-        //txBuffer->data=message;
         MCAN1_TxFifoCallbackRegister( APP_MCAN_TxFifoCallback, (uintptr_t)APP_STATE_MCAN_TRANSMIT );
         state = APP_STATE_MCAN_IDLE;
         if (MCAN1_MessageTransmitFifo(1, txBuffer) == false)
