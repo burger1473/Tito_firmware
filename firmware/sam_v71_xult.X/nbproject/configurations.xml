@@ -80,6 +80,11 @@
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="lib" displayName="lib" projectFiles="true">
+        <logicalFolder name="mcan_fd_interrupt"
+                       displayName="mcan_fd_interrupt"
+                       projectFiles="true">
+          <itemPath>../lib/mcan_fd_interrupt/mcan_fd_interrupt.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="Usart1_FreeRTOS"
                        displayName="Usart1_FreeRTOS"
                        projectFiles="true">
@@ -307,6 +312,11 @@
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="lib" displayName="lib" projectFiles="true">
+        <logicalFolder name="mcan_fd_interrupt"
+                       displayName="mcan_fd_interrupt"
+                       projectFiles="true">
+          <itemPath>../lib/mcan_fd_interrupt/mcan_fd_interrupt.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="Usart1_FreeRTOS"
                        displayName="Usart1_FreeRTOS"
                        projectFiles="true">
@@ -561,7 +571,7 @@
         <property key="memories.programmemory.ranges" value="400000-5fffff"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programmerToGoFilePath"
-                  value="D:/H3/csp_apps_sam_e70_s70_v70_v71/apps/mcan/mcan_fd_operation_interrupt_timestamp/firmware/sam_v71_xult.X/debug/sam_v71_xult/sam_v71_xult_ptg"/>
+                  value="C:/Users/faburgos/Desktop/Mio/Spacebee/mio/Tito_firmware/firmware/sam_v71_xult.X/debug/sam_v71_xult/sam_v71_xult_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"

@@ -13,6 +13,7 @@
 #include <string.h>
 #include <stdio.h>
 #include "../lib/Usart1_FreeRTOS/Uart1_FreeRTOS.h"
+#include "../lib/mcan_fd_interrupt/mcan_fd_interrupt.h"
 
 /*=====================[Variables]================================*/
   TAREA_PRINCIPAL_DATA tarea_principalData;       //Estructura que contiene la informacion de la tarea como por ejemplo, el estado de esta
@@ -20,13 +21,19 @@
   TaskHandle_t xTAREA_Can1;                       //Puntero hacia la tarea can1
   TaskHandle_t xTAREA_Can2;                       //Puntero hacia la tarea can2
   
+  
+  //uint8_t Can1MessageRAM[MCAN1_MESSAGE_RAM_CONFIG_SIZE] __attribute__((aligned (32)))__attribute__((space(data), section (".ram_nocache")));
+  uint8_t Mcan1MessageRAM[MCAN1_MESSAGE_RAM_CONFIG_SIZE] __attribute__((aligned (32)))__attribute__((space(data), section (".ram_nocache")));
+  SemaphoreHandle_t canMutexLock;                 //Mutex de semaforo utilizado para proteger el recurso compartido de CAN con otras tareas
+  
+  
+  
 
 /*===================[Prototipos de funciones]=========================*/
   void TAREA_Can1(void *pvParameters );
   void TAREA_Can2(void *pvParameters );
   
 /*=====================[Implementaciones]==============================*/
-
   
 /*========================================================================
   Funcion: TAREA_PRINCIPAL_Initialize
@@ -43,6 +50,13 @@ void TAREA_PRINCIPAL_Initialize ( void )
     if (resultado == 0){ Uart1_println("CANopen was initialized and is in pre-operational mode"); }
     if (resultado == 1){ Uart1_println("No se pudo crear el bloqueo mutex"); }
    // if (resultado == 2){ Uart1_println("Error al mandar mensaje Boot_Up");  CANopen_STOP(); }
+    
+    canMutexLock = xSemaphoreCreateMutex();                //Creo semaforo para proteger el recurso compartido de CAN con otras tareas
+    if(canMutexLock == NULL)                               //Si no se creo el semaforo
+    {
+        /* No habia suficiente almacenamiento dinamico de FreeRTOS disponible para que el semaforo se creara correctamente. */
+        USART1_Write((uint8_t*)"No se pudo crear el bloqueo mutex2\r\n", strlen("No se pudo crear el bloqueo mutex2\r\n"));  //Escribo por uart
+    }
 }
 
 /*========================================================================
@@ -53,6 +67,8 @@ void TAREA_PRINCIPAL_Initialize ( void )
   ========================================================================*/
 void TAREA_PRINCIPAL_Tasks ( void )
 {
+    mcan_fd_interrupt_config(Mcan1MessageRAM);               //Configuro memoria ram de mensaje can
+    
     while (1)
     {
         
@@ -65,6 +81,7 @@ void TAREA_PRINCIPAL_Tasks ( void )
 
             if (dato[0] == '1')                               //Si el dato recibido es el caracter 1
             {
+                
                 xTaskCreate((TaskFunction_t) TAREA_Can1, "TAREA_Can1", 512, NULL, 4, &xTAREA_Can1); //Creo tarea para envio trama 1 por can
             }
 
@@ -89,6 +106,17 @@ void TAREA_PRINCIPAL_Tasks ( void )
   No retorna nada
   ========================================================================*/
 void TAREA_Can1(void *pvParameters ){
+  
+  xSemaphoreTake(canMutexLock, portMAX_DELAY);                         //Tomo semaforo para proteger el bus can ya que es un recurso compartico con otras tareas
+  static uint8_t message[4] = {0}; message[0]='T'; message[1]='I'; message[2]='T'; message[3]='O';
+  Enable_testmode(0);
+  bool retorno = mcan_fd_interrupt_enviar((uint32_t) 0x45A, message, 4, MCAN_MODE_NORMAL); //Envio trama por can bus
+  if ( retorno == false)
+  {
+    Uart1_print("\r\nError");
+  }             
+  //mcan_fd_interrupt_habilitar();                                     //Libero la maquina de estado del mcan para que otra tarea o funcion pueda enviar o recibir por can
+  xSemaphoreGive(canMutexLock);                                        //Libero semaforo
   
   Uart1_print("\r\nFin tarea can 1");
   if(xTAREA_Can1 != NULL){vTaskDelete(xTAREA_Can1); xTAREA_Can1=NULL;} //Elimino esta tarea

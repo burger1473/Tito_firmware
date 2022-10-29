@@ -1,10 +1,6 @@
-build/sam_v71_xult/production/_ext/1360937237/tarea_principal.o: \
- ../src/tarea_principal.c ../src/tarea_principal.h \
- ../src/config/sam_v71_xult/configuration.h \
- ../src/config/sam_v71_xult/user.h \
- ../src/config/sam_v71_xult/toolchain_specifics.h \
- ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h \
- ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_gcc.h \
+build/sam_v71_xult/production/_ext/1563530619/mcan_fd_interrupt.o: \
+ ../lib/mcan_fd_interrupt/mcan_fd_interrupt.c \
+ ../lib/mcan_fd_interrupt/mcan_fd_interrupt.h \
  ../src/config/sam_v71_xult/definitions.h \
  ../src/config/sam_v71_xult/peripheral/clk/plib_clk.h \
  ../src/config/sam_v71_xult/peripheral/pio/plib_pio.h \
@@ -13,6 +9,7 @@ build/sam_v71_xult/production/_ext/1360937237/tarea_principal.o: \
  ../src/packs/CMSIS/CMSIS/Core/Include/core_cm7.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_version.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h \
+ ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_gcc.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h \
  ../src/packs/ATSAMV71Q21B_DFP/component/acc.h \
@@ -112,6 +109,8 @@ build/sam_v71_xult/production/_ext/1360937237/tarea_principal.o: \
  ../src/packs/ATSAMV71Q21B_DFP/pio/samv71q21b.h \
  ../src/config/sam_v71_xult/device_cache.h \
  ../src/config/sam_v71_xult/device.h \
+ ../src/config/sam_v71_xult/toolchain_specifics.h \
+ ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h \
  ../src/config/sam_v71_xult/peripheral/nvic/plib_nvic.h \
  ../src/config/sam_v71_xult/peripheral/mpu/plib_mpu.h \
  ../src/config/sam_v71_xult/peripheral/mcan/plib_mcan1.h \
@@ -132,20 +131,10 @@ build/sam_v71_xult/production/_ext/1360937237/tarea_principal.o: \
  ../src/config/sam_v71_xult/peripheral/usart/plib_usart1.h \
  ../src/config/sam_v71_xult/peripheral/usart/plib_usart_common.h \
  ../src/config/sam_v71_xult/system/cache/sys_cache.h \
- ../src/tarea_principal.h ../src/../lib/Usart1_FreeRTOS/Uart1_FreeRTOS.h \
- ../src/../lib/mcan_fd_interrupt/mcan_fd_interrupt.h
+ ../src/tarea_principal.h ../src/config/sam_v71_xult/configuration.h \
+ ../src/config/sam_v71_xult/user.h
 
-../src/tarea_principal.h:
-
-../src/config/sam_v71_xult/configuration.h:
-
-../src/config/sam_v71_xult/user.h:
-
-../src/config/sam_v71_xult/toolchain_specifics.h:
-
-../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h:
-
-../src/packs/CMSIS/CMSIS/Core/Include/cmsis_gcc.h:
+../lib/mcan_fd_interrupt/mcan_fd_interrupt.h:
 
 ../src/config/sam_v71_xult/definitions.h:
 
@@ -162,6 +151,8 @@ build/sam_v71_xult/production/_ext/1360937237/tarea_principal.o: \
 ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_version.h:
 
 ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h:
+
+../src/packs/CMSIS/CMSIS/Core/Include/cmsis_gcc.h:
 
 ../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h:
 
@@ -361,6 +352,10 @@ build/sam_v71_xult/production/_ext/1360937237/tarea_principal.o: \
 
 ../src/config/sam_v71_xult/device.h:
 
+../src/config/sam_v71_xult/toolchain_specifics.h:
+
+../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h:
+
 ../src/config/sam_v71_xult/peripheral/nvic/plib_nvic.h:
 
 ../src/config/sam_v71_xult/peripheral/mpu/plib_mpu.h:
@@ -403,6 +398,6 @@ build/sam_v71_xult/production/_ext/1360937237/tarea_principal.o: \
 
 ../src/tarea_principal.h:
 
-../src/../lib/Usart1_FreeRTOS/Uart1_FreeRTOS.h:
+../src/config/sam_v71_xult/configuration.h:
 
-../src/../lib/mcan_fd_interrupt/mcan_fd_interrupt.h:
+../src/config/sam_v71_xult/user.h:

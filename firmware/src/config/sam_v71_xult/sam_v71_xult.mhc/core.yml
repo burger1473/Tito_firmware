@@ -1149,6 +1149,13 @@ children:
       - type: Dynamic
         attributes: {id: core, value: '150000000'}
   - type: Boolean
+    attributes: {id: XDMAC_LL_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'false'}
+  - type: Boolean
     attributes: {id: systickEnable}
     children:
     - type: Attributes
