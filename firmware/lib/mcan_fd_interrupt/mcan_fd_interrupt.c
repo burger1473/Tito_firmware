@@ -21,7 +21,8 @@
   #include <stdlib.h>                       //Define EXIT_FAILURE
   #include <stdio.h>                        //Para sizeof
   #include "definitions.h"                  //Prototipos de funciones SYS
-  
+  #include "../Usart1_FreeRTOS/Uart1_FreeRTOS.h"
+
   /* Standard identifier id[28:18]*/
   #define WRITE_ID(id) (id << 18)
   #define READ_ID(id)  (id >> 18)
@@ -47,6 +48,10 @@
     static uint8_t rxFiFo1[MCAN1_RX_FIFO1_SIZE];
     static uint8_t rxBuffer[MCAN1_RX_BUFFER_SIZE];
 
+    static uint32_t rx_messageID = 0;
+    static uint8_t rx_message[64] = {0};
+    static uint8_t rx_messageLength = 0;
+    static uint16_t timestamp = 0;
 
 /*========================[Prototipos]=================================*/    
 
@@ -101,36 +106,63 @@ static uint8_t MCANDlcToLengthGet(uint8_t dlc)
     return msgLength[dlc];
 }
 
-/* Print Rx Message */
-//print_message(numberOfMessage, (MCAN_RX_BUFFER *)rxFiFo0, MCAN1_RX_FIFO0_ELEMENT_SIZE, 0);
-static void print_message(uint8_t numberOfMessage, MCAN_RX_BUFFER *rxBuf, uint8_t rxBufLen, uint8_t rxFifoBuf)
+/*========================================================================
+  Funcion: Save_message
+  Descripcion: Esta función guarda el mensaje recibido por can (por los diferentes buffer o fifo) y lo almacena en variables globales de esta libreria
+  No retorna nada
+  ========================================================================*/
+static void Save_message(uint8_t numberOfMessage, MCAN_RX_BUFFER *rxBuf, uint8_t rxBufLen, uint8_t rxFifoBuf)
 {
-    uint8_t length = 0;
-    uint8_t msgLength = 0;
-    uint32_t id = 0;
-
-    if (rxFifoBuf == 0)
-        printf(" Rx FIFO0 :");
-    else if (rxFifoBuf == 1)
-        printf(" Rx FIFO1 :");
-    else if (rxFifoBuf == 2)
-        printf(" Rx Buffer :");
-
-    for (uint8_t count = 0; count < numberOfMessage; count++)
-    {
-        /* Print message to Console */
-        printf(" New Message Received\r\n");
-        id = rxBuf->xtd ? rxBuf->id : READ_ID(rxBuf->id);
-        msgLength = MCANDlcToLengthGet(rxBuf->dlc);
-        length = msgLength;
-        printf(" Message - Timestamp : 0x%x ID : 0x%x Length : 0x%x ", (unsigned int)rxBuf->rxts, (unsigned int)id, (unsigned int)msgLength);
-        printf("Message : ");
-        while(length)
-        {
-            printf("0x%x ", rxBuf->data[msgLength - length--]);
+    uint8_t length = 0;                                                         //Variable que contiene el tamaño actual
+    //rx_messageLength = 0;                                                       //Variable para almacenar tamaño del mensaje
+    #ifdef debug
+        if (rxFifoBuf == 0){                                                    //Si el mensaje proviene de la fifo0
+                Uart1_print(" Rx FIFO0 :");
         }
-        printf("\r\n");
-        rxBuf += rxBufLen;
+        else if (rxFifoBuf == 1){                                               //Si el mensaje proviene de la fifo1
+                Uart1_print(" Rx FIFO1 :");
+        }else if (rxFifoBuf == 2){
+                Uart1_print(" Rx Buffer :");                                    //Si el mensaje proviene del buffer
+        }
+    #endif
+
+    for (uint8_t count = 0; count < numberOfMessage; count++)                   //Recorro todos los mensajes
+    {
+        #ifdef debug
+            Uart1_println(" New Message Received");
+        #endif
+        portENTER_CRITICAL();                                                   //Seccion critica para evitar que se ejecute cambio de contexto alterando el proceso de guardado de la variable
+        rx_messageID = rxBuf->xtd ? rxBuf->id : READ_ID(rxBuf->id);             //Obtengo ID
+        rx_messageLength = MCANDlcToLengthGet(rxBuf->dlc);                      //Obtengo tamaño mensaje
+        length = rx_messageLength;                                              //Valorizo el tamaño actual con el tamaño real del mensaje
+        timestamp=(unsigned int)rxBuf->rxts;                                    //Obtengo el timestamp
+        portEXIT_CRITICAL();                                                    //Salgo de seccion critica
+        #ifdef debug
+            //Uart1_print(" Message - Timestamp : 0x%x ID : 0x%x Length : 0x%x ", (unsigned int)rxBuf->rxts, (unsigned int)rx_messageID, (unsigned int)rx_messageLength);
+            Uart1_print(" Message - Timestamp : 0x");
+            Uart1_print(timestamp);
+            Uart1_print(" ID : 0x");
+            Uart1_print((unsigned int)rx_messageID);
+            Uart1_print(" Length : 0x");
+            Uart1_print((unsigned int)rx_messageLength);
+            Uart1_print("Message : ");
+        #endif
+        uint8_t posicion=0;                                                    //Variable para guardar la posicion actual del array
+        while(length)                                                          //Recorro el array que contiene el mensaje
+        {
+            posicion=rx_messageLength - length--;                              //Posicion actual del array
+            portENTER_CRITICAL();                                                   //Seccion critica para evitar que se ejecute cambio de contexto alterando el proceso de guardado de la variable
+            rx_message[posicion]=rxBuf->data[posicion];                        //Guardo mensaje en variable global
+            portEXIT_CRITICAL();                                                    //Salgo de seccion critica
+            #ifdef debug
+                Uart1_print("0x");
+                Uart1_print(&rxBuf->data[posicion]);
+            #endif
+        }
+        #ifdef debug
+            Uart1_println(" ");
+        #endif
+        rxBuf += rxBufLen;                                                     //Recorro el buffer
     }
 }
 
@@ -188,7 +220,7 @@ void APP_MCAN_RxBufferCallback(uint8_t bufferNumber, uintptr_t context)
                 memset(rxBuffer, 0x00, MCAN1_RX_BUFFER_ELEMENT_SIZE);   //memset(void *str, int c, size_t n) copia el caracter c (un caracter sin signo) en los primeros n caracteres de la cadena a la que apunta el argumento str .
                 if (MCAN1_MessageReceive(bufferNumber, (MCAN_RX_BUFFER *)rxBuffer) == true) //Recibe un mensaje por can
                 {                                                       //Si se pudo recibir
-                    print_message(1, (MCAN_RX_BUFFER *)rxBuffer, MCAN1_RX_BUFFER_ELEMENT_SIZE, 2);  //Imprimo mensaje
+                    Save_message(1, (MCAN_RX_BUFFER *)rxBuffer, MCAN1_RX_BUFFER_ELEMENT_SIZE, 2);  //Imprimo mensaje y almaceno en variable local
                     state = APP_STATE_MCAN_XFER_SUCCESSFUL;             //Estado mensaje recibido o transmitido correctamente
                 }
                 else                                                    //Si no se pudo recibir
@@ -229,7 +261,7 @@ void APP_MCAN_RxFifo0Callback(uint8_t numberOfMessage, uintptr_t context)
                 memset(rxFiFo0, 0x00, (numberOfMessage * MCAN1_RX_FIFO0_ELEMENT_SIZE));    //memset(void *str, int c, size_t n) copia el caracter c (un caracter sin signo) en los primeros n caracteres de la cadena a la que apunta el argumento str .
                 if (MCAN1_MessageReceiveFifo(MCAN_RX_FIFO_0, numberOfMessage, (MCAN_RX_BUFFER *)rxFiFo0) == true) //Recibe un mensaje por can
                 {                                                       //Si se pudo recibir
-                    print_message(numberOfMessage, (MCAN_RX_BUFFER *)rxFiFo0, MCAN1_RX_FIFO0_ELEMENT_SIZE, 0);    //Muestro mensaje recibido
+                    Save_message(numberOfMessage, (MCAN_RX_BUFFER *)rxFiFo0, MCAN1_RX_FIFO0_ELEMENT_SIZE, 0);    //Imprimo mensaje y almaceno en variable local
                     state = APP_STATE_MCAN_XFER_SUCCESSFUL;             //Estado mensaje recibido o transmitido correctamente
                 }
                 else                                                    //Si no se pudo recibir
@@ -270,7 +302,7 @@ void APP_MCAN_RxFifo1Callback(uint8_t numberOfMessage, uintptr_t context)
                 memset(rxFiFo1, 0x00, (numberOfMessage * MCAN1_RX_FIFO1_ELEMENT_SIZE));     //memset(void *str, int c, size_t n) copia el caracter c (un caracter sin signo) en los primeros n caracteres de la cadena a la que apunta el argumento str .
                 if (MCAN1_MessageReceiveFifo(MCAN_RX_FIFO_1, numberOfMessage, (MCAN_RX_BUFFER *)rxFiFo1) == true) //Recibe un mensaje por can
                 {                                                       //Si se pudo recibir
-                    print_message(numberOfMessage, (MCAN_RX_BUFFER *)rxFiFo1, MCAN1_RX_FIFO1_ELEMENT_SIZE, 1);  //Muestro mnensaje recibido
+                    Save_message(numberOfMessage, (MCAN_RX_BUFFER *)rxFiFo1, MCAN1_RX_FIFO1_ELEMENT_SIZE, 1);  //Imprimo mensaje y almaceno en variable local
                     state = APP_STATE_MCAN_XFER_SUCCESSFUL;             //Estado mensaje recibido o transmitido correctamente
                 }
                 else                                                    //Si no se pudo recibir
@@ -294,20 +326,22 @@ void APP_MCAN_RxFifo1Callback(uint8_t numberOfMessage, uintptr_t context)
   Funcion: mcan_fd_interrupt_recibir
   Descripcion: Recibe mensaje por canbus
   Parametro de entrada:
-                        uint32_t *rx_messageID:     Id can del mensaje recibido (de 11 bits/29 bits).
+                        uint32_t *rx_messageID:     Puntero de la variable donde se guardara el Id can del mensaje recibido (de 11 bits/29 bits).
                         uint8_t *rx_message:        Puntero de la variable donde guardar el mensaje
                         uint8_t *rx_messageLength:  Puntero de la variable donde guardar el tamaÃ±o del mensaje
-                        uint16_t *timestamp:        Puntero a la marca de tiempo del mensaje Rx, el valor de la marca de tiempo es 0 si la marca de tiempo estÃ¡ deshabilitada
-                        MCAN_MSG_ATTR_RX:           Trama de datos o trama remota usando Tx FIFO o Tx Buffer. Mensaje para ser leÃ­do desde Rx FIFO0 o Rx FIFO1 o Rx Buffer
-                                                    MCAN_MSG_ATTR_RX_BUFFER
-                                                    MCAN_MSG_ATTR_RX_FIFO0
-                                                    MCAN_MSG_ATTR_RX_FIFO1
-                        msgFrameAttr:               Trama de datos o trama remota a recibir  ej:  MCAN_MSG_RX_DATA_FRAME
   Retorna: dato bool indicando si se pudo transmitir el mensaje true o false.
   ========================================================================*/
-bool mcan_fd_interrupt_recibir(uint32_t *rx_messageID, uint8_t *rx_message, uint8_t *rx_messageLength){  
-    
-    return false;                                                                                              //Retorno falso si no se esperaba al usuario para enviar o recibir mensaje
+bool mcan_fd_interrupt_recibir(uint32_t *rx_messageID2, uint8_t *rx_message2, uint8_t *rx_messageLength2){  
+    if(state == APP_STATE_MCAN_XFER_SUCCESSFUL){
+        portENTER_CRITICAL();                                  //Seccion critica para evitar que se ejecute cambio de contexto alterando el proceso de guardado de la variable
+        rx_messageID2=rx_messageID;
+        rx_message2=rx_message;
+        rx_messageLength2=rx_messageLength;
+        portEXIT_CRITICAL();                                   //Salgo de seccion critica
+        return true;                                           //Retorno falso si se recibio mensaje
+    }else{
+        return false;                                          //Retorno falso si no se recibio mensaje
+    }
 }
 
 /*========================================================================

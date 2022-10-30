@@ -132,7 +132,8 @@ build/sam_v71_xult/production/_ext/1563530619/mcan_fd_interrupt.o: \
  ../src/config/sam_v71_xult/peripheral/usart/plib_usart_common.h \
  ../src/config/sam_v71_xult/system/cache/sys_cache.h \
  ../src/tarea_principal.h ../src/config/sam_v71_xult/configuration.h \
- ../src/config/sam_v71_xult/user.h
+ ../src/config/sam_v71_xult/user.h \
+ ../lib/mcan_fd_interrupt/../Usart1_FreeRTOS/Uart1_FreeRTOS.h
 
 ../lib/mcan_fd_interrupt/mcan_fd_interrupt.h:
 
@@ -401,3 +402,5 @@ build/sam_v71_xult/production/_ext/1563530619/mcan_fd_interrupt.o: \
 ../src/config/sam_v71_xult/configuration.h:
 
 ../src/config/sam_v71_xult/user.h:
+
+../lib/mcan_fd_interrupt/../Usart1_FreeRTOS/Uart1_FreeRTOS.h:

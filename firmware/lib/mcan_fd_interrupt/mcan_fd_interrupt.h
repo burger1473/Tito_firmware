@@ -10,13 +10,8 @@
 /*==================[Definiciones]================================*/
   #ifndef _MCAN_FD_INTERRUPT_H
   #define _MCAN_FD_INTERRUPT_H
-  // DOM-IGNORE-BEGIN
-  #ifdef __cplusplus  // Provide C++ Compatibility
 
-  extern "C" {
-
-  #endif
-  // DOM-IGNORE-END
+  #define debug 1
 
 /*=====================[ Inclusiones ]============================*/
   #include <stddef.h>                     //Define NULL
@@ -45,7 +40,7 @@ typedef enum
 /*=================[Prototipos de funciones]======================*/
  void mcan_fd_interrupt_config(uint8_t *msgRAMConfigBaseAddress);
  bool mcan_fd_interrupt_enviar(uint32_t messageID , uint8_t *message, uint8_t messageLength, MCAN_MODE MCAN_MODE_L);
- bool mcan_fd_interrupt_recibir(uint32_t *rx_messageID, uint8_t *rx_message, uint8_t *rx_messageLength);
+ bool mcan_fd_interrupt_recibir(uint32_t *rx_messageID2, uint8_t *rx_message2, uint8_t *rx_messageLength2);
  uint8_t Resultado(void);
  void mcan_fd_interrupt_habilitar(void);
 

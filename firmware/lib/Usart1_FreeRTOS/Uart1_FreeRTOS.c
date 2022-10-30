@@ -1,6 +1,7 @@
 /*=============================================================================
  * Author: Spacebeetech - Navegación
  * Date: 16/05/2022 
+ * Update: 29/10/2022
  * Board: Atmel ARM Cortex-M7 Xplained Ultra Dev Board ATSAMV71-XULT ATSAMV71Q21B
  * Entorno de programacion: MPLABX - Harmony
  *
@@ -10,6 +11,15 @@
  *                 Ademas el iniciarse esta tarea tambien crea un semaforo binario, este semaforo sirve para bloquear o habilitar la tarea dependiendo si hay datos en el buffer para leer o no.
  *                 Luego de iniciar el semaforo y configurar la int de uart, se entra un bucle infinito. Dentro de este bucle se intenta tomar el semaforo, si el semaforo habilita, se leen los datos del buffer uart.
  *                 en caso de que no haya dato en el buffer, el semaforo no estara habilitado por la interrupcion y por ende bloqueara la tarea TAREA_UART_Tasks hasta que llegue el dato uart permitiendo que otras tareas entren en contexto y ejecución.
+ *
+ *                 Para recibir un dato, se debe llemar a la funcion Uart1_Recibir(). Esta funcion retorna el mensaje obtenido por la tarea explicada anteriormente.
+ *                 Para enviar mensaje se puede usar Uart1_print() o Uart1_println()
+ * Funcionamiento sin tarea: La funcion Uart1_FreeRTOS_Config realiza: 
+ *                              -Crea un semaforo para proteger el intercambio de datos con el periferico ya que es un recurso compartido entre diferentes tareas. 
+ *                              -Configura el periferico uart como interrupcion cuando el buffer uart llega a x bytes previamente establecidos.
+ *                           La funcion Uart1_Recibir() configura la recepcion de x bytes por medio de callback y entra a un bucle con timuout esperando la recpcion de loz x bytes.
+ *                             si se recibe datos, estos son enviados al puntero que se especifica en la funcion y la misma retorna true, de lo contrario retorna false.   
+ *                           Las funciones Uart1_print() o Uart1_println()  solo realizan el envio de datos
  *
  *                 Para recibir un dato, se debe llemar a la funcion Uart1_Recibir(). Esta funcion retorna el mensaje obtenido por la tarea explicada anteriormente.
  *                 Para enviar mensaje se puede usar Uart1_print() o Uart1_println()
