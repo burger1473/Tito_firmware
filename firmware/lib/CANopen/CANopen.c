@@ -6,7 +6,7 @@
  *
  * Descripcion: Libreria CANopen utilizando preiferico MCAN con libreria mcan_fd_interrupt.c
  *              Soporte SDO en modo Expedited Read y Expedited Write. No soporta lectura y escritura por segmentos.
- *              Proximas mejores: Optimizar diccionario, crear soporte PDO, sincronizacion, SDO abort code, codigos de error.
+ *              Proximas mejores: Optimizar diccionario, crear soporte PDO, sincronizacion, SDO abort code, codigos de error, soporte a boot-up.
  *              Esta libreria funciona para FreeRTOS y esta protegida por un semaforo binario para evitar conflictos ya que can es un recurso compartido.
 *===========================================================================*/
 
@@ -14,7 +14,7 @@
   #include "CANopen.h"
   #include "Dictionary.h"
   #define Boot_up 0     //1 Si se quiere enviar mensaje Boot-up luego de pasar al estado pre-operacional  o 0 para desactivar
-
+    //¡¡¡¡IMPORTANTE: BOOT_UP no funciona, manetener en cero!!!!!
 /*=====================[Variables]================================*/
     typedef enum
     {
@@ -60,6 +60,7 @@ uint8_t CANopen_init(void){
     
     state = CANopen_PRE_OPERATIONAL;                                //Cambio estado de la maquina de estado de CANopen
     if(Boot_up == 1){                                       //Si esta activo el Boot_up
+        Enable_testmode(0);
         if(CANopen_BootUp()==false){ return 2; }            //Envio mensaje de inicio y verifico errores
     }
     return 0;                                               //Retorno OK

@@ -118,13 +118,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 6FCE34A4A703285FBDC343F2389D0587
-- generatedChecksum: 43E38D9E529A456F42489E9D0DEA8E8B
+- generatedChecksum: D13A456E6F7F08E8651A4FDE6057D14D
   logicalPath: config/sam_v71_xult/peripheral/usart
   name: plib_usart1.c
   physicalPath: peripheral/usart
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 43E38D9E529A456F42489E9D0DEA8E8B
+  userChecksum: D13A456E6F7F08E8651A4FDE6057D14D
 - generatedChecksum: A44EAFDF7F180C2C05A0AE0AEB3FB80C
   logicalPath: FreeRTOS/Source/portable/GCC/SAM/CM7
   name: port.c
@@ -195,13 +195,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: AF3A8D8AA610E7DFD3E38DDAC5E42074
-- generatedChecksum: F1D29B162A323C5C92593465330E6059
+- generatedChecksum: FD6B034365C9D6D182B515F411153F93
   logicalPath: config/sam_v71_xult
   name: FreeRTOSConfig.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: F1D29B162A323C5C92593465330E6059
+  userChecksum: FD6B034365C9D6D182B515F411153F93
 - generatedChecksum: 3C6B332F916A1F3F509E6374EF9EDAEB
   logicalPath: packs/ATSAMV71Q21B_DFP/component
   name: acc.h
@@ -706,13 +706,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 0AB5699F2CAFEF4779E007A68187F6CF
-- generatedChecksum: 25E9B8A08995C97B01258B806E62A816
+- generatedChecksum: 52609ED43F98B1083100F15EC6A1C8FE
   logicalPath: config/sam_v71_xult/peripheral/usart
   name: plib_usart1.h
   physicalPath: peripheral/usart
   security: NON_SECURE
   type: HEADER
-  userChecksum: 25E9B8A08995C97B01258B806E62A816
+  userChecksum: 52609ED43F98B1083100F15EC6A1C8FE
 - generatedChecksum: 2B0D6DB62F6E6E43DA189A8FA1DB7B5C
   logicalPath: config/sam_v71_xult/peripheral/usart
   name: plib_usart_common.h

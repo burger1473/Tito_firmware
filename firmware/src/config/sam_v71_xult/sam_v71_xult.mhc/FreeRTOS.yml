@@ -18,5 +18,12 @@ children:
       children:
       - type: User
         attributes: {value: 'true'}
+  - type: Boolean
+    attributes: {id: FREERTOS_USE_RECURSIVE_MUTEXES}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
 - type: ElementPosition
   attributes: {x: '341', y: '179', id: FreeRTOS}

@@ -43,9 +43,9 @@
 void TAREA_PRINCIPAL_Initialize ( void )
 {
     tarea_principalData.state = TAREA_PRINCIPAL_STATE_INIT; //Se inicia la maquina de estado mediante su estructura. Se establece en 1
-    Uart1_FreeRTOS_Config();
+    Uart1_FreeRTOS_Config(2);
+    //Uart1_FreeRTOS_Config();
     uint8_t resultado=CANopen_init();
-    //uint8_t resultado=1;    
     if (resultado == 0){ Uart1_println("CANopen was initialized and is in pre-operational mode"); }
     if (resultado == 1){ Uart1_println("No se pudo crear el bloqueo mutex"); }
     if (resultado == 2){ Uart1_println("Error al mandar mensaje Boot_Up");  CANopen_STOP(); }
@@ -60,29 +60,32 @@ void TAREA_PRINCIPAL_Initialize ( void )
   ========================================================================*/
 void TAREA_PRINCIPAL_Tasks ( void )
 {
+    uint8_t readByte=' ';                                      //Variable para guadar el byte leido por uart.
+    
     while (1)
     {
         
         char dato[1]= {0};
-        Uart1_leer_x_bytes(1, dato);
-        
+        Uart1_Recibir(1, dato);
+        //readByte = Uart1_Recibir();                            //Recibo dato de uart1
         if (dato[0] != ' ')                                   //Si el byte es distinto del caracter ' '
         {   
-            //Uart1_print(dato);
-
-            if (dato[0] == '1')                               //Si el dato recibido es el caracter 1
+            char destino[8]="        ";
+            sprintf(destino, "Teclas: %c", dato[0]);
+            Uart1_println(destino);
+            
+            if (dato[0]  == '1')                               //Si el dato recibido es el caracter 1
             {
-                
                 xTaskCreate((TaskFunction_t) TAREA_Can1, "TAREA_Can1", 512, NULL, 4, &xTAREA_Can1); //Creo tarea para envio trama 1 por can
             }
 
-            if (dato[0] == '2')                               //Si el dato recibido es el caracter 2
+            if (dato[0]  == '2')                               //Si el dato recibido es el caracter 2
             {
                 xTaskCreate((TaskFunction_t) TAREA_Can2, "TAREA_Can2", 512, NULL, 4, &xTAREA_Can2); //Creo tarea para envio trama 2 por can
             }
 
         }else{
-            Uart1_print("\r\nEsperando tecla...");
+            Uart1_println("Esperando tecla...");
         }
 
         vTaskDelay(1500 / portTICK_PERIOD_MS );               //Deje que la tarea quede inactiva por un tiempo determinado dejando que se produzca el cambio de contexto a otra tarea.
@@ -103,7 +106,7 @@ void TAREA_Can1(void *pvParameters ){
 
   //Escribo posicion
   uint8_t pos[3]={0}; pos[0]=0x42; pos[1]=0x13; pos[2]=0x23; pos[3]=0x87;
-  if(Epos4_write_target_position(EPOS4_id, pos)==true){}else{Uart1_print("\r\nFallo escritura EPOS4");}
+  if(Epos4_write_target_position(EPOS4_id, pos)==true){Uart1_println("Escritura EPOS4 OK");}else{Uart1_println("Fallo escritura EPOS4");}
 
   //Leo posicion actual
   //uint8_t pos_actual[3]={0};
@@ -111,7 +114,7 @@ void TAREA_Can1(void *pvParameters ){
 
   //mcan_fd_interrupt_habilitar();                                     //Libero la maquina de estado del mcan para que otra tarea o funcion pueda enviar o recibir por can
 
-  Uart1_print("\r\nFin tarea can 1");
+  Uart1_println("Fin tarea can 1");
   if(xTAREA_Can1 != NULL){vTaskDelete(xTAREA_Can1); xTAREA_Can1=NULL;} //Elimino esta tarea
 }
 
@@ -123,7 +126,7 @@ void TAREA_Can1(void *pvParameters ){
   ========================================================================*/
 void TAREA_Can2(void *pvParameters ){
   
-  Uart1_print("\r\nFin tarea can 2");
+  Uart1_println("Fin tarea can 2");
   if(xTAREA_Can2 != NULL){vTaskDelete(xTAREA_Can2); xTAREA_Can2=NULL;} //Elimino esta tarea
 }
 
