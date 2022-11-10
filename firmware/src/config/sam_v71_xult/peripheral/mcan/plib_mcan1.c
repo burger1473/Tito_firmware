@@ -129,7 +129,7 @@ void MCAN1_Initialize(void)
     MCAN1_REGS->MCAN_TXESC = MCAN_TXESC_TBDS(7UL);
 
     /* Global Filter Configuration Register */
-    MCAN1_REGS->MCAN_GFC = MCAN_GFC_ANFS(2) | MCAN_GFC_ANFE(2);
+    MCAN1_REGS->MCAN_GFC = MCAN_GFC_ANFS_RX_FIFO_0 | MCAN_GFC_ANFE(2);
 
     /* Extended ID AND Mask Register */
     MCAN1_REGS->MCAN_XIDAM = MCAN_XIDAM_Msk;
