@@ -67,22 +67,6 @@ static MCAN_RX_FIFO_CALLBACK_OBJ mcan1RxFifoCallbackObj[2];
 static MCAN_CALLBACK_OBJ mcan1CallbackObj;
 static MCAN_OBJ mcan1Obj;
 
-static const mcan_sidfe_registers_t mcan1StdFilter[] =
-{
-    {
-        .MCAN_SIDFE_0 = MCAN_SIDFE_0_SFT(0UL) |
-                  MCAN_SIDFE_0_SFID1(0x0UL) |
-                  MCAN_SIDFE_0_SFID2(0x100UL) |
-                  MCAN_SIDFE_0_SFEC(1UL)
-    },
-    {
-        .MCAN_SIDFE_0 = MCAN_SIDFE_0_SFT(0UL) |
-                  MCAN_SIDFE_0_SFID1(0x7ffUL) |
-                  MCAN_SIDFE_0_SFID2(0x100UL) |
-                  MCAN_SIDFE_0_SFEC(7UL)
-    },
-};
-
 static const mcan_xidfe_registers_t mcan1ExtFilter[] =
 {
     {
@@ -598,15 +582,6 @@ void MCAN1_MessageRAMConfigSet(uint8_t *msgRAMConfigBaseAddress)
     MCAN1_REGS->MCAN_TXEFC = MCAN_TXEFC_EFWM(0UL) | MCAN_TXEFC_EFS(1UL) |
             MCAN_TXEFC_EFSA(((uint32_t)mcan1Obj.msgRAMConfig.txEventFIFOAddress >> 2));
 
-    mcan1Obj.msgRAMConfig.stdMsgIDFilterAddress = (mcan_sidfe_registers_t *)(msgRAMConfigBaseAddress + offset);
-    memcpy((void *)mcan1Obj.msgRAMConfig.stdMsgIDFilterAddress,
-           (const void *)mcan1StdFilter,
-           MCAN1_STD_MSG_ID_FILTER_SIZE);
-    offset += MCAN1_STD_MSG_ID_FILTER_SIZE;
-    /* Standard ID Filter Configuration Register */
-    MCAN1_REGS->MCAN_SIDFC = MCAN_SIDFC_LSS(2UL) |
-            MCAN_SIDFC_FLSSA(((uint32_t)mcan1Obj.msgRAMConfig.stdMsgIDFilterAddress >> 2));
-
     mcan1Obj.msgRAMConfig.extMsgIDFilterAddress = (mcan_xidfe_registers_t *)(msgRAMConfigBaseAddress + offset);
     memcpy((void *)mcan1Obj.msgRAMConfig.extMsgIDFilterAddress,
            (const void *)mcan1ExtFilter,
@@ -630,67 +605,6 @@ void MCAN1_MessageRAMConfigSet(uint8_t *msgRAMConfigBaseAddress)
     }
 }
 
-// *****************************************************************************
-/* Function:
-    bool MCAN1_StandardFilterElementSet(uint8_t filterNumber, mcan_sidfe_registers_t *stdMsgIDFilterElement)
-
-   Summary:
-    Set a standard filter element configuration.
-
-   Precondition:
-    MCAN1_Initialize and MCAN1_MessageRAMConfigSet must have been called
-    for the associated MCAN instance.
-
-   Parameters:
-    filterNumber          - Standard Filter number to be configured.
-    stdMsgIDFilterElement - Pointer to Standard Filter Element configuration to be set on specific filterNumber.
-
-   Returns:
-    Request status.
-    true  - Request was successful.
-    false - Request has failed.
-*/
-bool MCAN1_StandardFilterElementSet(uint8_t filterNumber, mcan_sidfe_registers_t *stdMsgIDFilterElement)
-{
-    if ((filterNumber > 2U) || (stdMsgIDFilterElement == NULL))
-    {
-        return false;
-    }
-    mcan1Obj.msgRAMConfig.stdMsgIDFilterAddress[filterNumber - 1U].MCAN_SIDFE_0 = stdMsgIDFilterElement->MCAN_SIDFE_0;
-
-    return true;
-}
-
-// *****************************************************************************
-/* Function:
-    bool MCAN1_StandardFilterElementGet(uint8_t filterNumber, mcan_sidfe_registers_t *stdMsgIDFilterElement)
-
-   Summary:
-    Get a standard filter element configuration.
-
-   Precondition:
-    MCAN1_Initialize and MCAN1_MessageRAMConfigSet must have been called
-    for the associated MCAN instance.
-
-   Parameters:
-    filterNumber          - Standard Filter number to get filter configuration.
-    stdMsgIDFilterElement - Pointer to Standard Filter Element configuration for storing filter configuration.
-
-   Returns:
-    Request status.
-    true  - Request was successful.
-    false - Request has failed.
-*/
-bool MCAN1_StandardFilterElementGet(uint8_t filterNumber, mcan_sidfe_registers_t *stdMsgIDFilterElement)
-{
-    if ((filterNumber > 2U) || (stdMsgIDFilterElement == NULL))
-    {
-        return false;
-    }
-    stdMsgIDFilterElement->MCAN_SIDFE_0 = mcan1Obj.msgRAMConfig.stdMsgIDFilterAddress[filterNumber - 1U].MCAN_SIDFE_0;
-
-    return true;
-}
 
 // *****************************************************************************
 /* Function:

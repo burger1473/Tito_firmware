@@ -90,13 +90,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 2788D041CAB75857A7CECCD3818C7110
-- generatedChecksum: EC31CA4C0707ED62E617766DFB5E8C26
+- generatedChecksum: 43EDAC0DF93CE8B0713DB8AB81D1A12F
   logicalPath: config/sam_v71_xult/peripheral/mcan
   name: plib_mcan1.c
   physicalPath: peripheral/mcan
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 4A7433E77A5E712B8BC32C9700459E6A
+  userChecksum: 43EDAC0DF93CE8B0713DB8AB81D1A12F
 - generatedChecksum: D7BB8B6F4351E9C258FA926F65F8196E
   logicalPath: config/sam_v71_xult/peripheral/mpu
   name: plib_mpu.c
@@ -664,13 +664,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 5585BAE026A5B30FCC904115CFC6CFB3
-- generatedChecksum: 1D7C7488837787075BA37418265F3786
+- generatedChecksum: 0D5B001516C0ADF5BEFEAF17663F05C8
   logicalPath: config/sam_v71_xult/peripheral/mcan
   name: plib_mcan1.h
   physicalPath: peripheral/mcan
   security: NON_SECURE
   type: HEADER
-  userChecksum: 1B8EB62D09F4ED9B5BA1D52219A01882
+  userChecksum: 87D7DAA37C080F527C47EECA3CA8A641
 - generatedChecksum: 3BF4CAE93539FEB20C58356494C0C6B3
   logicalPath: config/sam_v71_xult/peripheral/mcan
   name: plib_mcan_common.h
