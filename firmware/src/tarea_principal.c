@@ -95,25 +95,45 @@ void TAREA_PRINCIPAL_Tasks ( void )
 
 /*========================================================================
   Funcion: TAREA_Can1
-  Descripcion: Envio la trama 1 por canbus
+  Descripcion: Envio la trama EPOS por CANopen
   Sin parametro de entrada
   No retorna nada
   ========================================================================*/
 void TAREA_Can1(void *pvParameters ){
   
-  Enable_testmode(0);
+  Uart1_println ("Inicio tarea 1");
+  
+  //Enable_testmode(0);
   uint8_t EPOS4_id = 1;
 
   //Escribo posicion
   uint8_t pos[3]={0}; pos[0]=0x42; pos[1]=0x13; pos[2]=0x23; pos[3]=0x87;
   if(Epos4_write_target_position(EPOS4_id, pos)==true){Uart1_println("Escritura EPOS4 OK");}else{Uart1_println("Fallo escritura EPOS4");}
-
+  
+  //Muestro datos recibidos
+  USART1_Write((uint8_t*)"Dato recibidio: ", strlen("Dato recibidio: "));
+  char destino[5]="     ";
+  for(uint8_t i=0; i<4; i++){
+      sprintf(destino, "0x%x ", pos[i]);
+      USART1_Write((uint8_t*)destino, 5);
+  }
+  USART1_Write((uint8_t*)"\r\n", strlen("\r\n"));
+  
+  /*
   //Leo posicion actual
-  //uint8_t pos_actual[3]={0};
-  //if(Epos4_read_actual_position(EPOS4_id, pos_actual)==true){}else{Uart1_println("\r\nFallo lectura EPOS4");}
-
-  //mcan_fd_interrupt_habilitar();                                     //Libero la maquina de estado del mcan para que otra tarea o funcion pueda enviar o recibir por can
-
+  uint8_t pos_actual[3]={0};
+  if(Epos4_read_actual_position(EPOS4_id, pos_actual)==true){}else{Uart1_println("\r\nFallo lectura EPOS4");}
+  
+  //Muestro datos recibidos
+  USART1_Write((uint8_t*)"Dato recibidio: ", strlen("Dato recibidio: "));
+  char destino[5]="     ";
+  for(uint8_t i=0; i<4; i++){
+      sprintf(destino, "0x%x ", pos_actual[i]);
+      USART1_Write((uint8_t*)destino, 5);
+  }
+  USART1_Write((uint8_t*)"\r\n", strlen("\r\n"));
+  */
+  
   Uart1_println("Fin tarea can 1");
   if(xTAREA_Can1 != NULL){vTaskDelete(xTAREA_Can1); xTAREA_Can1=NULL;} //Elimino esta tarea
 }
@@ -125,7 +145,6 @@ void TAREA_Can1(void *pvParameters ){
   No retorna nada
   ========================================================================*/
 void TAREA_Can2(void *pvParameters ){
-  
   Uart1_println("Fin tarea can 2");
   if(xTAREA_Can2 != NULL){vTaskDelete(xTAREA_Can2); xTAREA_Can2=NULL;} //Elimino esta tarea
 }

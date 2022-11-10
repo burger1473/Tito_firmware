@@ -157,22 +157,17 @@ uint8_t CANopen_SDO_Expedited_Write(uint8_t node_id, uint8_t command, uint16_t i
         //Envio mensaje por can
         bool retorno = mcan_fd_interrupt_enviar((uint32_t) id, message, 8, MCAN_MODE_NORMAL); //Envio trama por can bus
         if ( retorno == false){
+            mcan_fd_interrupt_habilitar();                          //Habilito mcan para seguir operando en el proximo mensaje sdo
+            xSemaphoreGive(canMutexLock);                           //Libero semaforo
             return 1;
         }
-
         if(Verify_writing_by_can()==1){
+            mcan_fd_interrupt_habilitar();                          //Habilito mcan para seguir operando en el proximo mensaje sdo
+            xSemaphoreGive(canMutexLock);                           //Libero semaforo
             return 1;
         }
-
         //Si esta en modo cliente, espero respuesta desde el servidor
         if(mode==CANopen_SDO_mode_client){
-            //Configuro recepcion de mensaje can
-            bool retorno3 = mcan_fd_interrupt_recibir(&rx_messageID, rx_message, &rx_messageLength);
-            if (retorno3 == false)  
-            {
-                xSemaphoreGive(canMutexLock);                      //Libero semaforo
-                return 2;                                          //Retorno desde la funcion
-            }
             volatile static CAN_ESTADO estado = CAN_LIBRE;         //Variable para guardar el estado de la aplicación CAN
             //Bucle infinito con timeout para verificar la recepcion en periferico can
             uint8_t interacciones=0;
@@ -181,8 +176,15 @@ uint8_t CANopen_SDO_Expedited_Write(uint8_t node_id, uint8_t command, uint16_t i
                 estado=Resultado();
                 switch (estado)
                 {
-                    case CAN_RECEPCION_OK:                                    
+                    case CAN_RECEPCION_OK:                        //Si se recibio mensaje                              
                     {
+                        //Traigo mensaje desde libreria mcan_fd_interrupt a esta libreria
+                        bool retorno3 = mcan_fd_interrupt_recibir(&rx_messageID, &rx_message, &rx_messageLength);
+                        if (retorno3 == false)                    //Si ocurrio un error
+                        {
+                            retornar = 2;                         //Indico que se debe retornar 2
+                            break;                                //Salgo del switch
+                        }
                         //Verifico que el mensaje recibido sea el correcto
                         if(rx_messageID!=0x580 + node_id){         //Si la respuesta no es del servidor o no es un mensaje sdo tx 
                             retornar = 3;
@@ -191,6 +193,13 @@ uint8_t CANopen_SDO_Expedited_Write(uint8_t node_id, uint8_t command, uint16_t i
                         if(rx_message[0]==0x60||rx_message[0]==0x43||rx_message[0]==0x4B||rx_message[0]==0x4F){ //Si la respuesta es un comando de respuesta
                             if(rx_message[0]==0x60){               //Si el mensaje es de confirmacion de escritura
                                 retornar = 0;
+                                // BORRAR DESDE ACA
+                                //paso el dato recibido a la variable apuntada en la funcion
+                                data[0]=rx_message[4];
+                                data[1]=rx_message[5];
+                                data[2]=rx_message[6];
+                                data[3]=rx_message[7];
+                                //HASTA ACA!!!!!!
                                 break;                             //Salgo del switch
                             }else{                                 //Sino verifico que el diccionario de respuesta corresponda con el enviado
                                 if((rx_message[1]==(index & 0xFF)) && (rx_message[2]==(index >> 8))){
@@ -225,12 +234,12 @@ uint8_t CANopen_SDO_Expedited_Write(uint8_t node_id, uint8_t command, uint16_t i
                     mcan_fd_interrupt_habilitar();                  //Habilito mcan para seguir operando en el proximo mensaje sdo
                     break;                                          //Salgo del while true
                 }
-                if(interacciones*1>=CANopen_SDO_timeout){
+                if(interacciones>=CANopen_SDO_timeout){
                     retornar = 2;
                     mcan_fd_interrupt_habilitar();                  //Habilito mcan para seguir operando en el proximo mensaje sdo
                     break;                                          //Salgo del while true
                 }
-                vTaskDelay(1 / portTICK_PERIOD_MS );                //Deje que la tarea quede inactiva por un tiempo determinado dejando que se produzca el cambio de contexto a otra tarea.
+                vTaskDelay(100 / portTICK_PERIOD_MS );               //Deje que la tarea quede inactiva por un tiempo determinado dejando que se produzca el cambio de contexto a otra tarea.
             }
             xSemaphoreGive(canMutexLock);
             return retornar;                                        //Retorno desde la funcion
@@ -264,13 +273,6 @@ uint8_t CANopen_SDO_Expedited_Read(uint16_t *index, uint8_t *subindex){
     xSemaphoreTake(canMutexLock, portMAX_DELAY);                    //Tomo semaforo para proteger el bus can ya que es un recurso compartico con otras tareas
     uint8_t retornar=7;                                             //Inicializo en un valor no utilizado
     if(state==CANopen_PRE_OPERATIONAL || state==CANopen_OPERATIONAL){         //Si el estado del CANopen permite mensajes SDO
-        //Configuro recepcion de mensaje can
-        bool retorno = mcan_fd_interrupt_recibir(&rx_messageID, rx_message, &rx_messageLength);
-        if (retorno == false)  
-        {
-            xSemaphoreGive(canMutexLock);                               //Libero semaforo
-            return 1;                                                   //Retorno desde la funcion
-        }
         volatile static CAN_ESTADO estado = CAN_LIBRE;                  //Variable para guardar el estado de la aplicación CAN
         //Bucle infinito con timeout para verificar la recepcion en periferico can
         uint8_t interacciones=0;                                        //Interacciones para timeout
@@ -280,6 +282,13 @@ uint8_t CANopen_SDO_Expedited_Read(uint16_t *index, uint8_t *subindex){
             {
                 case CAN_RECEPCION_OK:                                    
                 {
+                    //Traigo mensaje desde libreria mcan_fd_interrupt a esta libreria
+                    bool retorno = mcan_fd_interrupt_recibir(&rx_messageID, rx_message, &rx_messageLength);
+                    if (retorno == false)                               //Si ocurrio error
+                    {
+                        retornar= 1;                                    //Indico que se debe retornar 1
+                        break;                                          //Salgo del switch
+                    }
                     //Verifico que el mensaje recibido sea el correcto
                     if(rx_messageID>=0x601 && rx_messageID<=0x67F){     //Si el mensaje tiene cobid SDO Rx
                         if(rx_messageID==(0x600+CANopen_nodeid)){       //El mensaje esta dedicado a este nodo
@@ -337,7 +346,7 @@ uint8_t CANopen_SDO_Expedited_Read(uint16_t *index, uint8_t *subindex){
                     break;                                              //Salgo del switch
             }
 
-            if(retornar == 0 || retornar == 2 || retornar == 3 || retornar == 4 || retornar == 5){ //Si en el switch se establecio retorno
+            if(retornar == 0 || retornar == 1 || retornar == 2 || retornar == 3 || retornar == 4 || retornar == 5){ //Si en el switch se establecio retorno
                 mcan_fd_interrupt_habilitar();                          //Habilito mcan para seguir operando en el proximo mensaje sdo
                 break;                                                  //Salgo del while true
             }
@@ -349,7 +358,6 @@ uint8_t CANopen_SDO_Expedited_Read(uint16_t *index, uint8_t *subindex){
             }
             vTaskDelay(1 / portTICK_PERIOD_MS );                        //Deje que la tarea quede inactiva por un tiempo determinado dejando que se produzca el cambio de contexto a otra tarea.
         }
-        xSemaphoreGive(canMutexLock);
 
         if(retornar==0){                                                //Si el comando recibido era de escritura y se escribio con exito, Envio mensaje de confirmacion
             uint8_t data_ff[3]={0};
@@ -404,6 +412,7 @@ uint8_t CANopen_SDO_Expedited_Read(uint16_t *index, uint8_t *subindex){
             
         }
     }
+    xSemaphoreGive(canMutexLock);                                   //Libero semaforo
     return retornar;                                                //Retorno desde la funcion
 }
 

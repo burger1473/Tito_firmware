@@ -90,13 +90,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 2788D041CAB75857A7CECCD3818C7110
-- generatedChecksum: B0030AFB98E851914FC6C891FE9C9616
+- generatedChecksum: EC31CA4C0707ED62E617766DFB5E8C26
   logicalPath: config/sam_v71_xult/peripheral/mcan
   name: plib_mcan1.c
   physicalPath: peripheral/mcan
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 33D2AD7967B1A2838E43B5D1C7887336
+  userChecksum: 4A7433E77A5E712B8BC32C9700459E6A
 - generatedChecksum: D7BB8B6F4351E9C258FA926F65F8196E
   logicalPath: config/sam_v71_xult/peripheral/mpu
   name: plib_mpu.c

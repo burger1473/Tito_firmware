@@ -9,7 +9,7 @@
 
 /*=====================[ Inclusiones ]============================*/
   #include "../CANopen/CANopen.h"
-  
+  #include "../lib/Usart1_FreeRTOS/Uart1_FreeRTOS.h"
 /*=====================[Implementaciones]==============================*/
 
 /*========================================================================
@@ -24,6 +24,7 @@
 bool Epos4_read_actual_position(uint8_t EPOS4_id, uint8_t *resultado){
   uint8_t data[3]={0};
   uint8_t res = CANopen_SDO_Expedited_Write(EPOS4_id, 0x40, 0x6064, 0x00, data, CANopen_SDO_mode_client);
+    
   resultado=data;
   if(res==0){
     return true;

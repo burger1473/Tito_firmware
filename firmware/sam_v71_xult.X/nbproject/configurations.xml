@@ -584,7 +584,7 @@
         <property key="memories.programmemory.ranges" value="400000-5fffff"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programmerToGoFilePath"
-                  value="C:/Users/faburgos/Desktop/Mio/Spacebee/mio/Tito_firmware/firmware/sam_v71_xult.X/debug/sam_v71_xult/sam_v71_xult_ptg"/>
+                  value="D:/H3/csp_apps_sam_e70_s70_v70_v71/apps/mcan/mcan_fd_operation_interrupt_timestamp/firmware/sam_v71_xult.X/debug/sam_v71_xult/sam_v71_xult_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"

@@ -113,56 +113,27 @@ static uint8_t MCANDlcToLengthGet(uint8_t dlc)
   ========================================================================*/
 static void Save_message(uint8_t numberOfMessage, MCAN_RX_BUFFER *rxBuf, uint8_t rxBufLen, uint8_t rxFifoBuf)
 {
-    uint8_t length = 0;                                                         //Variable que contiene el tamaño actual
-    //rx_messageLength = 0;                                                       //Variable para almacenar tamaño del mensaje
-    #ifdef debug
-        if (rxFifoBuf == 0){                                                    //Si el mensaje proviene de la fifo0
-                Uart1_print(" Rx FIFO0 :");
-        }
-        else if (rxFifoBuf == 1){                                               //Si el mensaje proviene de la fifo1
-                Uart1_print(" Rx FIFO1 :");
-        }else if (rxFifoBuf == 2){
-                Uart1_print(" Rx Buffer :");                                    //Si el mensaje proviene del buffer
-        }
-    #endif
-
-    for (uint8_t count = 0; count < numberOfMessage; count++)                   //Recorro todos los mensajes
+    uint8_t length = 0;
+    uint8_t msgLength = 0;
+    
+    for (uint8_t count = 0; count < numberOfMessage; count++)
     {
-        #ifdef debug
-            Uart1_println(" New Message Received");
-        #endif
-        portENTER_CRITICAL();                                                   //Seccion critica para evitar que se ejecute cambio de contexto alterando el proceso de guardado de la variable
-        rx_messageID = rxBuf->xtd ? rxBuf->id : READ_ID(rxBuf->id);             //Obtengo ID
-        rx_messageLength = MCANDlcToLengthGet(rxBuf->dlc);                      //Obtengo tamaño mensaje
-        length = rx_messageLength;                                              //Valorizo el tamaño actual con el tamaño real del mensaje
-        timestamp=(unsigned int)rxBuf->rxts;                                    //Obtengo el timestamp
-        portEXIT_CRITICAL();                                                    //Salgo de seccion critica
-        #ifdef debug
-            //Uart1_print(" Message - Timestamp : 0x%x ID : 0x%x Length : 0x%x ", (unsigned int)rxBuf->rxts, (unsigned int)rx_messageID, (unsigned int)rx_messageLength);
-            Uart1_print(" Message - Timestamp : 0x");
-            Uart1_print(timestamp);
-            Uart1_print(" ID : 0x");
-            Uart1_print((unsigned int)rx_messageID);
-            Uart1_print(" Length : 0x");
-            Uart1_print((unsigned int)rx_messageLength);
-            Uart1_print("Message : ");
-        #endif
-        uint8_t posicion=0;                                                    //Variable para guardar la posicion actual del array
-        while(length)                                                          //Recorro el array que contiene el mensaje
+        
+        msgLength = MCANDlcToLengthGet(rxBuf->dlc);
+        portENTER_CRITICAL();     
+        rx_messageID = rxBuf->xtd ? rxBuf->id : READ_ID(rxBuf->id);
+        rx_messageLength=msgLength;
+        portEXIT_CRITICAL();
+        length = msgLength;
+        while(length)
         {
-            posicion=rx_messageLength - length--;                              //Posicion actual del array
-            portENTER_CRITICAL();                                                   //Seccion critica para evitar que se ejecute cambio de contexto alterando el proceso de guardado de la variable
-            rx_message[posicion]=rxBuf->data[posicion];                        //Guardo mensaje en variable global
-            portEXIT_CRITICAL();                                                    //Salgo de seccion critica
-            #ifdef debug
-                Uart1_print("0x");
-                Uart1_print(&rxBuf->data[posicion]);
-            #endif
+            uint8_t posicion=msgLength - length--;
+            portENTER_CRITICAL(); 
+            rx_message[posicion] = rxBuf->data[posicion]; 
+            portEXIT_CRITICAL();
         }
-        #ifdef debug
-            Uart1_println(" ");
-        #endif
-        rxBuf += rxBufLen;                                                     //Recorro el buffer
+        
+        rxBuf += rxBufLen;
     }
 }
 
@@ -189,6 +160,7 @@ void APP_MCAN_TxFifoCallback(uintptr_t context)
                 break;                                                  //Salgo de switch
             }
             default:                                                    //En cualquier otro contexto
+                state = APP_STATE_MCAN_XFER_ERROR;                      //Estado mensaje recibido o transmitido erroneamente
                 break;                                                  //Salgo de switch
         }
     }
@@ -332,11 +304,13 @@ void APP_MCAN_RxFifo1Callback(uint8_t numberOfMessage, uintptr_t context)
   Retorna: dato bool indicando si se pudo transmitir el mensaje true o false.
   ========================================================================*/
 bool mcan_fd_interrupt_recibir(uint32_t *rx_messageID2, uint8_t *rx_message2, uint8_t *rx_messageLength2){  
-    if(state == APP_STATE_MCAN_XFER_SUCCESSFUL){
-        portENTER_CRITICAL();                                  //Seccion critica para evitar que se ejecute cambio de contexto alterando el proceso de guardado de la variable
-        rx_messageID2=rx_messageID;
-        rx_message2=rx_message;
-        rx_messageLength2=rx_messageLength;
+    if(state == APP_STATE_MCAN_XFER_SUCCESSFUL && (APP_STATES)xferContext == APP_STATE_MCAN_RECEIVE){
+         portENTER_CRITICAL();                                  //Seccion critica para evitar que se ejecute cambio de contexto alterando el proceso de guardado de la variable
+        *rx_messageID2=rx_messageID;
+        for(uint8_t i=0; i<rx_messageLength; i++){
+            rx_message2[i]=rx_message[i];
+        }
+        *rx_messageLength2=rx_messageLength;
         portEXIT_CRITICAL();                                   //Salgo de seccion critica
         return true;                                           //Retorno falso si se recibio mensaje
     }else{
@@ -391,7 +365,7 @@ bool mcan_fd_interrupt_enviar(uint32_t messageID , uint8_t *message, uint8_t mes
         for (uint8_t loop_count = 0; loop_count < messageLength; loop_count++){
 			txBuffer->data[loop_count] = message[loop_count];
 		}
-        MCAN1_TxFifoCallbackRegister( APP_MCAN_TxFifoCallback, (uintptr_t)APP_STATE_MCAN_TRANSMIT );
+        MCAN1_TxFifoCallbackRegister(APP_MCAN_TxFifoCallback, (uintptr_t)APP_STATE_MCAN_TRANSMIT);
         state = APP_STATE_MCAN_IDLE;
         if (MCAN1_MessageTransmitFifo(1, txBuffer) == false)
         {

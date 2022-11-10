@@ -35,7 +35,7 @@
   
   #define CANopen_SDO_mode_client 0
   #define CANopen_SDO_mode_server 1
-  #define CANopen_SDO_timeout     10                         //Tiempo de espera en ms para recibir respuesta de servidor
+  #define CANopen_SDO_timeout     150                        //Tiempo de espera en ms para recibir respuesta de servidor
   #define CANopen_SDO_command_writing_request_4byte     0x23 //(rx) Solicitud de escritura de 4 bytes
   #define CANopen_SDO_command_writing_request_2byte     0x2B //(rx) Solicitud de escritura de 2 bytes
   #define CANopen_SDO_command_writing_request_1byte     0x2F //(rx) Solicitud de escritura de 1 byte

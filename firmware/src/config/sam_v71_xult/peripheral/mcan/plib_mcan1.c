@@ -71,14 +71,14 @@ static const mcan_sidfe_registers_t mcan1StdFilter[] =
 {
     {
         .MCAN_SIDFE_0 = MCAN_SIDFE_0_SFT(0UL) |
-                  MCAN_SIDFE_0_SFID1(0x469UL) |
-                  MCAN_SIDFE_0_SFID2(0x469UL) |
+                  MCAN_SIDFE_0_SFID1(0x0UL) |
+                  MCAN_SIDFE_0_SFID2(0x100UL) |
                   MCAN_SIDFE_0_SFEC(1UL)
     },
     {
         .MCAN_SIDFE_0 = MCAN_SIDFE_0_SFT(0UL) |
-                  MCAN_SIDFE_0_SFID1(0x45aUL) |
-                  MCAN_SIDFE_0_SFID2(0x0UL) |
+                  MCAN_SIDFE_0_SFID1(0x7ffUL) |
+                  MCAN_SIDFE_0_SFID2(0x100UL) |
                   MCAN_SIDFE_0_SFEC(7UL)
     },
 };
